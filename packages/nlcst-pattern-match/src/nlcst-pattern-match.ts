@@ -13,7 +13,30 @@ export interface PatternMatcherArgs {
     parser: { parse(text: string): Root };
 }
 
+/**
+ * Match actual with expected
+ * @param actualValue
+ * @param expectedValue
+ * @returns {boolean}
+ */
+function matchValue(actualValue: any, expectedValue: any): boolean {
+    // wildcard
+    if (expectedValue === "*" && actualValue !== undefined) {
+        return true
+    } else if (isRegExp(expectedValue)) {
+        // /pattern/
+        return expectedValue.test(actualValue);
+    } else if (typeof expectedValue === "object") {
+        // data object
+        return Object.keys(expectedValue).every(key => {
+            return matchValue(actualValue[key], expectedValue[key]);
+        });
+    }
+    return actualValue === expectedValue;
+}
+
 function matchNode(actualNode: Node, expectedNode: Node): boolean {
+    // ignore other property. ore-ore property should be ignored
     return ["type", "children", "value", "data"].every((key: string) => {
         const expectedProp = expectedNode[key];
         if (!expectedProp) {
@@ -28,16 +51,7 @@ function matchNode(actualNode: Node, expectedNode: Node): boolean {
         } else {
             const expectedValues = Array.isArray(expectedProp) ? expectedProp : [expectedProp];
             return expectedValues.some(expectedValue => {
-                if (isRegExp(expectedValue)) {
-                    return expectedValue.test(actualProp);
-                } else if (typeof expectedValue === "object") {
-                    // data object
-                    return Object.keys(expectedValue).every(key => {
-                        return expectedValue[key] === actualProp[key];
-                    });
-                } else {
-                    return actualProp === expectedValue;
-                }
+                return matchValue(actualProp, expectedValue);
             });
         }
     });
@@ -83,10 +97,10 @@ function match(parent: Sentence, expectedNode: Sentence) {
                 position:
                     firstNode.position && lastNode.position
                         ? {
-                              start: firstNode.position.start,
-                              end: lastNode.position.end,
-                              index: firstNode.index
-                          }
+                            start: firstNode.position.start,
+                            end: lastNode.position.end,
+                            index: firstNode.index
+                        }
                         : undefined,
                 nodeList: tokens
             });
@@ -109,8 +123,9 @@ export class PatternMatcher {
     match(text: string, pattern: any) {
         let allResults: { position: Position | undefined; nodeList: Node[] }[] = [];
         const AST = this.parser.parse(text);
+        console.log(JSON.stringify(AST, null, 4));
         walk(AST, {
-            enter: function(node: Node) {
+            enter: function (node: Node) {
                 if (isSentence(node)) {
                     const results = match(node, pattern);
                     allResults = allResults.concat(results);
@@ -165,7 +180,7 @@ export class PatternMatcher {
         });
         const AST = this.parser.parse(allString);
         walk(AST, {
-            enter: function(node: Node, parent: Parent) {
+            enter: function (node: Node, parent: Parent) {
                 replaceHolders
                     .filter(replaceHolder => {
                         return node.position!.start.offset === replaceHolder.start;
