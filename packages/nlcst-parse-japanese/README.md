@@ -12,6 +12,8 @@ Install with [npm](https://www.npmjs.com/):
 
 This library use [kuromoji.js](https://github.com/takuyaa/kuromoji.js#api "kuromoji.js") via [kuromojin](https://github.com/azu/kuromojin).
 
+NLCST Node's `data` property is following values.
+
 
 | Property        | Example     | Description               |
 | --------------- | :---------- | ------------------------- |
