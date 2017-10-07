@@ -4,7 +4,6 @@ export {
     Paragraph,
     Sentence,
     Word,
-    Text,
     Symbol,
     Punctuation,
     WhiteSpace,
