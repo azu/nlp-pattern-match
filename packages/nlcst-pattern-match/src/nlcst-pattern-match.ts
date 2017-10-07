@@ -3,14 +3,14 @@ import { Root } from "nlcst-types";
 import { Parent, Node, Position } from "unist-types";
 import { isPunctuation, isSentence, isWhiteSpace, Sentence, Word, Punctuation, WhiteSpace } from "nlcst-types";
 
-const select = require('unist-util-select');
-const walk = require('estree-walker').walk;
+const select = require("unist-util-select");
+const walk = require("estree-walker").walk;
 const isRegExp = (v: any): v is RegExp => {
-    return Object.prototype.toString.call(v) === '[object RegExp]';
+    return Object.prototype.toString.call(v) === "[object RegExp]";
 };
 
 export interface PatternMatcherArgs {
-    parser: { parse(text: string): Root }
+    parser: { parse(text: string): Root };
 }
 
 function matchNode(actualNode: Node, expectedNode: Node): boolean {
@@ -54,7 +54,7 @@ function match(parent: Sentence, expectedNode: Sentence) {
     const expectedChildren = expectedNode.children;
     const tokenCount = expectedChildren.length;
     const matchTokens = [];
-    const results: { position: Position | undefined, nodeList: Node[] }[] = [];
+    const results: { position: Position | undefined; nodeList: Node[] }[] = [];
     let currentTokenPosition = 0;
     let index = 0;
     for (index = 0; index < children.length; index++) {
@@ -80,16 +80,16 @@ function match(parent: Sentence, expectedNode: Sentence) {
             const firstNode = tokens[0];
             const lastNode = tokens[tokens.length - 1];
             results.push({
-                position: firstNode.position && lastNode.position
-                    ? {
-                        start: firstNode.position.start,
-                        end: lastNode.position.end,
-                        index: firstNode.index
-                    }
-                    : undefined,
+                position:
+                    firstNode.position && lastNode.position
+                        ? {
+                              start: firstNode.position.start,
+                              end: lastNode.position.end,
+                              index: firstNode.index
+                          }
+                        : undefined,
                 nodeList: tokens
-            })
-            ;
+            });
         }
     }
     return results;
@@ -103,14 +103,14 @@ export class PatternMatcher {
     private parser: { parse: ((text: string) => Root) };
 
     constructor(args: PatternMatcherArgs) {
-        this.parser = args.parser
+        this.parser = args.parser;
     }
 
     match(text: string, pattern: any) {
-        let allResults: { position: Position | undefined, nodeList: Node[] }[] = [];
+        let allResults: { position: Position | undefined; nodeList: Node[] }[] = [];
         const AST = this.parser.parse(text);
         walk(AST, {
-            enter: function (node: Node) {
+            enter: function(node: Node) {
                 if (isSentence(node)) {
                     const results = match(node, pattern);
                     allResults = allResults.concat(results);
@@ -141,7 +141,7 @@ export class PatternMatcher {
     }
 
     tag(strings: TemplateStringsArray, ...values: TagNode[]): Sentence {
-        const replaceHolders: { start: number, length: number, value: TagNode }[] = [];
+        const replaceHolders: { start: number; length: number; value: TagNode }[] = [];
         const createPlaceholder = (start: number, value: TagNode) => {
             const DEFAULT_VALUE_LENGTH = 5;
             const length = value.length ? value.length : DEFAULT_VALUE_LENGTH;
@@ -155,7 +155,7 @@ export class PatternMatcher {
             } else if (isWhiteSpace(value)) {
                 return new Array(length + 1).join(" ");
             } else {
-                return new Array(length + 1).join("X")
+                return new Array(length + 1).join("X");
             }
         };
         const allString = strings.reduce((result, string, i) => {
@@ -165,17 +165,19 @@ export class PatternMatcher {
         });
         const AST = this.parser.parse(allString);
         walk(AST, {
-            enter: function (node: Node, parent: Parent) {
-                replaceHolders.filter(replaceHolder => {
-                    return node.position!.start.offset === replaceHolder.start;
-                }).forEach(replaceHolder => {
-                    const indexOf = parent.children.indexOf(node);
-                    const actualNode = parent.children[indexOf];
-                    const placeholderNode = replaceHolder.value;
-                    parent.children[indexOf] = Object.assign({}, placeholderNode, {
-                        position: actualNode.position,
+            enter: function(node: Node, parent: Parent) {
+                replaceHolders
+                    .filter(replaceHolder => {
+                        return node.position!.start.offset === replaceHolder.start;
+                    })
+                    .forEach(replaceHolder => {
+                        const indexOf = parent.children.indexOf(node);
+                        const actualNode = parent.children[indexOf];
+                        const placeholderNode = replaceHolder.value;
+                        parent.children[indexOf] = Object.assign({}, placeholderNode, {
+                            position: actualNode.position
+                        });
                     });
-                })
             }
         });
 

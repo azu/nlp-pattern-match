@@ -1,0 +1,588 @@
+{
+  "type": "RootNode",
+  "children": [
+    {
+      "type": "ParagraphNode",
+      "children": [
+        {
+          "type": "SentenceNode",
+          "children": [
+            {
+              "type": "WordNode",
+              "children": [
+                {
+                  "type": "TextNode",
+                  "value": "ようこそ",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1,
+                      "offset": 0
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 5,
+                      "offset": 4
+                    }
+                  },
+                  "data": {
+                    "word_id": 34120,
+                    "word_type": "KNOWN",
+                    "word_position": 1,
+                    "surface_form": "ようこそ",
+                    "pos": "感動詞",
+                    "pos_detail_1": "*",
+                    "pos_detail_2": "*",
+                    "pos_detail_3": "*",
+                    "conjugated_type": "*",
+                    "conjugated_form": "*",
+                    "basic_form": "ようこそ",
+                    "reading": "ヨウコソ",
+                    "pronunciation": "ヨーコソ"
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 5,
+                  "offset": 4
+                }
+              },
+              "data": {
+                "word_id": 34120,
+                "word_type": "KNOWN",
+                "word_position": 1,
+                "surface_form": "ようこそ",
+                "pos": "感動詞",
+                "pos_detail_1": "*",
+                "pos_detail_2": "*",
+                "pos_detail_3": "*",
+                "conjugated_type": "*",
+                "conjugated_form": "*",
+                "basic_form": "ようこそ",
+                "reading": "ヨウコソ",
+                "pronunciation": "ヨーコソ"
+              }
+            },
+            {
+              "type": "WordNode",
+              "children": [
+                {
+                  "type": "TextNode",
+                  "value": "、",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 5,
+                      "offset": 4
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 6,
+                      "offset": 5
+                    }
+                  },
+                  "data": {
+                    "word_id": 51340,
+                    "word_type": "KNOWN",
+                    "word_position": 5,
+                    "surface_form": "、",
+                    "pos": "名詞",
+                    "pos_detail_1": "数",
+                    "pos_detail_2": "*",
+                    "pos_detail_3": "*",
+                    "conjugated_type": "*",
+                    "conjugated_form": "*",
+                    "basic_form": "、",
+                    "reading": "、",
+                    "pronunciation": "、"
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 5,
+                  "offset": 4
+                },
+                "end": {
+                  "line": 1,
+                  "column": 6,
+                  "offset": 5
+                }
+              },
+              "data": {
+                "word_id": 51340,
+                "word_type": "KNOWN",
+                "word_position": 5,
+                "surface_form": "、",
+                "pos": "名詞",
+                "pos_detail_1": "数",
+                "pos_detail_2": "*",
+                "pos_detail_3": "*",
+                "conjugated_type": "*",
+                "conjugated_form": "*",
+                "basic_form": "、",
+                "reading": "、",
+                "pronunciation": "、"
+              }
+            },
+            {
+              "type": "WordNode",
+              "children": [
+                {
+                  "type": "TextNode",
+                  "value": "日本",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 6,
+                      "offset": 5
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 8,
+                      "offset": 7
+                    }
+                  },
+                  "data": {
+                    "word_id": 329310,
+                    "word_type": "KNOWN",
+                    "word_position": 6,
+                    "surface_form": "日本",
+                    "pos": "名詞",
+                    "pos_detail_1": "固有名詞",
+                    "pos_detail_2": "地域",
+                    "pos_detail_3": "国",
+                    "conjugated_type": "*",
+                    "conjugated_form": "*",
+                    "basic_form": "日本",
+                    "reading": "ニッポン",
+                    "pronunciation": "ニッポン"
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 6,
+                  "offset": 5
+                },
+                "end": {
+                  "line": 1,
+                  "column": 8,
+                  "offset": 7
+                }
+              },
+              "data": {
+                "word_id": 329310,
+                "word_type": "KNOWN",
+                "word_position": 6,
+                "surface_form": "日本",
+                "pos": "名詞",
+                "pos_detail_1": "固有名詞",
+                "pos_detail_2": "地域",
+                "pos_detail_3": "国",
+                "conjugated_type": "*",
+                "conjugated_form": "*",
+                "basic_form": "日本",
+                "reading": "ニッポン",
+                "pronunciation": "ニッポン"
+              }
+            },
+            {
+              "type": "WordNode",
+              "children": [
+                {
+                  "type": "TextNode",
+                  "value": "へ",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 8,
+                      "offset": 7
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 9,
+                      "offset": 8
+                    }
+                  },
+                  "data": {
+                    "word_id": 92260,
+                    "word_type": "KNOWN",
+                    "word_position": 8,
+                    "surface_form": "へ",
+                    "pos": "助詞",
+                    "pos_detail_1": "格助詞",
+                    "pos_detail_2": "一般",
+                    "pos_detail_3": "*",
+                    "conjugated_type": "*",
+                    "conjugated_form": "*",
+                    "basic_form": "へ",
+                    "reading": "ヘ",
+                    "pronunciation": "エ"
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 8,
+                  "offset": 7
+                },
+                "end": {
+                  "line": 1,
+                  "column": 9,
+                  "offset": 8
+                }
+              },
+              "data": {
+                "word_id": 92260,
+                "word_type": "KNOWN",
+                "word_position": 8,
+                "surface_form": "へ",
+                "pos": "助詞",
+                "pos_detail_1": "格助詞",
+                "pos_detail_2": "一般",
+                "pos_detail_3": "*",
+                "conjugated_type": "*",
+                "conjugated_form": "*",
+                "basic_form": "へ",
+                "reading": "ヘ",
+                "pronunciation": "エ"
+              }
+            },
+            {
+              "type": "PunctuationNode",
+              "value": "。",
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 9,
+                  "offset": 8
+                },
+                "end": {
+                  "line": 1,
+                  "column": 10,
+                  "offset": 9
+                }
+              },
+              "data": {
+                "word_id": 90940,
+                "word_type": "KNOWN",
+                "word_position": 9,
+                "surface_form": "。",
+                "pos": "記号",
+                "pos_detail_1": "句点",
+                "pos_detail_2": "*",
+                "pos_detail_3": "*",
+                "conjugated_type": "*",
+                "conjugated_form": "*",
+                "basic_form": "。",
+                "reading": "。",
+                "pronunciation": "。"
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 10,
+              "offset": 9
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 10,
+          "offset": 9
+        }
+      }
+    },
+    {
+      "type": "ParagraphNode",
+      "children": [
+        {
+          "type": "SentenceNode",
+          "children": [
+            {
+              "type": "WordNode",
+              "children": [
+                {
+                  "type": "TextNode",
+                  "value": "こんにちわ",
+                  "position": {
+                    "start": {
+                      "line": 2,
+                      "column": 1,
+                      "offset": 9
+                    },
+                    "end": {
+                      "line": 2,
+                      "column": 6,
+                      "offset": 14
+                    }
+                  },
+                  "data": {
+                    "word_id": 34640,
+                    "word_type": "KNOWN",
+                    "word_position": 1,
+                    "surface_form": "こんにちわ",
+                    "pos": "感動詞",
+                    "pos_detail_1": "*",
+                    "pos_detail_2": "*",
+                    "pos_detail_3": "*",
+                    "conjugated_type": "*",
+                    "conjugated_form": "*",
+                    "basic_form": "こんにちわ",
+                    "reading": "コンニチワ",
+                    "pronunciation": "コンニチワ"
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 2,
+                  "column": 1,
+                  "offset": 9
+                },
+                "end": {
+                  "line": 2,
+                  "column": 6,
+                  "offset": 14
+                }
+              },
+              "data": {
+                "word_id": 34640,
+                "word_type": "KNOWN",
+                "word_position": 1,
+                "surface_form": "こんにちわ",
+                "pos": "感動詞",
+                "pos_detail_1": "*",
+                "pos_detail_2": "*",
+                "pos_detail_3": "*",
+                "conjugated_type": "*",
+                "conjugated_form": "*",
+                "basic_form": "こんにちわ",
+                "reading": "コンニチワ",
+                "pronunciation": "コンニチワ"
+              }
+            },
+            {
+              "type": "WordNode",
+              "children": [
+                {
+                  "type": "TextNode",
+                  "value": "、",
+                  "position": {
+                    "start": {
+                      "line": 2,
+                      "column": 6,
+                      "offset": 14
+                    },
+                    "end": {
+                      "line": 2,
+                      "column": 7,
+                      "offset": 15
+                    }
+                  },
+                  "data": {
+                    "word_id": 51340,
+                    "word_type": "KNOWN",
+                    "word_position": 6,
+                    "surface_form": "、",
+                    "pos": "名詞",
+                    "pos_detail_1": "数",
+                    "pos_detail_2": "*",
+                    "pos_detail_3": "*",
+                    "conjugated_type": "*",
+                    "conjugated_form": "*",
+                    "basic_form": "、",
+                    "reading": "、",
+                    "pronunciation": "、"
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 2,
+                  "column": 6,
+                  "offset": 14
+                },
+                "end": {
+                  "line": 2,
+                  "column": 7,
+                  "offset": 15
+                }
+              },
+              "data": {
+                "word_id": 51340,
+                "word_type": "KNOWN",
+                "word_position": 6,
+                "surface_form": "、",
+                "pos": "名詞",
+                "pos_detail_1": "数",
+                "pos_detail_2": "*",
+                "pos_detail_3": "*",
+                "conjugated_type": "*",
+                "conjugated_form": "*",
+                "basic_form": "、",
+                "reading": "、",
+                "pronunciation": "、"
+              }
+            },
+            {
+              "type": "WordNode",
+              "children": [
+                {
+                  "type": "TextNode",
+                  "value": "太郎",
+                  "position": {
+                    "start": {
+                      "line": 2,
+                      "column": 7,
+                      "offset": 15
+                    },
+                    "end": {
+                      "line": 2,
+                      "column": 9,
+                      "offset": 17
+                    }
+                  },
+                  "data": {
+                    "word_id": 2246970,
+                    "word_type": "KNOWN",
+                    "word_position": 7,
+                    "surface_form": "太郎",
+                    "pos": "名詞",
+                    "pos_detail_1": "固有名詞",
+                    "pos_detail_2": "地域",
+                    "pos_detail_3": "一般",
+                    "conjugated_type": "*",
+                    "conjugated_form": "*",
+                    "basic_form": "太郎",
+                    "reading": "タロウ",
+                    "pronunciation": "タロー"
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 2,
+                  "column": 7,
+                  "offset": 15
+                },
+                "end": {
+                  "line": 2,
+                  "column": 9,
+                  "offset": 17
+                }
+              },
+              "data": {
+                "word_id": 2246970,
+                "word_type": "KNOWN",
+                "word_position": 7,
+                "surface_form": "太郎",
+                "pos": "名詞",
+                "pos_detail_1": "固有名詞",
+                "pos_detail_2": "地域",
+                "pos_detail_3": "一般",
+                "conjugated_type": "*",
+                "conjugated_form": "*",
+                "basic_form": "太郎",
+                "reading": "タロウ",
+                "pronunciation": "タロー"
+              }
+            },
+            {
+              "type": "PunctuationNode",
+              "value": "。",
+              "position": {
+                "start": {
+                  "line": 2,
+                  "column": 9,
+                  "offset": 17
+                },
+                "end": {
+                  "line": 2,
+                  "column": 10,
+                  "offset": 18
+                }
+              },
+              "data": {
+                "word_id": 90940,
+                "word_type": "KNOWN",
+                "word_position": 9,
+                "surface_form": "。",
+                "pos": "記号",
+                "pos_detail_1": "句点",
+                "pos_detail_2": "*",
+                "pos_detail_3": "*",
+                "conjugated_type": "*",
+                "conjugated_form": "*",
+                "basic_form": "。",
+                "reading": "。",
+                "pronunciation": "。"
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 2,
+              "column": 1,
+              "offset": 9
+            },
+            "end": {
+              "line": 2,
+              "column": 10,
+              "offset": 18
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 2,
+          "column": 1,
+          "offset": 9
+        },
+        "end": {
+          "line": 2,
+          "column": 10,
+          "offset": 18
+        }
+      }
+    }
+  ],
+  "position": {
+    "start": {
+      "line": 1,
+      "column": 1,
+      "offset": 0
+    },
+    "end": {
+      "line": 2,
+      "column": 10,
+      "offset": 18
+    }
+  }
+}

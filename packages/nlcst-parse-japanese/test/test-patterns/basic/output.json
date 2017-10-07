@@ -1,0 +1,1493 @@
+{
+  "type": "RootNode",
+  "children": [
+    {
+      "type": "ParagraphNode",
+      "children": [
+        {
+          "type": "SentenceNode",
+          "children": [
+            {
+              "type": "WordNode",
+              "children": [
+                {
+                  "type": "TextNode",
+                  "value": "1",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 1,
+                      "offset": 0
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 2,
+                      "offset": 1
+                    }
+                  },
+                  "data": {
+                    "word_id": 90,
+                    "word_type": "UNKNOWN",
+                    "word_position": 1,
+                    "surface_form": "1",
+                    "pos": "名詞",
+                    "pos_detail_1": "数",
+                    "pos_detail_2": "*",
+                    "pos_detail_3": "*",
+                    "conjugated_type": "*",
+                    "conjugated_form": "*",
+                    "basic_form": "*"
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 1,
+                  "offset": 0
+                },
+                "end": {
+                  "line": 1,
+                  "column": 2,
+                  "offset": 1
+                }
+              },
+              "data": {
+                "word_id": 90,
+                "word_type": "UNKNOWN",
+                "word_position": 1,
+                "surface_form": "1",
+                "pos": "名詞",
+                "pos_detail_1": "数",
+                "pos_detail_2": "*",
+                "pos_detail_3": "*",
+                "conjugated_type": "*",
+                "conjugated_form": "*",
+                "basic_form": "*"
+              }
+            },
+            {
+              "type": "WhiteSpaceNode",
+              "value": " ",
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 2,
+                  "offset": 1
+                },
+                "end": {
+                  "line": 1,
+                  "column": 3,
+                  "offset": 2
+                }
+              },
+              "data": {
+                "word_id": 10,
+                "word_type": "UNKNOWN",
+                "word_position": 2,
+                "surface_form": " ",
+                "pos": "記号",
+                "pos_detail_1": "空白",
+                "pos_detail_2": "*",
+                "pos_detail_3": "*",
+                "conjugated_type": "*",
+                "conjugated_form": "*",
+                "basic_form": "*"
+              }
+            },
+            {
+              "type": "WordNode",
+              "children": [
+                {
+                  "type": "TextNode",
+                  "value": "これ",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 3,
+                      "offset": 2
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 5,
+                      "offset": 4
+                    }
+                  },
+                  "data": {
+                    "word_id": 43350,
+                    "word_type": "KNOWN",
+                    "word_position": 3,
+                    "surface_form": "これ",
+                    "pos": "名詞",
+                    "pos_detail_1": "代名詞",
+                    "pos_detail_2": "一般",
+                    "pos_detail_3": "*",
+                    "conjugated_type": "*",
+                    "conjugated_form": "*",
+                    "basic_form": "これ",
+                    "reading": "コレ",
+                    "pronunciation": "コレ"
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 3,
+                  "offset": 2
+                },
+                "end": {
+                  "line": 1,
+                  "column": 5,
+                  "offset": 4
+                }
+              },
+              "data": {
+                "word_id": 43350,
+                "word_type": "KNOWN",
+                "word_position": 3,
+                "surface_form": "これ",
+                "pos": "名詞",
+                "pos_detail_1": "代名詞",
+                "pos_detail_2": "一般",
+                "pos_detail_3": "*",
+                "conjugated_type": "*",
+                "conjugated_form": "*",
+                "basic_form": "これ",
+                "reading": "コレ",
+                "pronunciation": "コレ"
+              }
+            },
+            {
+              "type": "WordNode",
+              "children": [
+                {
+                  "type": "TextNode",
+                  "value": "は",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 5,
+                      "offset": 4
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 6,
+                      "offset": 5
+                    }
+                  },
+                  "data": {
+                    "word_id": 93010,
+                    "word_type": "KNOWN",
+                    "word_position": 5,
+                    "surface_form": "は",
+                    "pos": "助詞",
+                    "pos_detail_1": "係助詞",
+                    "pos_detail_2": "*",
+                    "pos_detail_3": "*",
+                    "conjugated_type": "*",
+                    "conjugated_form": "*",
+                    "basic_form": "は",
+                    "reading": "ハ",
+                    "pronunciation": "ワ"
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 5,
+                  "offset": 4
+                },
+                "end": {
+                  "line": 1,
+                  "column": 6,
+                  "offset": 5
+                }
+              },
+              "data": {
+                "word_id": 93010,
+                "word_type": "KNOWN",
+                "word_position": 5,
+                "surface_form": "は",
+                "pos": "助詞",
+                "pos_detail_1": "係助詞",
+                "pos_detail_2": "*",
+                "pos_detail_3": "*",
+                "conjugated_type": "*",
+                "conjugated_form": "*",
+                "basic_form": "は",
+                "reading": "ハ",
+                "pronunciation": "ワ"
+              }
+            },
+            {
+              "type": "WordNode",
+              "children": [
+                {
+                  "type": "TextNode",
+                  "value": "前段",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 6,
+                      "offset": 5
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 8,
+                      "offset": 7
+                    }
+                  },
+                  "data": {
+                    "word_id": 2492910,
+                    "word_type": "KNOWN",
+                    "word_position": 6,
+                    "surface_form": "前段",
+                    "pos": "名詞",
+                    "pos_detail_1": "一般",
+                    "pos_detail_2": "*",
+                    "pos_detail_3": "*",
+                    "conjugated_type": "*",
+                    "conjugated_form": "*",
+                    "basic_form": "前段",
+                    "reading": "ゼンダン",
+                    "pronunciation": "ゼンダン"
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 6,
+                  "offset": 5
+                },
+                "end": {
+                  "line": 1,
+                  "column": 8,
+                  "offset": 7
+                }
+              },
+              "data": {
+                "word_id": 2492910,
+                "word_type": "KNOWN",
+                "word_position": 6,
+                "surface_form": "前段",
+                "pos": "名詞",
+                "pos_detail_1": "一般",
+                "pos_detail_2": "*",
+                "pos_detail_3": "*",
+                "conjugated_type": "*",
+                "conjugated_form": "*",
+                "basic_form": "前段",
+                "reading": "ゼンダン",
+                "pronunciation": "ゼンダン"
+              }
+            },
+            {
+              "type": "WordNode",
+              "children": [
+                {
+                  "type": "TextNode",
+                  "value": "です",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 8,
+                      "offset": 7
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 10,
+                      "offset": 9
+                    }
+                  },
+                  "data": {
+                    "word_id": 23760,
+                    "word_type": "KNOWN",
+                    "word_position": 8,
+                    "surface_form": "です",
+                    "pos": "助動詞",
+                    "pos_detail_1": "*",
+                    "pos_detail_2": "*",
+                    "pos_detail_3": "*",
+                    "conjugated_type": "特殊・デス",
+                    "conjugated_form": "基本形",
+                    "basic_form": "です",
+                    "reading": "デス",
+                    "pronunciation": "デス"
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 8,
+                  "offset": 7
+                },
+                "end": {
+                  "line": 1,
+                  "column": 10,
+                  "offset": 9
+                }
+              },
+              "data": {
+                "word_id": 23760,
+                "word_type": "KNOWN",
+                "word_position": 8,
+                "surface_form": "です",
+                "pos": "助動詞",
+                "pos_detail_1": "*",
+                "pos_detail_2": "*",
+                "pos_detail_3": "*",
+                "conjugated_type": "特殊・デス",
+                "conjugated_form": "基本形",
+                "basic_form": "です",
+                "reading": "デス",
+                "pronunciation": "デス"
+              }
+            },
+            {
+              "type": "PunctuationNode",
+              "value": "。",
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 10,
+                  "offset": 9
+                },
+                "end": {
+                  "line": 1,
+                  "column": 11,
+                  "offset": 10
+                }
+              },
+              "data": {
+                "word_id": 90940,
+                "word_type": "KNOWN",
+                "word_position": 10,
+                "surface_form": "。",
+                "pos": "記号",
+                "pos_detail_1": "句点",
+                "pos_detail_2": "*",
+                "pos_detail_3": "*",
+                "conjugated_type": "*",
+                "conjugated_form": "*",
+                "basic_form": "。",
+                "reading": "。",
+                "pronunciation": "。"
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 11,
+              "offset": 10
+            }
+          }
+        },
+        {
+          "type": "SentenceNode",
+          "children": [
+            {
+              "type": "WordNode",
+              "children": [
+                {
+                  "type": "TextNode",
+                  "value": "これ",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 11,
+                      "offset": 10
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 13,
+                      "offset": 12
+                    }
+                  },
+                  "data": {
+                    "word_id": 43350,
+                    "word_type": "KNOWN",
+                    "word_position": 11,
+                    "surface_form": "これ",
+                    "pos": "名詞",
+                    "pos_detail_1": "代名詞",
+                    "pos_detail_2": "一般",
+                    "pos_detail_3": "*",
+                    "conjugated_type": "*",
+                    "conjugated_form": "*",
+                    "basic_form": "これ",
+                    "reading": "コレ",
+                    "pronunciation": "コレ"
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 11,
+                  "offset": 10
+                },
+                "end": {
+                  "line": 1,
+                  "column": 13,
+                  "offset": 12
+                }
+              },
+              "data": {
+                "word_id": 43350,
+                "word_type": "KNOWN",
+                "word_position": 11,
+                "surface_form": "これ",
+                "pos": "名詞",
+                "pos_detail_1": "代名詞",
+                "pos_detail_2": "一般",
+                "pos_detail_3": "*",
+                "conjugated_type": "*",
+                "conjugated_form": "*",
+                "basic_form": "これ",
+                "reading": "コレ",
+                "pronunciation": "コレ"
+              }
+            },
+            {
+              "type": "WordNode",
+              "children": [
+                {
+                  "type": "TextNode",
+                  "value": "は",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 13,
+                      "offset": 12
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 14,
+                      "offset": 13
+                    }
+                  },
+                  "data": {
+                    "word_id": 93010,
+                    "word_type": "KNOWN",
+                    "word_position": 13,
+                    "surface_form": "は",
+                    "pos": "助詞",
+                    "pos_detail_1": "係助詞",
+                    "pos_detail_2": "*",
+                    "pos_detail_3": "*",
+                    "conjugated_type": "*",
+                    "conjugated_form": "*",
+                    "basic_form": "は",
+                    "reading": "ハ",
+                    "pronunciation": "ワ"
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 13,
+                  "offset": 12
+                },
+                "end": {
+                  "line": 1,
+                  "column": 14,
+                  "offset": 13
+                }
+              },
+              "data": {
+                "word_id": 93010,
+                "word_type": "KNOWN",
+                "word_position": 13,
+                "surface_form": "は",
+                "pos": "助詞",
+                "pos_detail_1": "係助詞",
+                "pos_detail_2": "*",
+                "pos_detail_3": "*",
+                "conjugated_type": "*",
+                "conjugated_form": "*",
+                "basic_form": "は",
+                "reading": "ハ",
+                "pronunciation": "ワ"
+              }
+            },
+            {
+              "type": "WordNode",
+              "children": [
+                {
+                  "type": "TextNode",
+                  "value": "中段",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 14,
+                      "offset": 13
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 16,
+                      "offset": 15
+                    }
+                  },
+                  "data": {
+                    "word_id": 1857190,
+                    "word_type": "KNOWN",
+                    "word_position": 14,
+                    "surface_form": "中段",
+                    "pos": "名詞",
+                    "pos_detail_1": "一般",
+                    "pos_detail_2": "*",
+                    "pos_detail_3": "*",
+                    "conjugated_type": "*",
+                    "conjugated_form": "*",
+                    "basic_form": "中段",
+                    "reading": "チュウダン",
+                    "pronunciation": "チューダン"
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 14,
+                  "offset": 13
+                },
+                "end": {
+                  "line": 1,
+                  "column": 16,
+                  "offset": 15
+                }
+              },
+              "data": {
+                "word_id": 1857190,
+                "word_type": "KNOWN",
+                "word_position": 14,
+                "surface_form": "中段",
+                "pos": "名詞",
+                "pos_detail_1": "一般",
+                "pos_detail_2": "*",
+                "pos_detail_3": "*",
+                "conjugated_type": "*",
+                "conjugated_form": "*",
+                "basic_form": "中段",
+                "reading": "チュウダン",
+                "pronunciation": "チューダン"
+              }
+            },
+            {
+              "type": "PunctuationNode",
+              "value": "（",
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 16,
+                  "offset": 15
+                },
+                "end": {
+                  "line": 1,
+                  "column": 17,
+                  "offset": 16
+                }
+              },
+              "data": {
+                "word_id": 90130,
+                "word_type": "KNOWN",
+                "word_position": 16,
+                "surface_form": "（",
+                "pos": "記号",
+                "pos_detail_1": "括弧開",
+                "pos_detail_2": "*",
+                "pos_detail_3": "*",
+                "conjugated_type": "*",
+                "conjugated_form": "*",
+                "basic_form": "（",
+                "reading": "（",
+                "pronunciation": "（"
+              }
+            },
+            {
+              "type": "WordNode",
+              "children": [
+                {
+                  "type": "TextNode",
+                  "value": "２",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 17,
+                      "offset": 16
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 18,
+                      "offset": 17
+                    }
+                  },
+                  "data": {
+                    "word_id": 51530,
+                    "word_type": "KNOWN",
+                    "word_position": 17,
+                    "surface_form": "２",
+                    "pos": "名詞",
+                    "pos_detail_1": "数",
+                    "pos_detail_2": "*",
+                    "pos_detail_3": "*",
+                    "conjugated_type": "*",
+                    "conjugated_form": "*",
+                    "basic_form": "２",
+                    "reading": "ニ",
+                    "pronunciation": "ニ"
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 17,
+                  "offset": 16
+                },
+                "end": {
+                  "line": 1,
+                  "column": 18,
+                  "offset": 17
+                }
+              },
+              "data": {
+                "word_id": 51530,
+                "word_type": "KNOWN",
+                "word_position": 17,
+                "surface_form": "２",
+                "pos": "名詞",
+                "pos_detail_1": "数",
+                "pos_detail_2": "*",
+                "pos_detail_3": "*",
+                "conjugated_type": "*",
+                "conjugated_form": "*",
+                "basic_form": "２",
+                "reading": "ニ",
+                "pronunciation": "ニ"
+              }
+            },
+            {
+              "type": "WordNode",
+              "children": [
+                {
+                  "type": "TextNode",
+                  "value": "文",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 18,
+                      "offset": 17
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 19,
+                      "offset": 18
+                    }
+                  },
+                  "data": {
+                    "word_id": 87330,
+                    "word_type": "KNOWN",
+                    "word_position": 18,
+                    "surface_form": "文",
+                    "pos": "名詞",
+                    "pos_detail_1": "接尾",
+                    "pos_detail_2": "助数詞",
+                    "pos_detail_3": "*",
+                    "conjugated_type": "*",
+                    "conjugated_form": "*",
+                    "basic_form": "文",
+                    "reading": "ブン",
+                    "pronunciation": "ブン"
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 18,
+                  "offset": 17
+                },
+                "end": {
+                  "line": 1,
+                  "column": 19,
+                  "offset": 18
+                }
+              },
+              "data": {
+                "word_id": 87330,
+                "word_type": "KNOWN",
+                "word_position": 18,
+                "surface_form": "文",
+                "pos": "名詞",
+                "pos_detail_1": "接尾",
+                "pos_detail_2": "助数詞",
+                "pos_detail_3": "*",
+                "conjugated_type": "*",
+                "conjugated_form": "*",
+                "basic_form": "文",
+                "reading": "ブン",
+                "pronunciation": "ブン"
+              }
+            },
+            {
+              "type": "WordNode",
+              "children": [
+                {
+                  "type": "TextNode",
+                  "value": "の",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 19,
+                      "offset": 18
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 20,
+                      "offset": 19
+                    }
+                  },
+                  "data": {
+                    "word_id": 93100,
+                    "word_type": "KNOWN",
+                    "word_position": 19,
+                    "surface_form": "の",
+                    "pos": "助詞",
+                    "pos_detail_1": "連体化",
+                    "pos_detail_2": "*",
+                    "pos_detail_3": "*",
+                    "conjugated_type": "*",
+                    "conjugated_form": "*",
+                    "basic_form": "の",
+                    "reading": "ノ",
+                    "pronunciation": "ノ"
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 19,
+                  "offset": 18
+                },
+                "end": {
+                  "line": 1,
+                  "column": 20,
+                  "offset": 19
+                }
+              },
+              "data": {
+                "word_id": 93100,
+                "word_type": "KNOWN",
+                "word_position": 19,
+                "surface_form": "の",
+                "pos": "助詞",
+                "pos_detail_1": "連体化",
+                "pos_detail_2": "*",
+                "pos_detail_3": "*",
+                "conjugated_type": "*",
+                "conjugated_form": "*",
+                "basic_form": "の",
+                "reading": "ノ",
+                "pronunciation": "ノ"
+              }
+            },
+            {
+              "type": "WordNode",
+              "children": [
+                {
+                  "type": "TextNode",
+                  "value": "場合",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 20,
+                      "offset": 19
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 22,
+                      "offset": 21
+                    }
+                  },
+                  "data": {
+                    "word_id": 35540,
+                    "word_type": "KNOWN",
+                    "word_position": 20,
+                    "surface_form": "場合",
+                    "pos": "名詞",
+                    "pos_detail_1": "副詞可能",
+                    "pos_detail_2": "*",
+                    "pos_detail_3": "*",
+                    "conjugated_type": "*",
+                    "conjugated_form": "*",
+                    "basic_form": "場合",
+                    "reading": "バアイ",
+                    "pronunciation": "バアイ"
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 20,
+                  "offset": 19
+                },
+                "end": {
+                  "line": 1,
+                  "column": 22,
+                  "offset": 21
+                }
+              },
+              "data": {
+                "word_id": 35540,
+                "word_type": "KNOWN",
+                "word_position": 20,
+                "surface_form": "場合",
+                "pos": "名詞",
+                "pos_detail_1": "副詞可能",
+                "pos_detail_2": "*",
+                "pos_detail_3": "*",
+                "conjugated_type": "*",
+                "conjugated_form": "*",
+                "basic_form": "場合",
+                "reading": "バアイ",
+                "pronunciation": "バアイ"
+              }
+            },
+            {
+              "type": "WordNode",
+              "children": [
+                {
+                  "type": "TextNode",
+                  "value": "は",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 22,
+                      "offset": 21
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 23,
+                      "offset": 22
+                    }
+                  },
+                  "data": {
+                    "word_id": 93010,
+                    "word_type": "KNOWN",
+                    "word_position": 22,
+                    "surface_form": "は",
+                    "pos": "助詞",
+                    "pos_detail_1": "係助詞",
+                    "pos_detail_2": "*",
+                    "pos_detail_3": "*",
+                    "conjugated_type": "*",
+                    "conjugated_form": "*",
+                    "basic_form": "は",
+                    "reading": "ハ",
+                    "pronunciation": "ワ"
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 22,
+                  "offset": 21
+                },
+                "end": {
+                  "line": 1,
+                  "column": 23,
+                  "offset": 22
+                }
+              },
+              "data": {
+                "word_id": 93010,
+                "word_type": "KNOWN",
+                "word_position": 22,
+                "surface_form": "は",
+                "pos": "助詞",
+                "pos_detail_1": "係助詞",
+                "pos_detail_2": "*",
+                "pos_detail_3": "*",
+                "conjugated_type": "*",
+                "conjugated_form": "*",
+                "basic_form": "は",
+                "reading": "ハ",
+                "pronunciation": "ワ"
+              }
+            },
+            {
+              "type": "WordNode",
+              "children": [
+                {
+                  "type": "TextNode",
+                  "value": "後段",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 23,
+                      "offset": 22
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 25,
+                      "offset": 24
+                    }
+                  },
+                  "data": {
+                    "word_id": 1657870,
+                    "word_type": "KNOWN",
+                    "word_position": 23,
+                    "surface_form": "後段",
+                    "pos": "名詞",
+                    "pos_detail_1": "一般",
+                    "pos_detail_2": "*",
+                    "pos_detail_3": "*",
+                    "conjugated_type": "*",
+                    "conjugated_form": "*",
+                    "basic_form": "後段",
+                    "reading": "コウダン",
+                    "pronunciation": "コーダン"
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 23,
+                  "offset": 22
+                },
+                "end": {
+                  "line": 1,
+                  "column": 25,
+                  "offset": 24
+                }
+              },
+              "data": {
+                "word_id": 1657870,
+                "word_type": "KNOWN",
+                "word_position": 23,
+                "surface_form": "後段",
+                "pos": "名詞",
+                "pos_detail_1": "一般",
+                "pos_detail_2": "*",
+                "pos_detail_3": "*",
+                "conjugated_type": "*",
+                "conjugated_form": "*",
+                "basic_form": "後段",
+                "reading": "コウダン",
+                "pronunciation": "コーダン"
+              }
+            },
+            {
+              "type": "PunctuationNode",
+              "value": "。",
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 25,
+                  "offset": 24
+                },
+                "end": {
+                  "line": 1,
+                  "column": 26,
+                  "offset": 25
+                }
+              },
+              "data": {
+                "word_id": 90940,
+                "word_type": "KNOWN",
+                "word_position": 25,
+                "surface_form": "。",
+                "pos": "記号",
+                "pos_detail_1": "句点",
+                "pos_detail_2": "*",
+                "pos_detail_3": "*",
+                "conjugated_type": "*",
+                "conjugated_form": "*",
+                "basic_form": "。",
+                "reading": "。",
+                "pronunciation": "。"
+              }
+            },
+            {
+              "type": "PunctuationNode",
+              "value": "）",
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 26,
+                  "offset": 25
+                },
+                "end": {
+                  "line": 1,
+                  "column": 27,
+                  "offset": 26
+                }
+              },
+              "data": {
+                "word_id": 90270,
+                "word_type": "KNOWN",
+                "word_position": 26,
+                "surface_form": "）",
+                "pos": "記号",
+                "pos_detail_1": "括弧閉",
+                "pos_detail_2": "*",
+                "pos_detail_3": "*",
+                "conjugated_type": "*",
+                "conjugated_form": "*",
+                "basic_form": "）",
+                "reading": "）",
+                "pronunciation": "）"
+              }
+            },
+            {
+              "type": "WordNode",
+              "children": [
+                {
+                  "type": "TextNode",
+                  "value": "です",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 27,
+                      "offset": 26
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 29,
+                      "offset": 28
+                    }
+                  },
+                  "data": {
+                    "word_id": 23760,
+                    "word_type": "KNOWN",
+                    "word_position": 27,
+                    "surface_form": "です",
+                    "pos": "助動詞",
+                    "pos_detail_1": "*",
+                    "pos_detail_2": "*",
+                    "pos_detail_3": "*",
+                    "conjugated_type": "特殊・デス",
+                    "conjugated_form": "基本形",
+                    "basic_form": "です",
+                    "reading": "デス",
+                    "pronunciation": "デス"
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 27,
+                  "offset": 26
+                },
+                "end": {
+                  "line": 1,
+                  "column": 29,
+                  "offset": 28
+                }
+              },
+              "data": {
+                "word_id": 23760,
+                "word_type": "KNOWN",
+                "word_position": 27,
+                "surface_form": "です",
+                "pos": "助動詞",
+                "pos_detail_1": "*",
+                "pos_detail_2": "*",
+                "pos_detail_3": "*",
+                "conjugated_type": "特殊・デス",
+                "conjugated_form": "基本形",
+                "basic_form": "です",
+                "reading": "デス",
+                "pronunciation": "デス"
+              }
+            },
+            {
+              "type": "PunctuationNode",
+              "value": "。",
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 29,
+                  "offset": 28
+                },
+                "end": {
+                  "line": 1,
+                  "column": 30,
+                  "offset": 29
+                }
+              },
+              "data": {
+                "word_id": 90940,
+                "word_type": "KNOWN",
+                "word_position": 29,
+                "surface_form": "。",
+                "pos": "記号",
+                "pos_detail_1": "句点",
+                "pos_detail_2": "*",
+                "pos_detail_3": "*",
+                "conjugated_type": "*",
+                "conjugated_form": "*",
+                "basic_form": "。",
+                "reading": "。",
+                "pronunciation": "。"
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 11,
+              "offset": 10
+            },
+            "end": {
+              "line": 1,
+              "column": 30,
+              "offset": 29
+            }
+          }
+        },
+        {
+          "type": "SentenceNode",
+          "children": [
+            {
+              "type": "WordNode",
+              "children": [
+                {
+                  "type": "TextNode",
+                  "value": "これ",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 30,
+                      "offset": 29
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 32,
+                      "offset": 31
+                    }
+                  },
+                  "data": {
+                    "word_id": 43350,
+                    "word_type": "KNOWN",
+                    "word_position": 30,
+                    "surface_form": "これ",
+                    "pos": "名詞",
+                    "pos_detail_1": "代名詞",
+                    "pos_detail_2": "一般",
+                    "pos_detail_3": "*",
+                    "conjugated_type": "*",
+                    "conjugated_form": "*",
+                    "basic_form": "これ",
+                    "reading": "コレ",
+                    "pronunciation": "コレ"
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 30,
+                  "offset": 29
+                },
+                "end": {
+                  "line": 1,
+                  "column": 32,
+                  "offset": 31
+                }
+              },
+              "data": {
+                "word_id": 43350,
+                "word_type": "KNOWN",
+                "word_position": 30,
+                "surface_form": "これ",
+                "pos": "名詞",
+                "pos_detail_1": "代名詞",
+                "pos_detail_2": "一般",
+                "pos_detail_3": "*",
+                "conjugated_type": "*",
+                "conjugated_form": "*",
+                "basic_form": "これ",
+                "reading": "コレ",
+                "pronunciation": "コレ"
+              }
+            },
+            {
+              "type": "WordNode",
+              "children": [
+                {
+                  "type": "TextNode",
+                  "value": "は",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 32,
+                      "offset": 31
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 33,
+                      "offset": 32
+                    }
+                  },
+                  "data": {
+                    "word_id": 93010,
+                    "word_type": "KNOWN",
+                    "word_position": 32,
+                    "surface_form": "は",
+                    "pos": "助詞",
+                    "pos_detail_1": "係助詞",
+                    "pos_detail_2": "*",
+                    "pos_detail_3": "*",
+                    "conjugated_type": "*",
+                    "conjugated_form": "*",
+                    "basic_form": "は",
+                    "reading": "ハ",
+                    "pronunciation": "ワ"
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 32,
+                  "offset": 31
+                },
+                "end": {
+                  "line": 1,
+                  "column": 33,
+                  "offset": 32
+                }
+              },
+              "data": {
+                "word_id": 93010,
+                "word_type": "KNOWN",
+                "word_position": 32,
+                "surface_form": "は",
+                "pos": "助詞",
+                "pos_detail_1": "係助詞",
+                "pos_detail_2": "*",
+                "pos_detail_3": "*",
+                "conjugated_type": "*",
+                "conjugated_form": "*",
+                "basic_form": "は",
+                "reading": "ハ",
+                "pronunciation": "ワ"
+              }
+            },
+            {
+              "type": "WordNode",
+              "children": [
+                {
+                  "type": "TextNode",
+                  "value": "後段",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 33,
+                      "offset": 32
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 35,
+                      "offset": 34
+                    }
+                  },
+                  "data": {
+                    "word_id": 1657870,
+                    "word_type": "KNOWN",
+                    "word_position": 33,
+                    "surface_form": "後段",
+                    "pos": "名詞",
+                    "pos_detail_1": "一般",
+                    "pos_detail_2": "*",
+                    "pos_detail_3": "*",
+                    "conjugated_type": "*",
+                    "conjugated_form": "*",
+                    "basic_form": "後段",
+                    "reading": "コウダン",
+                    "pronunciation": "コーダン"
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 33,
+                  "offset": 32
+                },
+                "end": {
+                  "line": 1,
+                  "column": 35,
+                  "offset": 34
+                }
+              },
+              "data": {
+                "word_id": 1657870,
+                "word_type": "KNOWN",
+                "word_position": 33,
+                "surface_form": "後段",
+                "pos": "名詞",
+                "pos_detail_1": "一般",
+                "pos_detail_2": "*",
+                "pos_detail_3": "*",
+                "conjugated_type": "*",
+                "conjugated_form": "*",
+                "basic_form": "後段",
+                "reading": "コウダン",
+                "pronunciation": "コーダン"
+              }
+            },
+            {
+              "type": "WordNode",
+              "children": [
+                {
+                  "type": "TextNode",
+                  "value": "です",
+                  "position": {
+                    "start": {
+                      "line": 1,
+                      "column": 35,
+                      "offset": 34
+                    },
+                    "end": {
+                      "line": 1,
+                      "column": 37,
+                      "offset": 36
+                    }
+                  },
+                  "data": {
+                    "word_id": 23760,
+                    "word_type": "KNOWN",
+                    "word_position": 35,
+                    "surface_form": "です",
+                    "pos": "助動詞",
+                    "pos_detail_1": "*",
+                    "pos_detail_2": "*",
+                    "pos_detail_3": "*",
+                    "conjugated_type": "特殊・デス",
+                    "conjugated_form": "基本形",
+                    "basic_form": "です",
+                    "reading": "デス",
+                    "pronunciation": "デス"
+                  }
+                }
+              ],
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 35,
+                  "offset": 34
+                },
+                "end": {
+                  "line": 1,
+                  "column": 37,
+                  "offset": 36
+                }
+              },
+              "data": {
+                "word_id": 23760,
+                "word_type": "KNOWN",
+                "word_position": 35,
+                "surface_form": "です",
+                "pos": "助動詞",
+                "pos_detail_1": "*",
+                "pos_detail_2": "*",
+                "pos_detail_3": "*",
+                "conjugated_type": "特殊・デス",
+                "conjugated_form": "基本形",
+                "basic_form": "です",
+                "reading": "デス",
+                "pronunciation": "デス"
+              }
+            },
+            {
+              "type": "PunctuationNode",
+              "value": "。",
+              "position": {
+                "start": {
+                  "line": 1,
+                  "column": 37,
+                  "offset": 36
+                },
+                "end": {
+                  "line": 1,
+                  "column": 38,
+                  "offset": 37
+                }
+              },
+              "data": {
+                "word_id": 90940,
+                "word_type": "KNOWN",
+                "word_position": 37,
+                "surface_form": "。",
+                "pos": "記号",
+                "pos_detail_1": "句点",
+                "pos_detail_2": "*",
+                "pos_detail_3": "*",
+                "conjugated_type": "*",
+                "conjugated_form": "*",
+                "basic_form": "。",
+                "reading": "。",
+                "pronunciation": "。"
+              }
+            }
+          ],
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 30,
+              "offset": 29
+            },
+            "end": {
+              "line": 1,
+              "column": 38,
+              "offset": 37
+            }
+          }
+        }
+      ],
+      "position": {
+        "start": {
+          "line": 1,
+          "column": 1,
+          "offset": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 38,
+          "offset": 37
+        }
+      }
+    }
+  ],
+  "position": {
+    "start": {
+      "line": 1,
+      "column": 1,
+      "offset": 0
+    },
+    "end": {
+      "line": 1,
+      "column": 38,
+      "offset": 37
+    }
+  }
+}
