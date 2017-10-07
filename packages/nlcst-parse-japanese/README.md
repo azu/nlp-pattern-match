@@ -27,7 +27,7 @@ This library use [kuromoji.js](https://github.com/takuyaa/kuromoji.js#api "kurom
 | conjugated_form | '*'         | 活用形                       |
 | basic_form      | '黒文字'       | 基本形                       |
 | reading         | 'クロモジ'      | 読み                        |
-| pronunciation   | 'クロモジ'   発音 |                           |
+| pronunciation   | 'クロモジ'    |      発音                     |
 
 
 ## Usage
