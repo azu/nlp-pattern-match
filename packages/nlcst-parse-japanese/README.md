@@ -410,3 +410,9 @@ For bugs and feature requests, [please create an issue](https://github.com/azu/n
 ## License
 
 MIT © azu
+
+### Original
+
+> The MIT License (MIT)
+> Copyright (c) 2015 Kenichiro Murata
+> https://github.com/muraken720/parse-japanese
