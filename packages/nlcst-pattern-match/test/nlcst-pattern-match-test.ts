@@ -4,6 +4,7 @@ import * as assert from "assert";
 import { isWord } from "nlcst-types";
 import { EnglishParser } from "nlcst-parse-english";
 
+const toString = require('nlcst-to-string');
 // const inspect = require('unist-util-inspect');
 
 describe("nlcst-pattern-match", () => {
@@ -118,6 +119,24 @@ ${JSON.stringify(actual)}
     });
 
     describe("#match", () => {
+        it("match and replace", () => {
+            const englishParser = new EnglishParser();
+            const patternMatcher = new PatternMatcher({
+                parser: englishParser
+            });
+            const pattern = patternMatcher.tag`Click ${{
+                type: "*",
+                data: {
+                    pos: /^VB/ // verb
+                }
+            }} if you want to ${{
+                type: "PatternNode",
+                pattern: /[\w\s]+/
+            }}.`;
+            const text = "Click Delete if you want to delete the entire document.";
+            const results = patternMatcher.match(text, pattern);
+            assert.strictEqual(toString(results[0].nodeList), "Click Delete if you want to delete the entire document.");
+        });
         it("match regexp", () => {
             const englishParser = new EnglishParser();
             const patternMatcher = new PatternMatcher({
@@ -200,7 +219,6 @@ ${JSON.stringify(actual)}
             const results = patternMatcher.match(text, pattern);
             assert.ok(results.length === 1, "should have 1 result");
             const result = results[0];
-            console.log("result", result);
             assert.strictEqual(
                 text.slice(result.position!.start.offset, result.position!.end.offset),
                 "This is a pen."

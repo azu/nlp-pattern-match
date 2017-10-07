@@ -3,6 +3,7 @@ import { Root } from "nlcst-types";
 import { Parent, Node, Position } from "unist-types";
 import { isPunctuation, isSentence, isWhiteSpace, Sentence, Word, Punctuation, WhiteSpace } from "nlcst-types";
 
+const toString = require("nlcst-to-string");
 const select = require("unist-util-select");
 const walk = require("estree-walker").walk;
 const isRegExp = (v: any): v is RegExp => {
@@ -67,14 +68,40 @@ function match(parent: Sentence, expectedNode: Sentence) {
     const children = parent.children;
     const expectedChildren = expectedNode.children;
     const tokenCount = expectedChildren.length;
-    const matchTokens = [];
+    const matchTokens: Node[] = [];
     const results: { position: Position | undefined; nodeList: Node[] }[] = [];
     let currentTokenPosition = 0;
     let index = 0;
     for (index = 0; index < children.length; index++) {
         const actualChild = children[index];
         const expectedChild = expectedChildren[currentTokenPosition];
-        if (matchNode(actualChild, expectedChild)) {
+        // PatternNode
+        if (isPatternNode(expectedChild)) {
+            const pattern = expectedChild.pattern;
+            const afterAllChildren = children.slice(index);
+            const startIndex = afterAllChildren[0].position!.start.offset!;
+            const text = toString(afterAllChildren);
+            const matchResult = text.match(pattern);
+            if (matchResult) {
+                const progressLength = matchResult[0].length;
+                const endIndex = startIndex + progressLength;
+                const restChildren = afterAllChildren.slice(1);
+                // fist token always added because already matchResult.
+                matchTokens.push(afterAllChildren[0]);
+                restChildren.forEach(restChild => {
+                    const nodeOffset = restChild.position!.end.offset!;
+                    if (startIndex <= nodeOffset && nodeOffset <= endIndex) {
+                        matchTokens.push(restChild);
+                        index++;
+                    }
+                });
+                currentTokenPosition += 1;
+            } else {
+                // reset position
+                matchTokens.length = 0;
+                currentTokenPosition = 0;
+            }
+        } else if (matchNode(actualChild, expectedChild)) {
             matchTokens.push(actualChild);
             currentTokenPosition += 1;
         } else {
@@ -97,10 +124,10 @@ function match(parent: Sentence, expectedNode: Sentence) {
                 position:
                     firstNode.position && lastNode.position
                         ? {
-                              start: firstNode.position.start,
-                              end: lastNode.position.end,
-                              index: firstNode.index
-                          }
+                            start: firstNode.position.start,
+                            end: lastNode.position.end,
+                            index: firstNode.index
+                        }
                         : undefined,
                 nodeList: tokens
             });
@@ -111,6 +138,15 @@ function match(parent: Sentence, expectedNode: Sentence) {
 
 export interface TagNode extends Node {
     length?: number;
+}
+
+export const isPatternNode = (v: any): v is PatternNode => {
+    return v.type === "PatternNode";
+};
+
+export interface PatternNode extends Node {
+    type: "PatternNode";
+    pattern: RegExp;
 }
 
 export class PatternMatcher {
@@ -124,14 +160,13 @@ export class PatternMatcher {
         if (typeof text !== "string") {
             throw new Error(
                 "Invalid Arguments: match(text: string, pattern: Sentence)\n" +
-                    "matcher.match(text, matcher.tag`pattern`)"
+                "matcher.match(text, matcher.tag`pattern`)"
             );
         }
         let allResults: { position: Position | undefined; nodeList: Node[] }[] = [];
         const AST = this.parser.parse(text);
-        console.log(JSON.stringify(AST, null, 4));
         walk(AST, {
-            enter: function(node: Node) {
+            enter: function (node: Node) {
                 if (isSentence(node)) {
                     const results = match(node, pattern);
                     allResults = allResults.concat(results);
@@ -140,6 +175,13 @@ export class PatternMatcher {
             }
         });
         return allResults;
+    }
+
+    createPatternNode(pattern: RegExp): PatternNode {
+        return {
+            type: "PatternNode",
+            pattern
+        };
     }
 
     createWordNode(text: string): Word {
@@ -195,7 +237,7 @@ export class PatternMatcher {
         });
         const AST = this.parser.parse(allString);
         walk(AST, {
-            enter: function(node: Node, parent: Parent) {
+            enter: function (node: Node, parent: Parent) {
                 replaceHolders
                     .filter(replaceHolder => {
                         return node.position!.start.offset === replaceHolder.start;

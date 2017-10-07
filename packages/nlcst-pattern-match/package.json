@@ -40,7 +40,8 @@
     "nlcst-types": "^1.0.0",
     "unist-types": "^1.0.0",
     "estree-walker": "^0.5.0",
-    "unist-util-select": "^1.0.0"
+    "unist-util-select": "^1.0.0",
+    "nlcst-to-string": "^2.0.0"
   },
   "devDependencies": {
     "@types/mocha": "^2.2.43",
