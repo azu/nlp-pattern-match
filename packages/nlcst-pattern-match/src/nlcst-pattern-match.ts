@@ -14,7 +14,7 @@ export interface PatternMatcherArgs {
 }
 
 function matchNode(actualNode: Node, expectedNode: Node): boolean {
-    return ["type", "children", "value"].every((key: string) => {
+    return ["type", "children", "value", "data"].every((key: string) => {
         const expectedProp = expectedNode[key];
         if (!expectedProp) {
             return true;
@@ -30,6 +30,11 @@ function matchNode(actualNode: Node, expectedNode: Node): boolean {
             return expectedValues.some(expectedValue => {
                 if (isRegExp(expectedValue)) {
                     return expectedValue.test(actualProp);
+                } else if (typeof expectedValue === "object") {
+                    // data object
+                    return Object.keys(expectedValue).every(key => {
+                        return expectedValue[key] === actualProp[key];
+                    });
                 } else {
                     return actualProp === expectedValue;
                 }

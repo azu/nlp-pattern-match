@@ -20,16 +20,16 @@ Parser:
 
 
 ```js
-import {nlp} from "nlp-pattern-match";
+import {PatternMatcher} from "nlp-pattern-match";
 import {noun} from "nlp-pattern-tag-english";
 import Parser from "parse-english";
 // https://github.com/syntax-tree/nlcst
-const nlp = nlp({
+const matcher = PatternMatcher({
     parser: new Parser()
 });
-const match = nlp.tag`This is a ${noun()}`;
+const pattern = matcher.tag`This is a ${noun()}`;
 const text = "This is a pen";
-const results = match(parseEnglish(text));
+const results = matcher.match(text, pattern);
 /*
     [
         {
