@@ -8,6 +8,28 @@ Install with [npm](https://www.npmjs.com/):
 
     npm install nlcst-parse-japanese
 
+## Tokenized Data
+
+This library use [kuromoji.js](https://github.com/takuyaa/kuromoji.js#api "kuromoji.js") via [kuromojin](https://github.com/azu/kuromojin).
+
+
+| Property        | Example     | Description               |
+| --------------- | :---------- | ------------------------- |
+| word_id         | 509800      | 辞書内での単語ID                 |
+| word_type       | 'KNOWN'     | 単語タイプ(辞書に登録されている単語ならKNOWN |
+| word_position   | 1           | 単語の開始位置                   |
+| surface_form    | '黒文字'       | 表層形                       |
+| pos             | '名詞'        | 品詞                        |
+| pos_detail_1    | '一般'        | 品詞細分類1                    |
+| pos_detail_2    | '*'         | 品詞細分類2                    |
+| pos_detail_3    | '*'         | 品詞細分類3                    |
+| conjugated_type | '*'         | 活用型                       |
+| conjugated_form | '*'         | 活用形                       |
+| basic_form      | '黒文字'       | 基本形                       |
+| reading         | 'クロモジ'      | 読み                        |
+| pronunciation   | 'クロモジ'   発音 |                           |
+
+
 ## Usage
 
 ```ts
