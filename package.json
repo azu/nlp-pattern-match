@@ -1,0 +1,56 @@
+{
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "author": "azu",
+  "license": "MIT",
+  "files": [
+    "bin/",
+    "lib/",
+    "src/"
+  ],
+  "name": "nlp-pattern-match",
+  "version": "1.0.0",
+  "description": "Natural Language pattern matching library for JavaScript.",
+  "main": "lib/nlp-pattern-match.js",
+  "scripts": {
+    "prepare": "lerna bootstrap",
+    "test": "lerna run test",
+    "precommit": "lint-staged",
+    "postcommit": "git reset",
+    "prettier": "prettier --write '**/*.{js,jsx,ts,tsx,css}'"
+  },
+  "keywords": [
+    "NLP",
+    "natural",
+    "language",
+    "pattern",
+    "match",
+    "matcher"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/azu/nlp-pattern-match.git"
+  },
+  "bugs": {
+    "url": "https://github.com/azu/nlp-pattern-match/issues"
+  },
+  "homepage": "https://github.com/azu/nlp-pattern-match",
+  "devDependencies": {
+    "husky": "^0.14.3",
+    "lerna": "^2.4.0",
+    "lint-staged": "^4.2.3",
+    "prettier": "^1.7.4"
+  },
+  "prettier": {
+    "printWidth": 120,
+    "tabWidth": 4
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,css}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
