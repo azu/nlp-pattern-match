@@ -10,7 +10,9 @@ Install with [npm](https://www.npmjs.com/):
 
 ## Usage
 
-- [ ] Write usage instructions
+```js
+
+```
 
 ## Changelog
 

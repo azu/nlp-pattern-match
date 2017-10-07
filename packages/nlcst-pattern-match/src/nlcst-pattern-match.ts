@@ -22,7 +22,7 @@ export interface PatternMatcherArgs {
 function matchValue(actualValue: any, expectedValue: any): boolean {
     // wildcard
     if (expectedValue === "*" && actualValue !== undefined) {
-        return true
+        return true;
     } else if (isRegExp(expectedValue)) {
         // /pattern/
         return expectedValue.test(actualValue);
@@ -97,10 +97,10 @@ function match(parent: Sentence, expectedNode: Sentence) {
                 position:
                     firstNode.position && lastNode.position
                         ? {
-                            start: firstNode.position.start,
-                            end: lastNode.position.end,
-                            index: firstNode.index
-                        }
+                              start: firstNode.position.start,
+                              end: lastNode.position.end,
+                              index: firstNode.index
+                          }
                         : undefined,
                 nodeList: tokens
             });
@@ -120,12 +120,18 @@ export class PatternMatcher {
         this.parser = args.parser;
     }
 
-    match(text: string, pattern: any) {
+    match(text: string, pattern: Sentence) {
+        if (typeof text !== "string") {
+            throw new Error(
+                "Invalid Arguments: match(text: string, pattern: Sentence)\n" +
+                    "matcher.match(text, matcher.tag`pattern`)"
+            );
+        }
         let allResults: { position: Position | undefined; nodeList: Node[] }[] = [];
         const AST = this.parser.parse(text);
         console.log(JSON.stringify(AST, null, 4));
         walk(AST, {
-            enter: function (node: Node) {
+            enter: function(node: Node) {
                 if (isSentence(node)) {
                     const results = match(node, pattern);
                     allResults = allResults.concat(results);
@@ -155,7 +161,16 @@ export class PatternMatcher {
         };
     }
 
+    /**
+     * Template tag function.
+     * Return pattern objects that are used for `matcher.match` method.
+     */
     tag(strings: TemplateStringsArray, ...values: TagNode[]): Sentence {
+        if (!Array.isArray(strings)) {
+            throw new Error(
+                "tag method is template tag function.\n" + 'For example matcher.tag`this is ${{ type: "WordNode" }}` .'
+            );
+        }
         const replaceHolders: { start: number; length: number; value: TagNode }[] = [];
         const createPlaceholder = (start: number, value: TagNode) => {
             const DEFAULT_VALUE_LENGTH = 5;
@@ -180,7 +195,7 @@ export class PatternMatcher {
         });
         const AST = this.parser.parse(allString);
         walk(AST, {
-            enter: function (node: Node, parent: Parent) {
+            enter: function(node: Node, parent: Parent) {
                 replaceHolders
                     .filter(replaceHolder => {
                         return node.position!.start.offset === replaceHolder.start;

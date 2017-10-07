@@ -21,7 +21,7 @@ describe("nlcst-pattern-match", () => {
                 parser: englishParser
             });
             const word = patternMatcher.createWordNode("text");
-            assert.ok(isWord(word), "should return wordNode")
+            assert.ok(isWord(word), "should return wordNode");
         });
     });
     it("parse-replace", () => {
@@ -35,74 +35,86 @@ describe("nlcst-pattern-match", () => {
         assert.deepEqual(
             actual,
             {
-                "type": "SentenceNode",
-                "children": [{
-                    "type": "WordNode",
-                    "children": [{
-                        "type": "TextNode",
-                        "value": "This",
-                        "position": {
-                            "start": { "line": 1, "column": 1, "offset": 0 },
-                            "end": { "line": 1, "column": 5, "offset": 4 }
+                type: "SentenceNode",
+                children: [
+                    {
+                        type: "WordNode",
+                        children: [
+                            {
+                                type: "TextNode",
+                                value: "This",
+                                position: {
+                                    start: { line: 1, column: 1, offset: 0 },
+                                    end: { line: 1, column: 5, offset: 4 }
+                                }
+                            }
+                        ],
+                        position: {
+                            start: { line: 1, column: 1, offset: 0 },
+                            end: { line: 1, column: 5, offset: 4 }
+                        },
+                        data: { pos: "DT" }
+                    },
+                    {
+                        type: "WhiteSpaceNode",
+                        value: " ",
+                        position: {
+                            start: { line: 1, column: 5, offset: 4 },
+                            end: { line: 1, column: 6, offset: 5 }
                         }
-                    }],
-                    "position": {
-                        "start": { "line": 1, "column": 1, "offset": 0 },
-                        "end": { "line": 1, "column": 5, "offset": 4 }
                     },
-                    "data": { "pos": "DT" }
-                }, {
-                    "type": "WhiteSpaceNode",
-                    "value": " ",
-                    "position": {
-                        "start": { "line": 1, "column": 5, "offset": 4 },
-                        "end": { "line": 1, "column": 6, "offset": 5 }
-                    }
-                }, {
-                    "type": "WordNode",
-                    "children": [{
-                        "type": "TextNode",
-                        "value": "is",
-                        "position": {
-                            "start": { "line": 1, "column": 6, "offset": 5 },
-                            "end": { "line": 1, "column": 8, "offset": 7 }
+                    {
+                        type: "WordNode",
+                        children: [
+                            {
+                                type: "TextNode",
+                                value: "is",
+                                position: {
+                                    start: { line: 1, column: 6, offset: 5 },
+                                    end: { line: 1, column: 8, offset: 7 }
+                                }
+                            }
+                        ],
+                        position: {
+                            start: { line: 1, column: 6, offset: 5 },
+                            end: { line: 1, column: 8, offset: 7 }
+                        },
+                        data: { pos: "VBZ" }
+                    },
+                    {
+                        type: "WhiteSpaceNode",
+                        value: " ",
+                        position: {
+                            start: { line: 1, column: 8, offset: 7 },
+                            end: { line: 1, column: 9, offset: 8 }
                         }
-                    }],
-                    "position": {
-                        "start": { "line": 1, "column": 6, "offset": 5 },
-                        "end": { "line": 1, "column": 8, "offset": 7 }
                     },
-                    "data": { "pos": "VBZ" }
-                }, {
-                    "type": "WhiteSpaceNode",
-                    "value": " ",
-                    "position": {
-                        "start": { "line": 1, "column": 8, "offset": 7 },
-                        "end": { "line": 1, "column": 9, "offset": 8 }
-                    }
-                }, {
-                    "type": "WordNode",
-                    "position": {
-                        "start": { "line": 1, "column": 9, "offset": 8 },
-                        "end": { "line": 1, "column": 14, "offset": 13 }
-                    }
-                }, {
-                    "type": "PunctuationNode",
-                    "value": ".",
-                    "position": {
-                        "start": { "line": 1, "column": 14, "offset": 13 },
-                        "end": { "line": 1, "column": 15, "offset": 14 }
+                    {
+                        type: "WordNode",
+                        position: {
+                            start: { line: 1, column: 9, offset: 8 },
+                            end: { line: 1, column: 14, offset: 13 }
+                        }
                     },
-                    "data": { "pos": "." }
-                }],
-                "position": {
-                    "start": { "line": 1, "column": 1, "offset": 0 },
-                    "end": { "line": 1, "column": 15, "offset": 14 }
+                    {
+                        type: "PunctuationNode",
+                        value: ".",
+                        position: {
+                            start: { line: 1, column: 14, offset: 13 },
+                            end: { line: 1, column: 15, offset: 14 }
+                        },
+                        data: { pos: "." }
+                    }
+                ],
+                position: {
+                    start: { line: 1, column: 1, offset: 0 },
+                    end: { line: 1, column: 15, offset: 14 }
                 }
-            }
-            , `Mismatch
+            },
+            `Mismatch
 ${JSON.stringify(actual)}
-`);
+`
+        );
     });
 
     describe("#match", () => {
@@ -213,6 +225,6 @@ ${JSON.stringify(actual)}
                 text.slice(result.position!.start.offset, result.position!.end.offset),
                 "These are cars."
             );
-        })
+        });
     });
 });

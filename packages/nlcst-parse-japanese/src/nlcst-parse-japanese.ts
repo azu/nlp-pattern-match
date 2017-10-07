@@ -56,12 +56,14 @@ function stringToArray(str: string) {
 /**
  * Tokenize
  */
-function tokenize(parser: {
-                      tokenizer: any;
-                      pos: boolean;
-                      position: boolean;
-                  },
-                  text: string): Root {
+function tokenize(
+    parser: {
+        tokenizer: any;
+        pos: boolean;
+        position: boolean;
+    },
+    text: string
+): Root {
     let linedepth = 0;
     let offset = 0;
     let line: number, column: number;
@@ -181,9 +183,9 @@ function tokenize(parser: {
             parent.position =
                 firstParentNode.position && node.position
                     ? {
-                        start: firstParentNode.position.start,
-                        end: node.position.end
-                    }
+                          start: firstParentNode.position.start,
+                          end: node.position.end
+                      }
                     : undefined;
         }
     }

@@ -10,26 +10,28 @@ describe("nlcst-parse-japanese", () => {
         japaneseParse = new JapaneseParser();
         await japaneseParse.ready();
     });
-    const fixturesDir = path.join(__dirname, 'test-patterns');
+    const fixturesDir = path.join(__dirname, "test-patterns");
     fs.readdirSync(fixturesDir).map((caseName: string) => {
-        it(`${caseName.replace(/-/g, ' ')}`, () => {
+        it(`${caseName.replace(/-/g, " ")}`, () => {
             const fixtureDir = path.join(fixturesDir, caseName);
-            let actualPath = path.join(fixtureDir, 'input.txt');
+            let actualPath = path.join(fixtureDir, "input.txt");
             const actualContent = fs.readFileSync(actualPath, "utf-8");
             const actual = japaneseParse.parse(actualContent);
 
-            if (path.sep === '\\') {
+            if (path.sep === "\\") {
                 // Specific case of windows, transformFileSync return code with '/'
-                actualPath = actualPath.replace(/\\/g, '/');
+                actualPath = actualPath.replace(/\\/g, "/");
             }
 
-            const expected = JSON.parse(fs.readFileSync(
-                path.join(fixtureDir, 'output.json'), "utf-8"
-            ));
+            const expected = JSON.parse(fs.readFileSync(path.join(fixtureDir, "output.json"), "utf-8"));
 
-            assert.deepEqual(actual, expected, `Mismatch
+            assert.deepEqual(
+                actual,
+                expected,
+                `Mismatch
 ${JSON.stringify(actual)}
-                `);
+                `
+            );
         });
     });
 });
