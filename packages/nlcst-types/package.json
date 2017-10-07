@@ -17,8 +17,6 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "test": "mocha 'test/**/*.ts'",
-    "precommit": "lint-staged",
-    "postcommit": "git reset",
     "prettier": "prettier --write '**/*.{js,jsx,ts,tsx,css}'",
     "build": "cross-env NODE_ENV=production tsc -p .",
     "watch": "tsc -p . --watch",
