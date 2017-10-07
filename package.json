@@ -17,6 +17,7 @@
   "scripts": {
     "prepare": "lerna bootstrap",
     "test": "lerna run test",
+    "build": "lerna run build",
     "precommit": "lint-staged",
     "postcommit": "git reset",
     "prettier": "prettier --write '**/*.{js,jsx,ts,tsx,css}'"

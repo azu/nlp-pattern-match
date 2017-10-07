@@ -82,5 +82,4 @@ crashlytics.properties
 crashlytics-build.properties
 
 
-/packages/*/yarn.lock
-/packages/*/lib
+/lib

@@ -5,6 +5,8 @@ export interface Node {
     type: string;
     data?: Data;
     position?: Position;
+
+    [index: string]: any;
 }
 
 export interface Data {
@@ -23,8 +25,15 @@ export interface Point {
     offset?: number;
 }
 
+/**
+ * Nodes containing a value extend the abstract interface Text (Node).
+ */
+export interface Text extends Node {
+    value: string;
+}
+
 export interface Parent extends Node {
-    children: Array<Node>;
+    children: Array<Node | Parent>;
 }
 
 export interface Text extends Node {

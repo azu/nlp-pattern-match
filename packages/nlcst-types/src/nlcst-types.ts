@@ -1,5 +1,5 @@
 // MIT © 2017 azu
-import { Parent } from "unist-types";
+import { Parent, Text } from "unist-types";
 // NLCST spec
 // https://github.com/syntax-tree/nlcst
 /**
@@ -29,11 +29,6 @@ export interface Sentence extends Parent {
 export interface Word extends Parent {
     readonly type: "WordNode";
 }
-
-/**
- * TODO: Text is not defined in NLCST
- */
-export interface Text {}
 
 /**
  * Symbol (Text) represents typographical devices like white space, punctuation, signs, and more, different from characters which represent sounds (like letters and numerals).

@@ -10,15 +10,13 @@
     "lib/",
     "src/"
   ],
-  "name": "nlcst-types",
-  "version": "1.0.1",
-  "description": "NLCST types for TypeScript.",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "name": "nlcst-pattern-match",
+  "version": "1.0.0",
+  "description": "Pattern match for NLCST.",
+  "main": "lib/nlcst-pattern-match.js",
+  "types": "lib/nlcst-pattern-match.d.ts",
   "scripts": {
     "test": "mocha 'test/**/*.ts'",
-    "precommit": "lint-staged",
-    "postcommit": "git reset",
     "prettier": "prettier --write '**/*.{js,jsx,ts,tsx,css}'",
     "build": "cross-env NODE_ENV=production tsc -p .",
     "watch": "tsc -p . --watch",
@@ -26,8 +24,9 @@
   },
   "keywords": [
     "nlcst",
-    "type",
-    "typescript"
+    "pattern",
+    "match",
+    "find"
   ],
   "repository": {
     "type": "git",
@@ -36,9 +35,12 @@
   "bugs": {
     "url": "https://github.com/azu/nlp-pattern-match/issues"
   },
-  "homepage": "https://github.com/azu/nlp-pattern-match/tree/master/packages/nlcst-types/",
+  "homepage": "https://github.com/azu/nlp-pattern-match/tree/master/packages/nlcst-pattern-match/",
   "dependencies": {
-    "unist-types": "^1.0.0"
+    "nlcst-types": "^1.0.0",
+    "unist-types": "^1.0.0",
+    "estree-walker": "^0.5.0",
+    "unist-util-select": "^1.0.0"
   },
   "devDependencies": {
     "@types/mocha": "^2.2.43",
@@ -49,7 +51,9 @@
     "mocha": "^4.0.1",
     "prettier": "^1.7.4",
     "ts-node": "^3.3.0",
-    "typescript": "^2.5.3"
+    "typescript": "^2.5.3",
+    "parse-english": "*",
+    "unist-util-inspect": "*"
   },
   "prettier": {
     "printWidth": 120,
