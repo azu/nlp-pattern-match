@@ -15,16 +15,6 @@ describe("nlcst-pattern-match", () => {
         });
         assert.ok(patternMatcher instanceof PatternMatcher);
     });
-    describe("createWordNode", () => {
-        it("should return wordNode", () => {
-            const englishParser = new EnglishParser();
-            const patternMatcher = new PatternMatcher({
-                parser: englishParser
-            });
-            const word = patternMatcher.createWordNode("text");
-            assert.ok(isWord(word), "should return wordNode");
-        });
-    });
     it("parse-replace", () => {
         const englishParser = new EnglishParser();
         const patternMatcher = new PatternMatcher({

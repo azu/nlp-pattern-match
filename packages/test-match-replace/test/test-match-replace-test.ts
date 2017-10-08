@@ -111,7 +111,6 @@ describe("testMatchReplace", () => {
             const res = testMatchReplace(text, {
                 pattern: /Click (\w+) if you want to (.+)./,
                 replace: ({ captures }) => {
-                    console.log(captures);
                     return `To ${captures[1]}, click ${captures[0]}.`;
                 },
                 replaceTest: ({ all }) => {

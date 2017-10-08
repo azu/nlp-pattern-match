@@ -48,32 +48,6 @@ export class PatternMatcher {
         return allResults;
     }
 
-    // createPatternNode(pattern: RegExp): PatternNode {
-    //     return {
-    //         type: "PatternNode",
-    //         pattern
-    //     };
-    // }
-    //
-    // createWordNode(text: string): Word {
-    //     const AST = this.parser.parse(text);
-    //     return select.one(AST, "WordNode");
-    // }
-    //
-    // createPunctuationNode(text: string): Punctuation {
-    //     return {
-    //         type: "PunctuationNode",
-    //         value: text
-    //     };
-    // }
-    //
-    // createWhitespaceNode(length: number): WhiteSpace {
-    //     return {
-    //         type: "WhiteSpaceNode",
-    //         value: new Array(length + 1).join(" ")
-    //     };
-    // }
-
     /**
      * Template tag function.
      * Return pattern objects that are used for `matcher.match` method.
