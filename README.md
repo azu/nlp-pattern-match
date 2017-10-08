@@ -74,6 +74,30 @@ const dict = {
         return new Tag(noun).type === "noun"
     }
 };
+match(text, dict);
+/*
+{
+    ok: boolean,
+    results: [{
+        index: number,
+        match: string,
+        replace: string,
+        message: string    
+    }]
+}
+
+function splice(str, index, count, insert) {
+  return str.substring(0, index) + 
+    ((insert === null || insert === undefined) ? '' : insert) + 
+    str.substring(index + count);
+};
+const res = match(text, dict);
+if(res.ok){
+    res.results.forEach(result => {
+        text = splice(text, index, index + match.length, result.replace)
+    });
+}
+*/
 ```
 
 ## Changelog
