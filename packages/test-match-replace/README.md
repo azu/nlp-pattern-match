@@ -10,42 +10,7 @@ Install with [npm](https://www.npmjs.com/):
 
 ## Usage
 
-```ts
-const dict = {
-    // https://developers.google.com/web/updates/2017/07/upcoming-regexp-features
-    pattern: /This is (?<noun>\w+)/,
-    replace: 'This is a $<noun>',
-    message: ({ noun }) => {
-        return `$<noun> is not noun`;
-    },
-    test: ({ noun }) => {
-        return new Tag(noun).type === "noun"
-    }
-};
-match(text, dict);
-/*
-{
-    ok: boolean,
-    results: [{
-        index: number,
-        match: string,
-        replace: string,
-        message: string    
-    }]
-}
-
-function splice(str, index, count, insert) {
-  return str.substring(0, index) + 
-    ((insert === null || insert === undefined) ? '' : insert) + 
-    str.substring(index + count);
-};
-const res = match(text, dict);
-if(res.ok){
-    res.results.forEach(result => {
-        text = splice(text, index, index + match.length, result.replace)
-    });
-}
-```
+- [ ] TO DO
 
 ## Example
 
