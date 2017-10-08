@@ -1,7 +1,5 @@
 import { PatternMatcher } from "../src/nlcst-pattern-match";
 import * as assert from "assert";
-
-import { isWord } from "nlcst-types";
 import { EnglishParser } from "nlcst-parse-english";
 
 const toString = require("nlcst-to-string");
