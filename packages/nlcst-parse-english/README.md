@@ -1,6 +1,6 @@
 # nlcst-parse-english
 
-Parse english with Part-of-speech(POS) tagged and output NLCST.
+Parse english with Part-of-speech(POS) tagged and output [NLCST](https://github.com/syntax-tree/nlcst).
 
 ## Install
 

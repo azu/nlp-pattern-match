@@ -35,6 +35,7 @@ const results = matcher.match(text, pattern);
         {
             index: 10,
             text: "pen",
+            position: 
             nodeList: []
         }
     ]

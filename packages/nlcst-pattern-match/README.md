@@ -1,6 +1,6 @@
 # nlcst-pattern-match
 
-Pattern match for NLCST.
+Pattern match for [NLCST](https://github.com/syntax-tree/nlcst).
 
 ## Install
 
@@ -11,6 +11,120 @@ Install with [npm](https://www.npmjs.com/):
 ## Usage
 
 ```js
+const englishParser = new EnglishParser();
+const patternMatcher = new PatternMatcher({
+    parser: englishParser
+});
+const pattern = patternMatcher.tag`Bob ${{
+    type: "*",
+    data: {
+        pos: /^VB/ // verb
+    }
+}} it.`;
+const text = "Bob does it.";
+const results = patternMatcher.match(text, pattern);
+assert.equal(results.length, 1, "results should have 1");
+const [result] = results;
+assert.deepEqual(result.position, {
+    index: 0,
+    end: {
+        column: 13,
+        line: 1,
+        offset: 12
+    },
+    start: {
+        column: 1,
+        line: 1,
+        offset: 0
+    }
+});
+// https://github.com/syntax-tree/nlcst NodeList
+assert.deepEqual(
+    result.nodeList,
+    [
+        {
+            type: "WordNode",
+            children: [
+                {
+                    type: "TextNode",
+                    value: "Bob",
+                    position: {
+                        start: { line: 1, column: 1, offset: 0 },
+                        end: { line: 1, column: 4, offset: 3 }
+                    }
+                }
+            ],
+            position: {
+                start: { line: 1, column: 1, offset: 0 },
+                end: { line: 1, column: 4, offset: 3 }
+            },
+            data: { pos: "NNP" }
+        },
+        {
+            type: "WhiteSpaceNode",
+            value: " ",
+            position: {
+                start: { line: 1, column: 4, offset: 3 },
+                end: { line: 1, column: 5, offset: 4 }
+            }
+        },
+        {
+            type: "WordNode",
+            children: [
+                {
+                    type: "TextNode",
+                    value: "does",
+                    position: {
+                        start: { line: 1, column: 5, offset: 4 },
+                        end: { line: 1, column: 9, offset: 8 }
+                    }
+                }
+            ],
+            position: {
+                start: { line: 1, column: 5, offset: 4 },
+                end: { line: 1, column: 9, offset: 8 }
+            },
+            data: { pos: "VBZ" }
+        },
+        {
+            type: "WhiteSpaceNode",
+            value: " ",
+            position: {
+                start: { line: 1, column: 9, offset: 8 },
+                end: { line: 1, column: 10, offset: 9 }
+            }
+        },
+        {
+            type: "WordNode",
+            children: [
+                {
+                    type: "TextNode",
+                    value: "it",
+                    position: {
+                        start: { line: 1, column: 10, offset: 9 },
+                        end: { line: 1, column: 12, offset: 11 }
+                    }
+                }
+            ],
+            position: {
+                start: { line: 1, column: 10, offset: 9 },
+                end: { line: 1, column: 12, offset: 11 }
+            },
+            data: { pos: "PRP" }
+        },
+        {
+            type: "PunctuationNode",
+            value: ".",
+            position: {
+                start: { line: 1, column: 12, offset: 11 },
+                end: { line: 1, column: 13, offset: 12 }
+            },
+            data: { pos: "." }
+        }
+    ],
+    `\n${JSON.stringify(result.nodeList)}\n`
+);
+assert.strictEqual(result.text, "Bob does it.");
 
 ```
 

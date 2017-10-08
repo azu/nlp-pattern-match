@@ -1,6 +1,6 @@
 # nlcst-parse-japanese
 
-Parse Japanese text and output as NLCST.
+Parse Japanese text and output as [NLCST](https://github.com/syntax-tree/nlcst).
 
 ## Install
 
@@ -12,7 +12,7 @@ Install with [npm](https://www.npmjs.com/):
 
 This library use [kuromoji.js](https://github.com/takuyaa/kuromoji.js#api "kuromoji.js") via [kuromojin](https://github.com/azu/kuromojin).
 
-NLCST Node's `data` property is following values.
+[NLCST](https://github.com/syntax-tree/nlcst) Node's `data` property is following values.
 
 
 | Property        | Example     | Description               |

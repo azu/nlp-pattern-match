@@ -1,6 +1,6 @@
 # nlcst-types
 
-NLCST types for TypeScript.
+[NLCST](https://github.com/syntax-tree/nlcst) types for TypeScript.
 
 ## Install
 
