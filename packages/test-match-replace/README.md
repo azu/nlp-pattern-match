@@ -14,6 +14,23 @@ Install with [npm](https://www.npmjs.com/):
 
 ## Example
 
+### Match -> Replace
+
+```js
+const text = "Hello";
+const res = testMatchReplace(text, {
+    pattern: /hello/i,
+    replace: () => "Hello"
+});
+assert.ok(res.ok, "should be ok: true");
+assert.strictEqual(res.results.length, 1, "1 replace");
+/**
+[ { index: 0, match: 'Hello', replace: 'Hello', message: undefined } ]
+*/
+```
+
+### Complex
+
 ```js
 import * as assert from "assert";
 import { replaceAll, testMatchReplace } from "test-match-replace";

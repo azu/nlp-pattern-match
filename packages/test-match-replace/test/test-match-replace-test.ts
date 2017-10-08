@@ -88,6 +88,7 @@ describe("testMatchReplace", () => {
             });
             assert.ok(res.ok, "should be ok: true");
             assert.strictEqual(res.results.length, 1, "1 replace");
+            console.log(res.results);
         });
         it("should return ok:true when replaceTest() => false, but it is not replace", () => {
             const text = "before";
