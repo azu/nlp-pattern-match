@@ -13,6 +13,8 @@ Install with [npm](https://www.npmjs.com/):
 You write Pattern of NLCST object in `patternMatcher.tag`${object}`. 
 
 ```js
+import { PatternMatcher } from "nlcst-pattern-match";
+import { EnglishParser } from "nlcst-parse-english";
 const englishParser = new EnglishParser();
 const patternMatcher = new PatternMatcher({
     parser: englishParser

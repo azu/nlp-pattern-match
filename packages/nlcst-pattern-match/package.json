@@ -13,8 +13,8 @@
   "name": "nlcst-pattern-match",
   "version": "1.0.0",
   "description": "Pattern match for NLCST.",
-  "main": "lib/nlcst-pattern-match.js",
-  "types": "lib/nlcst-pattern-match.d.ts",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "test": "mocha 'test/**/*.ts'",
     "prettier": "prettier --write '**/*.{js,jsx,ts,tsx,css}'",
