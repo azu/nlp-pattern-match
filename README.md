@@ -16,6 +16,7 @@ This repository includes following packages.
 | nlcst-parse-english | [![npm](https://img.shields.io/npm/v/nlcst-parse-english.svg?style=flat-square)](https://www.npmjs.com/package/nlcst-parse-english) |
 | nlcst-parse-japanese | [![npm](https://img.shields.io/npm/v/nlcst-parse-japanese.svg?style=flat-square)](https://www.npmjs.com/package/nlcst-parse-japanese) |
 | nlcst-pattern-match | [![npm](https://img.shields.io/npm/v/nlcst-pattern-match.svg?style=flat-square)](https://www.npmjs.com/package/nlcst-pattern-match) |
+| match-test-replace | [![npm](https://img.shields.io/npm/v/match-test-replace.svg?style=flat-square)](https://www.npmjs.com/package/match-test-replace) |
 | nlcst-types | [![npm](https://img.shields.io/npm/v/nlcst-types.svg?style=flat-square)](https://www.npmjs.com/package/nlcst-types) |
 | unist-types | [![npm](https://img.shields.io/npm/v/unist-types.svg?style=flat-square)](https://www.npmjs.com/package/unist-types) |
 
