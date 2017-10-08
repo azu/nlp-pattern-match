@@ -1,4 +1,4 @@
-import { PatternMatchDictArgs, replaceAll, testMatchReplace } from "../src/test-match-replace";
+import { PatternMatchDictArgs, replaceAll, matchTestReplace } from "../src/match-test-replace";
 import * as assert from "assert";
 import { PatternMatcher } from "nlcst-pattern-match";
 import { EnglishParser } from "nlcst-parse-english";
@@ -8,7 +8,7 @@ describe("testMatchReplace", () => {
         it("replace args", () => {
             const text = "ALL-XYZ_ABC";
             const replaceArgsCaptures: PatternMatchDictArgs[] = [];
-            const res = testMatchReplace(text, {
+            const res = matchTestReplace(text, {
                 pattern: /X(Y+)Z.*(ABC)/,
                 replace: args => {
                     replaceArgsCaptures.push(args);
@@ -26,7 +26,7 @@ describe("testMatchReplace", () => {
         it("test args", () => {
             const text = "ALL-XYZ_ABC";
             const replaceTestArgsCaptures: PatternMatchDictArgs[] = [];
-            const res = testMatchReplace(text, {
+            const res = matchTestReplace(text, {
                 pattern: /X(Y+)Z.*(ABC)/,
                 replace: () => {
                     return "";
@@ -50,7 +50,7 @@ describe("testMatchReplace", () => {
     describe("replaceAll", () => {
         it("should replace ", () => {
             const text = "12345asdfghjkl";
-            const res = testMatchReplace(text, {
+            const res = matchTestReplace(text, {
                 pattern: /\w+/,
                 replace: ({ match }) => match.toUpperCase()
             });
@@ -59,7 +59,7 @@ describe("testMatchReplace", () => {
         });
         it("should work to multiple results", () => {
             const text = "12345asdfghjkl";
-            const res = testMatchReplace(text, {
+            const res = matchTestReplace(text, {
                 pattern: /(\d)/g,
                 replace: ({ captures }) => {
                     return `${captures[0]}_`;
@@ -73,7 +73,7 @@ describe("testMatchReplace", () => {
     describe("testMatchReplace", () => {
         it("should return ok:false when no match", () => {
             const text = "Hello";
-            const res = testMatchReplace(text, {
+            const res = matchTestReplace(text, {
                 pattern: /no match/,
                 replace: () => "Hello"
             });
@@ -82,7 +82,7 @@ describe("testMatchReplace", () => {
         });
         it("should return ok:true when match", () => {
             const text = "Hello";
-            const res = testMatchReplace(text, {
+            const res = matchTestReplace(text, {
                 pattern: /hello/i,
                 replace: () => "Hello"
             });
@@ -91,7 +91,7 @@ describe("testMatchReplace", () => {
         });
         it("should return ok:true when replaceTest() => false, but it is not replace", () => {
             const text = "before";
-            const res = testMatchReplace(text, {
+            const res = matchTestReplace(text, {
                 pattern: /before/i,
                 replace: () => "after",
                 replaceTest: () => {
@@ -108,7 +108,7 @@ describe("testMatchReplace", () => {
             // NG: Click Delete if you want to delete the entire document.
             // OK: To delete the entire document, click Delete.
             const text = "Click Delete if you want to delete the entire document.";
-            const res = testMatchReplace(text, {
+            const res = matchTestReplace(text, {
                 pattern: /Click (\w+) if you want to (.+)./,
                 replace: ({ captures }) => {
                     return `To ${captures[1]}, click ${captures[0]}.`;

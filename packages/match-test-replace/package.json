@@ -10,10 +10,10 @@
     "lib/",
     "src/"
   ],
-  "name": "test-match-replace",
+  "name": "match-test-replace",
   "version": "1.0.0",
   "description": "Easy pattern match and replace text.",
-  "main": "lib/test-match-replace.js",
+  "main": "lib/match-test-replace.js",
   "scripts": {
     "test": "mocha 'test/**/*.ts'",
     "prettier": "prettier --write '**/*.{js,jsx,ts,tsx,css}'",
@@ -28,7 +28,7 @@
   "bugs": {
     "url": "https://github.com/azu/nlp-pattern-match/issues"
   },
-  "homepage": "https://github.com/azu/nlp-pattern-match/tree/master/packages/test-match-replace/",
+  "homepage": "https://github.com/azu/nlp-pattern-match/tree/master/packages/match-test-replace/",
   "devDependencies": {
     "@types/mocha": "^2.2.43",
     "@types/node": "^8.0.33",
@@ -52,7 +52,7 @@
       "git add"
     ]
   },
-  "types": "lib/test-match-replace.d.ts",
+  "types": "lib/match-test-replace.d.ts",
   "keywords": [
     "nlp",
     "NLCST",

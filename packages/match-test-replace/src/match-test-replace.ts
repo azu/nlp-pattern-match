@@ -23,31 +23,31 @@ export interface TestMatchReplaceReturnDict {
     message?: (args: PatternMatchDictArgs) => string;
 }
 
-export interface TestMatchReplaceReturnResult {
+export interface MatchTestReplaceReturnResult {
     index: number;
     match: string;
     replace: string;
     message?: string;
 }
 
-export interface TestMatchReplaceReturn {
+export interface MatchTestReplaceReturn {
     ok: boolean;
-    results: TestMatchReplaceReturnResult[];
+    results: MatchTestReplaceReturnResult[];
 }
 
 /**
  * Apply ReturnResult order by last.
  */
-const applyFixes = (text: string, messages: TestMatchReplaceReturnResult[]) => {
+const applyFixes = (text: string, messages: MatchTestReplaceReturnResult[]) => {
     // As as result, show diff
-    const remainingMessages: TestMatchReplaceReturnResult[] = [];
+    const remainingMessages: MatchTestReplaceReturnResult[] = [];
     const cloneMessages = messages.slice();
-    const fixes: TestMatchReplaceReturnResult[] = cloneMessages;
+    const fixes: MatchTestReplaceReturnResult[] = cloneMessages;
     let lastFixPos = text.length + 1;
     let prefix = "";
     if (fixes.length) {
         // reverse: index larger is last
-        fixes.sort((a: TestMatchReplaceReturnResult, b: TestMatchReplaceReturnResult) => {
+        fixes.sort((a: MatchTestReplaceReturnResult, b: MatchTestReplaceReturnResult) => {
             if (a.index + a.match.length <= b.index) {
                 return 1;
             } else {
@@ -90,7 +90,7 @@ const applyFixes = (text: string, messages: TestMatchReplaceReturnResult[]) => {
 /**
  * replace `text` with `results`.
  */
-export const replaceAll = (text: string, results: TestMatchReplaceReturnResult[]): { ok: boolean; output: string } => {
+export const replaceAll = (text: string, results: MatchTestReplaceReturnResult[]): { ok: boolean; output: string } => {
     const fixes = applyFixes(text, results);
     return {
         ok: fixes.fixed,
@@ -101,7 +101,7 @@ export const replaceAll = (text: string, results: TestMatchReplaceReturnResult[]
 /**
  * test `text`, match `text`, and replace `text.
  */
-export const testMatchReplace = (text: string, dict: TestMatchReplaceReturnDict): TestMatchReplaceReturn => {
+export const matchTestReplace = (text: string, dict: TestMatchReplaceReturnDict): MatchTestReplaceReturn => {
     // No match
     if (!dict.pattern.test(text)) {
         return {
@@ -110,7 +110,7 @@ export const testMatchReplace = (text: string, dict: TestMatchReplaceReturnDict)
         };
     }
 
-    const results: TestMatchReplaceReturnResult[] = [];
+    const results: MatchTestReplaceReturnResult[] = [];
     text.replace(dict.pattern, function replacer() {
         let isReplaceOK = true;
         // ...rest operator can do following

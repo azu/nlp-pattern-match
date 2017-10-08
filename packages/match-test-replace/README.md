@@ -1,4 +1,4 @@
-# test-match-replace
+# match-test-replace
 
 Easy text pattern match and replace text.
 
@@ -6,7 +6,7 @@ Easy text pattern match and replace text.
 
 Install with [npm](https://www.npmjs.com/):
 
-    npm install test-match-replace
+    npm install match-test-replace
 
 ## Usage
 
@@ -33,7 +33,7 @@ assert.strictEqual(res.results.length, 1, "1 replace");
 
 ```js
 import * as assert from "assert";
-import { replaceAll, testMatchReplace } from "test-match-replace";
+import { replaceAll, testMatchReplace } from "match-test-replace";
 import { PatternMatcher } from "nlcst-pattern-match";
 import { EnglishParser } from "nlcst-parse-english";
 const englishParser = new EnglishParser();
