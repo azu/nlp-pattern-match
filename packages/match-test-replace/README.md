@@ -2,6 +2,12 @@
 
 Easy text pattern match and replace text.
 
+This library does Match -> Test -> Replace pattern.
+
+1. Match `pattern`
+2. Does `replaceTest`
+3. Does `replace`
+
 ## Install
 
 Install with [npm](https://www.npmjs.com/):
@@ -10,15 +16,52 @@ Install with [npm](https://www.npmjs.com/):
 
 ## Usage
 
-- [ ] TO DO
+```ts
+export interface PatternMatchDictArgs {
+    index: number;
+    match: string;
+    captures: string[];
+    all: string;
+}
+export interface TestMatchReplaceReturnDict {
+    pattern: RegExp;
+    replace: (args: PatternMatchDictArgs) => string;
+    replaceTest?: (args: PatternMatchDictArgs) => boolean;
+    message?: (args: PatternMatchDictArgs) => string;
+}
+export interface TestMatchReplaceReturnResult {
+    index: number;
+    match: string;
+    replace: string;
+    message?: string;
+}
+export interface TestMatchReplaceReturn {
+    ok: boolean;
+    results: TestMatchReplaceReturnResult[];
+}
+/**
+ * replace `text` with `results`.
+ */
+export declare const replaceAll: (
+    text: string,
+    results: TestMatchReplaceReturnResult[]
+) => {
+    ok: boolean;
+    output: string;
+};
+/**
+ * test `text`, match `text`, and replace `text.
+ */
+export declare const testMatchReplace: (text: string, dict: TestMatchReplaceReturnDict) => TestMatchReplaceReturn;
+```
 
-## Example
 
 ### Match -> Replace
 
 ```js
+import { replaceAll, matchTestReplace } from "match-test-replace";
 const text = "Hello";
-const res = testMatchReplace(text, {
+const res = matchTestReplace(text, {
     pattern: /hello/i,
     replace: () => "Hello"
 });
@@ -29,11 +72,30 @@ assert.strictEqual(res.results.length, 1, "1 replace");
 */
 ```
 
+### Match -> ReplaceTest -> Replace
+
+match-test-replace not replace if `replaceTest` return `false`
+
+```js
+import { replaceAll, matchTestReplace } from "match-test-replace";
+const text = "webkit is matched,but node-webkit is not match";
+const res = matchTestReplace(text, {
+    pattern: /(\S*?)webkit/g,
+    replace: () => "WebKit",
+    replaceTest: ({ captures }) => {
+        return captures[0] !== "node-";
+    }
+});
+assert.ok(res.ok === true, "should be ok: false");
+assert.strictEqual(res.results.length, 1, "no replace");
+assert.strictEqual(replaceAll(text, res.results).output, "WebKit is matched,but node-webkit is not match");
+```
+
 ### Complex
 
 ```js
 import * as assert from "assert";
-import { replaceAll, testMatchReplace } from "match-test-replace";
+import { replaceAll, matchTestReplace } from "match-test-replace";
 import { PatternMatcher } from "nlcst-pattern-match";
 import { EnglishParser } from "nlcst-parse-english";
 const englishParser = new EnglishParser();
@@ -42,7 +104,7 @@ const matcher = new PatternMatcher({ parser: englishParser });
 // NG: Click Delete if you want to delete the entire document.
 // OK: To delete the entire document, click Delete.
 const text = 'Click Delete if you want to delete the entire document.';
-const res = testMatchReplace(text, {
+const res = matchTestReplace(text, {
     pattern: /Click (\w+) if you want to (.+)./,
     replace: ({ captures }) => {
         console.log(captures);

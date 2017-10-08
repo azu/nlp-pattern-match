@@ -101,6 +101,19 @@ describe("testMatchReplace", () => {
             assert.ok(res.ok === true, "should be ok: false");
             assert.strictEqual(res.results.length, 0, "no replace");
         });
+        it("should return results if return ok:true and replaceTest() => true", () => {
+            const text = "webkit is matched,but node-webkit is not match";
+            const res = matchTestReplace(text, {
+                pattern: /(\S*?)webkit/g,
+                replace: () => "WebKit",
+                replaceTest: ({ captures }) => {
+                    return captures[0] !== "node-";
+                }
+            });
+            assert.ok(res.ok === true, "should be ok: false");
+            assert.strictEqual(res.results.length, 1, "no replace");
+            assert.strictEqual(replaceAll(text, res.results).output, "WebKit is matched,but node-webkit is not match");
+        });
         it("should replace complex example", () => {
             const englishParser = new EnglishParser();
             const matcher = new PatternMatcher({ parser: englishParser });
