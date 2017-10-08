@@ -260,7 +260,7 @@ ${JSON.stringify(actual)}
             const patternMatcher = new PatternMatcher({
                 parser: englishParser
             });
-            let pattern = patternMatcher.tag`This is a ${{
+            const pattern = patternMatcher.tag`This is a ${{
                 type: "WordNode",
                 children: [
                     {

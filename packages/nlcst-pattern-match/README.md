@@ -10,6 +10,8 @@ Install with [npm](https://www.npmjs.com/):
 
 ## Usage
 
+You write Pattern of NLCST object in `patternMatcher.tag`${object}`. 
+
 ```js
 const englishParser = new EnglishParser();
 const patternMatcher = new PatternMatcher({
@@ -125,8 +127,51 @@ assert.deepEqual(
     `\n${JSON.stringify(result.nodeList)}\n`
 );
 assert.strictEqual(result.text, "Bob does it.");
-
 ```
+
+### Wildcard(`*`)
+
+`*` value is match all value.
+
+```ts
+const englishParser = new EnglishParser();
+const patternMatcher = new PatternMatcher({
+    parser: englishParser
+});
+const pattern = patternMatcher.tag`These are ${{
+    type: "*", // <= any type is ok
+    data: {
+        pos: /^NN/
+    }
+}}.`;
+const text = "These are cars. Cool!";
+const results = patternMatcher.match(text, pattern);
+assert.ok(results.length === 1, "should have 1 result");
+```
+
+### Addition Nodes
+
+You can use [NLCST](https://github.com/syntax-tree/nlcst) for matching pattern.
+Additionally, you can use following special Nodes.
+
+
+#### PatternNode
+
+PatternNode represent RegExp pattern.
+
+```js
+const englishParser = new EnglishParser();
+const patternMatcher = new PatternMatcher({
+    parser: englishParser
+});
+const pattern = patternMatcher.tag`if you want to ${{
+    type: "PatternNode",
+    pattern: /[\w\s]+/
+}}.`;
+const text = "Click Delete if you want to delete the entire document.";
+const results = patternMatcher.match(text, pattern);
+```
+
 
 ## Changelog
 

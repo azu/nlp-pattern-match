@@ -2,44 +2,51 @@
 
 Natural Language pattern matching library for JavaScript.
 
-## Install
+## Packages
 
-Install with [npm](https://www.npmjs.com/):
+This repository is monorepo.
+This repository includes following packages.
 
-    npm install nlp-pattern-match
+| Package | npm |
+| ------  | --- |
+| nlcst-parse-english | [![npm](https://img.shields.io/npm/v/nlcst-parse-english.svg?style=flat-square)](https://www.npmjs.com/package/nlcst-parse-english) |
+| nlcst-parse-japanese | [![npm](https://img.shields.io/npm/v/nlcst-parse-japanese.svg?style=flat-square)](https://www.npmjs.com/package/nlcst-parse-japanese) |
+| nlcst-pattern-match | [![npm](https://img.shields.io/npm/v/nlcst-pattern-match.svg?style=flat-square)](https://www.npmjs.com/package/nlcst-pattern-match) |
+| nlcst-types | [![npm](https://img.shields.io/npm/v/nlcst-types.svg?style=flat-square)](https://www.npmjs.com/package/nlcst-types) |
+| unist-types | [![npm](https://img.shields.io/npm/v/unist-types.svg?style=flat-square)](https://www.npmjs.com/package/unist-types) |
 
-## Usage
+## Example
 
-- [ ] Implement
+[NLCST](https://github.com/syntax-tree/nlcst) Parser and Pattern match.
 
-Parser:
+You write Pattern of NLCST object in `patternMatcher.tag`${object}`. 
 
-- https://github.com/wooorm/parse-latin
-- https://github.com/wooorm/parse-english
-- https://github.com/muraken720/parse-japanese
-
+For more details, See [nlcst-pattern-match](./packages/nlcst-pattern-match) document.
 
 ```js
-import {PatternMatcher} from "nlp-pattern-match";
-import {noun} from "nlp-pattern-tag-english";
-import Parser from "parse-english";
-// https://github.com/syntax-tree/nlcst
-const matcher = PatternMatcher({
-    parser: new Parser()
+import { PatternMatcher } from "nlcst-pattern-match";
+import { EnglishParser } from "nlcst-parse-english";
+const englishParser = new EnglishParser();
+const patternMatcher = new PatternMatcher({
+    parser: englishParser
 });
-const text = "This is a pen";
-const pattern = matcher.tag`This is a ${noun()}`;
-const results = matcher.match(text, pattern);
-/*
-    [
+const pattern = patternMatcher.tag`This is a ${{
+    type: "WordNode",
+    children: [
         {
-            index: 10,
-            text: "pen",
-            position: 
-            nodeList: []
+            type: "TextNode",
+            value: /\w+/
         }
     ]
- */
+}}.`;
+let text = "Hello, This is a pen.";
+const results = patternMatcher.match(text, pattern);
+const result = results[0];
+
+assert.strictEqual(
+    text.slice(result.position.start.offset, result.position.end.offset),
+    "This is a pen."
+);
 ```
 
 Make named capture
@@ -56,9 +63,7 @@ const dict = {
         return new Tag(noun).type === "noun"
     }
 };
-
 ```
-
 
 ## Changelog
 

@@ -12,7 +12,7 @@ Install with [npm](https://www.npmjs.com/):
 
 `WordNode` has `{ data: { pos: Annotation } }`.
 
-This library use [FinNLP/en-pos](https://github.com/finnlp/en-pos "FinNLP/en-pos: ⚙️ [Processor] A better English POS tagger written in JavaScript").
+This library use [parse-english](https://github.com/wooorm/parse-english "parse-english") + [FinNLP/en-pos](https://github.com/finnlp/en-pos "FinNLP/en-pos: ⚙️ [Processor] A better English POS tagger written in JavaScript").
 
 Annotation | Name | Example
 --- | --- | ---

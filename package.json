@@ -1,15 +1,7 @@
 {
-  "directories": {
-    "lib": "lib",
-    "test": "test"
-  },
+  "private": true,
   "author": "azu",
   "license": "MIT",
-  "files": [
-    "bin/",
-    "lib/",
-    "src/"
-  ],
   "name": "nlp-pattern-match",
   "version": "1.0.0",
   "description": "Natural Language pattern matching library for JavaScript.",
