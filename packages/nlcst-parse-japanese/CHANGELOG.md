@@ -1,0 +1,17 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+<a name="1.1.0"></a>
+# 1.1.0 (2017-10-08)
+
+
+### Bug Fixes
+
+* **nlcst-pattern-match:** add checker for arguments ([be6af57](https://github.com/azu/nlp-pattern-match/commit/be6af57))
+
+
+### Features
+
+* **packages:** add nlcst-parse-japanese ([a1b20e9](https://github.com/azu/nlp-pattern-match/commit/a1b20e9))

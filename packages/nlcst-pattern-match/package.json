@@ -11,7 +11,7 @@
     "src/"
   ],
   "name": "nlcst-pattern-match",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Pattern match for NLCST.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -37,11 +37,11 @@
   },
   "homepage": "https://github.com/azu/nlp-pattern-match/tree/master/packages/nlcst-pattern-match/",
   "dependencies": {
-    "nlcst-types": "^1.0.0",
-    "unist-types": "^1.0.0",
     "estree-walker": "^0.5.0",
-    "unist-util-select": "^1.0.0",
-    "nlcst-to-string": "^2.0.0"
+    "nlcst-to-string": "^2.0.0",
+    "nlcst-types": "^1.2.0",
+    "unist-types": "^1.0.0",
+    "unist-util-select": "^1.0.0"
   },
   "devDependencies": {
     "@types/mocha": "^2.2.43",
@@ -50,10 +50,10 @@
     "husky": "^0.14.3",
     "lint-staged": "^4.2.3",
     "mocha": "^4.0.1",
+    "nlcst-parse-english": "^1.1.0",
     "prettier": "^1.7.4",
     "ts-node": "^3.3.0",
     "typescript": "^2.5.3",
-    "nlcst-parse-english": "^1.0.0",
     "unist-util-inspect": "*"
   },
   "prettier": {

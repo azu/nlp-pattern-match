@@ -11,7 +11,7 @@
     "src/"
   ],
   "name": "nlcst-parse-japanese",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Parse Japanese text and output as NLCST.",
   "main": "lib/nlcst-parse-japanese.js",
   "scripts": {
@@ -59,7 +59,7 @@
   "types": "lib/nlcst-parse-japanese.d.ts",
   "dependencies": {
     "kuromojin": "^1.4.0",
-    "nlcst-types": "^1.1.2",
+    "nlcst-types": "^1.2.0",
     "unist-types": "^1.1.2"
   }
 }
