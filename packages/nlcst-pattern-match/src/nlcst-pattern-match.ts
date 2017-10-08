@@ -1,11 +1,10 @@
 // MIT © 2017 azu
 import { Root } from "nlcst-types";
 import { Parent, Node } from "unist-types";
-import { isPunctuation, isSentence, isWhiteSpace, Sentence, Word, Punctuation, WhiteSpace } from "nlcst-types";
+import { isPunctuation, isSentence, isWhiteSpace, Sentence } from "nlcst-types";
 import { PatternNode, TagNode } from "./NodeTypes";
 import { match, MatchResult } from "./matcher";
 
-const select = require("unist-util-select");
 const walk = require("estree-walker").walk;
 // Acceptable Node Types
 export type NodeTypes = TagNode | PatternNode | Node;
@@ -21,17 +20,24 @@ export class PatternMatcher {
         this.parser = args.parser;
     }
 
+    /**
+     * Return true If test is passed
+     */
+    test(text: string, pattern: Sentence): boolean {
+        return this.match(text, pattern).length !== 0;
+    }
+
     match(text: string, pattern: Sentence): MatchResult[] {
         if (typeof text !== "string") {
             throw new Error(
                 "Invalid Arguments: match(text: string, pattern: Sentence)\n" +
-                "matcher.match(text, matcher.tag`pattern`)"
+                    "matcher.match(text, matcher.tag`pattern`)"
             );
         }
         let allResults: MatchResult[] = [];
         const AST = this.parser.parse(text);
         walk(AST, {
-            enter: function (node: Node) {
+            enter: function(node: Node) {
                 if (isSentence(node)) {
                     const results = match(text, node, pattern);
                     allResults = allResults.concat(results);
@@ -42,31 +48,31 @@ export class PatternMatcher {
         return allResults;
     }
 
-    createPatternNode(pattern: RegExp): PatternNode {
-        return {
-            type: "PatternNode",
-            pattern
-        };
-    }
-
-    createWordNode(text: string): Word {
-        const AST = this.parser.parse(text);
-        return select.one(AST, "WordNode");
-    }
-
-    createPunctuationNode(text: string): Punctuation {
-        return {
-            type: "PunctuationNode",
-            value: text
-        };
-    }
-
-    createWhitespaceNode(length: number): WhiteSpace {
-        return {
-            type: "WhiteSpaceNode",
-            value: new Array(length + 1).join(" ")
-        };
-    }
+    // createPatternNode(pattern: RegExp): PatternNode {
+    //     return {
+    //         type: "PatternNode",
+    //         pattern
+    //     };
+    // }
+    //
+    // createWordNode(text: string): Word {
+    //     const AST = this.parser.parse(text);
+    //     return select.one(AST, "WordNode");
+    // }
+    //
+    // createPunctuationNode(text: string): Punctuation {
+    //     return {
+    //         type: "PunctuationNode",
+    //         value: text
+    //     };
+    // }
+    //
+    // createWhitespaceNode(length: number): WhiteSpace {
+    //     return {
+    //         type: "WhiteSpaceNode",
+    //         value: new Array(length + 1).join(" ")
+    //     };
+    // }
 
     /**
      * Template tag function.
@@ -102,7 +108,7 @@ export class PatternMatcher {
         });
         const AST = this.parser.parse(allString);
         walk(AST, {
-            enter: function (node: Node, parent: Parent) {
+            enter: function(node: Node, parent: Parent) {
                 replaceHolders
                     .filter(replaceHolder => {
                         return node.position!.start.offset === replaceHolder.start;

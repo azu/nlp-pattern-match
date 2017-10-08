@@ -9,7 +9,6 @@ export const isRegExp = (v: any): v is RegExp => {
     return Object.prototype.toString.call(v) === "[object RegExp]";
 };
 
-
 export interface MatchResult {
     text: string;
     position: Position | undefined;

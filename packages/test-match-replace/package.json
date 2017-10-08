@@ -1,0 +1,64 @@
+{
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "author": "azu",
+  "license": "MIT",
+  "files": [
+    "bin/",
+    "lib/",
+    "src/"
+  ],
+  "name": "test-match-replace",
+  "version": "1.0.0",
+  "description": "Easy pattern match and replace text.",
+  "main": "lib/test-match-replace.js",
+  "scripts": {
+    "test": "mocha 'test/**/*.ts'",
+    "prettier": "prettier --write '**/*.{js,jsx,ts,tsx,css}'",
+    "build": "cross-env NODE_ENV=production tsc -p .",
+    "watch": "tsc -p . --watch",
+    "prepublish": "npm run --if-present build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/azu/nlp-pattern-match.git"
+  },
+  "bugs": {
+    "url": "https://github.com/azu/nlp-pattern-match/issues"
+  },
+  "homepage": "https://github.com/azu/nlp-pattern-match/tree/master/packages/test-match-replace/",
+  "devDependencies": {
+    "@types/mocha": "^2.2.43",
+    "@types/node": "^8.0.33",
+    "cross-env": "^5.0.5",
+    "husky": "^0.14.3",
+    "lint-staged": "^4.2.3",
+    "mocha": "^4.0.1",
+    "nlcst-parse-english": "^1.1.1",
+    "nlcst-pattern-match": "^1.1.1",
+    "prettier": "^1.7.4",
+    "ts-node": "^3.3.0",
+    "typescript": "^2.5.3"
+  },
+  "prettier": {
+    "printWidth": 120,
+    "tabWidth": 4
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,css}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "types": "lib/test-match-replace.d.ts",
+  "keywords": [
+    "nlp",
+    "NLCST",
+    "find",
+    "match",
+    "replace"
+  ],
+  "dependencies": {}
+}
