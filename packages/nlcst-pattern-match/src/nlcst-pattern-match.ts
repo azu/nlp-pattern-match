@@ -58,7 +58,7 @@ function matchNode(actualNode: Node, expectedNode: Node): boolean {
     });
 }
 
-function match(parent: Sentence, expectedNode: Sentence) {
+function match(text: string, parent: Sentence, expectedNode: Sentence): MatchResult[] {
     if (!isSentence(parent)) {
         throw new Error(`Expected sentence node: ${JSON.stringify(parent)}`);
     }
@@ -69,7 +69,7 @@ function match(parent: Sentence, expectedNode: Sentence) {
     const expectedChildren = expectedNode.children;
     const tokenCount = expectedChildren.length;
     const matchTokens: Node[] = [];
-    const results: { position: Position | undefined; nodeList: Node[] }[] = [];
+    const results: MatchResult[] = [];
     let currentTokenPosition = 0;
     let index = 0;
     for (index = 0; index < children.length; index++) {
@@ -120,15 +120,19 @@ function match(parent: Sentence, expectedNode: Sentence) {
             matchTokens.length = 0;
             const firstNode = tokens[0];
             const lastNode = tokens[tokens.length - 1];
+            if (!firstNode.position) {
+                throw new Error(`The node has not position: ${firstNode}`);
+            }
+            if (!lastNode.position) {
+                throw new Error(`The node has not position: ${firstNode}`);
+            }
             results.push({
-                position:
-                    firstNode.position && lastNode.position
-                        ? {
-                            start: firstNode.position.start,
-                            end: lastNode.position.end,
-                            index: firstNode.index
-                        }
-                        : undefined,
+                text: text.slice(firstNode.position.start.offset, lastNode.position.end.offset),
+                position: {
+                    start: firstNode.position.start,
+                    end: lastNode.position.end,
+                    index: firstNode.position.start.offset
+                },
                 nodeList: tokens
             });
         }
@@ -149,6 +153,12 @@ export interface PatternNode extends Node {
     pattern: RegExp;
 }
 
+export interface MatchResult {
+    text: string;
+    position: Position | undefined;
+    nodeList: Node[];
+}
+
 export class PatternMatcher {
     private parser: { parse: ((text: string) => Root) };
 
@@ -156,19 +166,19 @@ export class PatternMatcher {
         this.parser = args.parser;
     }
 
-    match(text: string, pattern: Sentence) {
+    match(text: string, pattern: Sentence): MatchResult[] {
         if (typeof text !== "string") {
             throw new Error(
                 "Invalid Arguments: match(text: string, pattern: Sentence)\n" +
-                "matcher.match(text, matcher.tag`pattern`)"
+                    "matcher.match(text, matcher.tag`pattern`)"
             );
         }
-        let allResults: { position: Position | undefined; nodeList: Node[] }[] = [];
+        let allResults: MatchResult[] = [];
         const AST = this.parser.parse(text);
         walk(AST, {
-            enter: function (node: Node) {
+            enter: function(node: Node) {
                 if (isSentence(node)) {
-                    const results = match(node, pattern);
+                    const results = match(text, node, pattern);
                     allResults = allResults.concat(results);
                     this.skip();
                 }
@@ -237,7 +247,7 @@ export class PatternMatcher {
         });
         const AST = this.parser.parse(allString);
         walk(AST, {
-            enter: function (node: Node, parent: Parent) {
+            enter: function(node: Node, parent: Parent) {
                 replaceHolders
                     .filter(replaceHolder => {
                         return node.position!.start.offset === replaceHolder.start;

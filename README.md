@@ -27,18 +27,35 @@ import Parser from "parse-english";
 const matcher = PatternMatcher({
     parser: new Parser()
 });
-const pattern = matcher.tag`This is a ${noun()}`;
 const text = "This is a pen";
+const pattern = matcher.tag`This is a ${noun()}`;
 const results = matcher.match(text, pattern);
 /*
     [
         {
             index: 10,
             text: "pen",
-            nodes: []
+            nodeList: []
         }
     ]
  */
+```
+
+Make named capture
+
+```js
+const dict = {
+    // https://developers.google.com/web/updates/2017/07/upcoming-regexp-features
+    pattern: /This is (?<noun>\w+)/,
+    replace: 'This is a $<noun>',
+    message: ({ noun }) => {
+        return `$<noun> is not noun`;
+    },
+    test: ({ noun }) => {
+        return new Tag(noun).type === "noun"
+    }
+};
+
 ```
 
 
