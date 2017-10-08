@@ -31,11 +31,13 @@ In other words, We have the above language parser for NLCST.
 
 If you want to add language, Welcome to Pull Request.
 
-## Example
+## Match strictly
 
 [NLCST](https://github.com/syntax-tree/nlcst) Parser and Pattern match.
 
 You write Pattern of NLCST object in `patternMatcher.tag`${object}`. 
+
+[nlcst-pattern-match](./packages/nlcst-pattern-match) aim to provide that match strict pattern.
 
 For more details, See [nlcst-pattern-match](./packages/nlcst-pattern-match) document.
 
@@ -65,46 +67,61 @@ assert.strictEqual(
 );
 ```
 
-## Future 
+## Easy to replace 
 
-Make named capture
+[match-test-replace](./pacakges/match-test-replace) aim to provide match, test and replace easily.
 
 ```js
-const dict = {
-    // https://developers.google.com/web/updates/2017/07/upcoming-regexp-features
-    pattern: /This is (?<noun>\w+)/,
-    replace: 'This is a $<noun>',
-    message: ({ noun }) => {
-        return `$<noun> is not noun`;
-    },
-    test: ({ noun }) => {
-        return new Tag(noun).type === "noun"
+import { replaceAll, matchTestReplace } from "match-test-replace";
+const text = "webkit is matched,but node-webkit is not match";
+const res = matchTestReplace(text, {
+    pattern: /(\S*?)webkit/g,
+    replace: () => "WebKit",
+    replaceTest: ({ captures }) => {
+        return captures[0] !== "node-";
     }
-};
-match(text, dict);
-/*
-{
-    ok: boolean,
-    results: [{
-        index: number,
-        match: string,
-        replace: string,
-        message: string    
-    }]
-}
+});
+assert.ok(res.ok === true, "should be ok: false");
+assert.strictEqual(res.results.length, 1, "no replace");
+assert.strictEqual(replaceAll(text, res.results).output, "WebKit is matched,but node-webkit is not match");
+```
 
-function splice(str, index, count, insert) {
-  return str.substring(0, index) + 
-    ((insert === null || insert === undefined) ? '' : insert) + 
-    str.substring(index + count);
-};
-const res = match(text, dict);
-if(res.ok){
-    res.results.forEach(result => {
-        text = splice(text, index, index + match.length, result.replace)
-    });
-}
-*/
+
+## Easy + Strict
+
+Easy match and replace, but test strictly.
+
+```js
+import * as assert from "assert";
+import { replaceAll, matchTestReplace } from "match-test-replace";
+import { PatternMatcher } from "nlcst-pattern-match";
+import { EnglishParser } from "nlcst-parse-english";
+const englishParser = new EnglishParser();
+const matcher = new PatternMatcher({ parser: englishParser });
+// https://developers.google.com/style/clause-order
+// NG: Click Delete if you want to delete the entire document.
+// OK: To delete the entire document, click Delete.
+const text = 'Click Delete if you want to delete the entire document.';
+const res = matchTestReplace(text, {
+    pattern: /Click (\w+) if you want to (.+)./,
+    replace: ({ captures }) => {
+        console.log(captures);
+        return `To ${captures[1]}, click ${captures[0]}.`
+    },
+    replaceTest: ({ all }) => {
+        const pattern = matcher.tag`Click ${{
+            type: "WordNode",
+            data: {
+                // Verb
+                pos: /^VB/
+            }
+        }}`;
+        return matcher.test(all, pattern);
+    }
+});
+assert.ok(res.ok === true, "should be ok: true");
+const output = replaceAll(text, res.results).output;
+assert.strictEqual(output, "To delete the entire document, click Delete.");
 ```
 
 ## Changelog
