@@ -1,6 +1,10 @@
-# nlp-pattern-match
+# nlp-pattern-match [![Build Status](https://travis-ci.org/azu/nlp-pattern-match.svg?branch=master)](https://travis-ci.org/azu/nlp-pattern-match)
 
 Natural Language pattern matching library for JavaScript.
+
+This library based on [NLCST](https://github.com/syntax-tree/nlcst) that is Natural Language Concrete Syntax Tree format.
+
+You can write pattern match syntax using Part-of-speech(POS) tagging, Morphological Analysis(形態素解析).
 
 ## Packages
 
@@ -14,6 +18,13 @@ This repository includes following packages.
 | nlcst-pattern-match | [![npm](https://img.shields.io/npm/v/nlcst-pattern-match.svg?style=flat-square)](https://www.npmjs.com/package/nlcst-pattern-match) |
 | nlcst-types | [![npm](https://img.shields.io/npm/v/nlcst-types.svg?style=flat-square)](https://www.npmjs.com/package/nlcst-types) |
 | unist-types | [![npm](https://img.shields.io/npm/v/unist-types.svg?style=flat-square)](https://www.npmjs.com/package/unist-types) |
+
+## Support Language
+
+Support English and Japanese.
+In other words, We have the above language parser for NLCST.
+
+If you want to add language, Welcome to Pull Request.
 
 ## Example
 
