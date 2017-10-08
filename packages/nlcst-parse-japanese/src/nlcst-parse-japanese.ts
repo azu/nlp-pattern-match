@@ -21,7 +21,6 @@ const { getTokenizer } = require("kuromojin");
 export interface IpadicFeatures {
     word_id?: number;
     word_type: "KNOWN" | "UNKNOWN";
-    word_position?: number;
     surface_form: string;
     pos: string;
     pos_detail_1: string;
@@ -233,7 +232,9 @@ function tokenize(
         // 分解された文字列単位にNLCST Treeを生成する
         for (let tindex = 0; tindex < data.length; tindex++) {
             const item = data[tindex];
-
+            // REMOVE word_position
+            // positionがword_positionの代わりとなるため
+            delete item.word_position;
             // 行頭の場合
             if (tindex === 0) {
                 // SentenceNodeをParagraphNodeに追加

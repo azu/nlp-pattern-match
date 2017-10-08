@@ -1,6 +1,7 @@
 import { PatternMatcher } from "../src/nlcst-pattern-match";
 import * as assert from "assert";
 import { EnglishParser } from "nlcst-parse-english";
+import { JapaneseParser } from "nlcst-parse-japanese";
 
 const toString = require("nlcst-to-string");
 // const inspect = require('unist-util-inspect');
@@ -348,6 +349,25 @@ ${JSON.stringify(actual)}
             assert.strictEqual(
                 text.slice(result.position!.start.offset, result.position!.end.offset),
                 "These are cars."
+            );
+        });
+
+        it("WordNode(/^NN/) in Japanese", async () => {
+            const japaneseParser = new JapaneseParser();
+            await japaneseParser.ready();
+            const patternMatcher = new PatternMatcher({
+                parser: japaneseParser
+            });
+            const pattern = patternMatcher.tag`これは${{
+                type: "WordNode",
+            }}です！`;
+            const text = "これは桃です！";
+            const results = patternMatcher.match(text, pattern);
+            assert.ok(results.length === 1, "should have 1 result");
+            const result = results[0];
+            assert.strictEqual(
+                text.slice(result.position!.start.offset, result.position!.end.offset),
+                "これは桃です！"
             );
         });
     });

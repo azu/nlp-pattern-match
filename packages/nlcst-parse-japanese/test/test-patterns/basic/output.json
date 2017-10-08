@@ -28,7 +28,6 @@
                   "data": {
                     "word_id": 90,
                     "word_type": "UNKNOWN",
-                    "word_position": 1,
                     "surface_form": "1",
                     "pos": "名詞",
                     "pos_detail_1": "数",
@@ -55,7 +54,6 @@
               "data": {
                 "word_id": 90,
                 "word_type": "UNKNOWN",
-                "word_position": 1,
                 "surface_form": "1",
                 "pos": "名詞",
                 "pos_detail_1": "数",
@@ -84,7 +82,6 @@
               "data": {
                 "word_id": 10,
                 "word_type": "UNKNOWN",
-                "word_position": 2,
                 "surface_form": " ",
                 "pos": "記号",
                 "pos_detail_1": "空白",
@@ -116,7 +113,6 @@
                   "data": {
                     "word_id": 43350,
                     "word_type": "KNOWN",
-                    "word_position": 3,
                     "surface_form": "これ",
                     "pos": "名詞",
                     "pos_detail_1": "代名詞",
@@ -145,7 +141,6 @@
               "data": {
                 "word_id": 43350,
                 "word_type": "KNOWN",
-                "word_position": 3,
                 "surface_form": "これ",
                 "pos": "名詞",
                 "pos_detail_1": "代名詞",
@@ -179,7 +174,6 @@
                   "data": {
                     "word_id": 93010,
                     "word_type": "KNOWN",
-                    "word_position": 5,
                     "surface_form": "は",
                     "pos": "助詞",
                     "pos_detail_1": "係助詞",
@@ -208,7 +202,6 @@
               "data": {
                 "word_id": 93010,
                 "word_type": "KNOWN",
-                "word_position": 5,
                 "surface_form": "は",
                 "pos": "助詞",
                 "pos_detail_1": "係助詞",
@@ -242,7 +235,6 @@
                   "data": {
                     "word_id": 2492910,
                     "word_type": "KNOWN",
-                    "word_position": 6,
                     "surface_form": "前段",
                     "pos": "名詞",
                     "pos_detail_1": "一般",
@@ -271,7 +263,6 @@
               "data": {
                 "word_id": 2492910,
                 "word_type": "KNOWN",
-                "word_position": 6,
                 "surface_form": "前段",
                 "pos": "名詞",
                 "pos_detail_1": "一般",
@@ -305,7 +296,6 @@
                   "data": {
                     "word_id": 23760,
                     "word_type": "KNOWN",
-                    "word_position": 8,
                     "surface_form": "です",
                     "pos": "助動詞",
                     "pos_detail_1": "*",
@@ -334,7 +324,6 @@
               "data": {
                 "word_id": 23760,
                 "word_type": "KNOWN",
-                "word_position": 8,
                 "surface_form": "です",
                 "pos": "助動詞",
                 "pos_detail_1": "*",
@@ -365,7 +354,6 @@
               "data": {
                 "word_id": 90940,
                 "word_type": "KNOWN",
-                "word_position": 10,
                 "surface_form": "。",
                 "pos": "記号",
                 "pos_detail_1": "句点",
@@ -416,7 +404,6 @@
                   "data": {
                     "word_id": 43350,
                     "word_type": "KNOWN",
-                    "word_position": 11,
                     "surface_form": "これ",
                     "pos": "名詞",
                     "pos_detail_1": "代名詞",
@@ -445,7 +432,6 @@
               "data": {
                 "word_id": 43350,
                 "word_type": "KNOWN",
-                "word_position": 11,
                 "surface_form": "これ",
                 "pos": "名詞",
                 "pos_detail_1": "代名詞",
@@ -479,7 +465,6 @@
                   "data": {
                     "word_id": 93010,
                     "word_type": "KNOWN",
-                    "word_position": 13,
                     "surface_form": "は",
                     "pos": "助詞",
                     "pos_detail_1": "係助詞",
@@ -508,7 +493,6 @@
               "data": {
                 "word_id": 93010,
                 "word_type": "KNOWN",
-                "word_position": 13,
                 "surface_form": "は",
                 "pos": "助詞",
                 "pos_detail_1": "係助詞",
@@ -542,7 +526,6 @@
                   "data": {
                     "word_id": 1857190,
                     "word_type": "KNOWN",
-                    "word_position": 14,
                     "surface_form": "中段",
                     "pos": "名詞",
                     "pos_detail_1": "一般",
@@ -571,7 +554,6 @@
               "data": {
                 "word_id": 1857190,
                 "word_type": "KNOWN",
-                "word_position": 14,
                 "surface_form": "中段",
                 "pos": "名詞",
                 "pos_detail_1": "一般",
@@ -602,7 +584,6 @@
               "data": {
                 "word_id": 90130,
                 "word_type": "KNOWN",
-                "word_position": 16,
                 "surface_form": "（",
                 "pos": "記号",
                 "pos_detail_1": "括弧開",
@@ -636,7 +617,6 @@
                   "data": {
                     "word_id": 51530,
                     "word_type": "KNOWN",
-                    "word_position": 17,
                     "surface_form": "２",
                     "pos": "名詞",
                     "pos_detail_1": "数",
@@ -665,7 +645,6 @@
               "data": {
                 "word_id": 51530,
                 "word_type": "KNOWN",
-                "word_position": 17,
                 "surface_form": "２",
                 "pos": "名詞",
                 "pos_detail_1": "数",
@@ -699,7 +678,6 @@
                   "data": {
                     "word_id": 87330,
                     "word_type": "KNOWN",
-                    "word_position": 18,
                     "surface_form": "文",
                     "pos": "名詞",
                     "pos_detail_1": "接尾",
@@ -728,7 +706,6 @@
               "data": {
                 "word_id": 87330,
                 "word_type": "KNOWN",
-                "word_position": 18,
                 "surface_form": "文",
                 "pos": "名詞",
                 "pos_detail_1": "接尾",
@@ -762,7 +739,6 @@
                   "data": {
                     "word_id": 93100,
                     "word_type": "KNOWN",
-                    "word_position": 19,
                     "surface_form": "の",
                     "pos": "助詞",
                     "pos_detail_1": "連体化",
@@ -791,7 +767,6 @@
               "data": {
                 "word_id": 93100,
                 "word_type": "KNOWN",
-                "word_position": 19,
                 "surface_form": "の",
                 "pos": "助詞",
                 "pos_detail_1": "連体化",
@@ -825,7 +800,6 @@
                   "data": {
                     "word_id": 35540,
                     "word_type": "KNOWN",
-                    "word_position": 20,
                     "surface_form": "場合",
                     "pos": "名詞",
                     "pos_detail_1": "副詞可能",
@@ -854,7 +828,6 @@
               "data": {
                 "word_id": 35540,
                 "word_type": "KNOWN",
-                "word_position": 20,
                 "surface_form": "場合",
                 "pos": "名詞",
                 "pos_detail_1": "副詞可能",
@@ -888,7 +861,6 @@
                   "data": {
                     "word_id": 93010,
                     "word_type": "KNOWN",
-                    "word_position": 22,
                     "surface_form": "は",
                     "pos": "助詞",
                     "pos_detail_1": "係助詞",
@@ -917,7 +889,6 @@
               "data": {
                 "word_id": 93010,
                 "word_type": "KNOWN",
-                "word_position": 22,
                 "surface_form": "は",
                 "pos": "助詞",
                 "pos_detail_1": "係助詞",
@@ -951,7 +922,6 @@
                   "data": {
                     "word_id": 1657870,
                     "word_type": "KNOWN",
-                    "word_position": 23,
                     "surface_form": "後段",
                     "pos": "名詞",
                     "pos_detail_1": "一般",
@@ -980,7 +950,6 @@
               "data": {
                 "word_id": 1657870,
                 "word_type": "KNOWN",
-                "word_position": 23,
                 "surface_form": "後段",
                 "pos": "名詞",
                 "pos_detail_1": "一般",
@@ -1011,7 +980,6 @@
               "data": {
                 "word_id": 90940,
                 "word_type": "KNOWN",
-                "word_position": 25,
                 "surface_form": "。",
                 "pos": "記号",
                 "pos_detail_1": "句点",
@@ -1042,7 +1010,6 @@
               "data": {
                 "word_id": 90270,
                 "word_type": "KNOWN",
-                "word_position": 26,
                 "surface_form": "）",
                 "pos": "記号",
                 "pos_detail_1": "括弧閉",
@@ -1076,7 +1043,6 @@
                   "data": {
                     "word_id": 23760,
                     "word_type": "KNOWN",
-                    "word_position": 27,
                     "surface_form": "です",
                     "pos": "助動詞",
                     "pos_detail_1": "*",
@@ -1105,7 +1071,6 @@
               "data": {
                 "word_id": 23760,
                 "word_type": "KNOWN",
-                "word_position": 27,
                 "surface_form": "です",
                 "pos": "助動詞",
                 "pos_detail_1": "*",
@@ -1136,7 +1101,6 @@
               "data": {
                 "word_id": 90940,
                 "word_type": "KNOWN",
-                "word_position": 29,
                 "surface_form": "。",
                 "pos": "記号",
                 "pos_detail_1": "句点",
@@ -1187,7 +1151,6 @@
                   "data": {
                     "word_id": 43350,
                     "word_type": "KNOWN",
-                    "word_position": 30,
                     "surface_form": "これ",
                     "pos": "名詞",
                     "pos_detail_1": "代名詞",
@@ -1216,7 +1179,6 @@
               "data": {
                 "word_id": 43350,
                 "word_type": "KNOWN",
-                "word_position": 30,
                 "surface_form": "これ",
                 "pos": "名詞",
                 "pos_detail_1": "代名詞",
@@ -1250,7 +1212,6 @@
                   "data": {
                     "word_id": 93010,
                     "word_type": "KNOWN",
-                    "word_position": 32,
                     "surface_form": "は",
                     "pos": "助詞",
                     "pos_detail_1": "係助詞",
@@ -1279,7 +1240,6 @@
               "data": {
                 "word_id": 93010,
                 "word_type": "KNOWN",
-                "word_position": 32,
                 "surface_form": "は",
                 "pos": "助詞",
                 "pos_detail_1": "係助詞",
@@ -1313,7 +1273,6 @@
                   "data": {
                     "word_id": 1657870,
                     "word_type": "KNOWN",
-                    "word_position": 33,
                     "surface_form": "後段",
                     "pos": "名詞",
                     "pos_detail_1": "一般",
@@ -1342,7 +1301,6 @@
               "data": {
                 "word_id": 1657870,
                 "word_type": "KNOWN",
-                "word_position": 33,
                 "surface_form": "後段",
                 "pos": "名詞",
                 "pos_detail_1": "一般",
@@ -1376,7 +1334,6 @@
                   "data": {
                     "word_id": 23760,
                     "word_type": "KNOWN",
-                    "word_position": 35,
                     "surface_form": "です",
                     "pos": "助動詞",
                     "pos_detail_1": "*",
@@ -1405,7 +1362,6 @@
               "data": {
                 "word_id": 23760,
                 "word_type": "KNOWN",
-                "word_position": 35,
                 "surface_form": "です",
                 "pos": "助動詞",
                 "pos_detail_1": "*",
@@ -1436,7 +1392,6 @@
               "data": {
                 "word_id": 90940,
                 "word_type": "KNOWN",
-                "word_position": 37,
                 "surface_form": "。",
                 "pos": "記号",
                 "pos_detail_1": "句点",

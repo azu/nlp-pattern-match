@@ -28,7 +28,6 @@
                   "data": {
                     "word_id": 34120,
                     "word_type": "KNOWN",
-                    "word_position": 1,
                     "surface_form": "ようこそ",
                     "pos": "感動詞",
                     "pos_detail_1": "*",
@@ -57,7 +56,6 @@
               "data": {
                 "word_id": 34120,
                 "word_type": "KNOWN",
-                "word_position": 1,
                 "surface_form": "ようこそ",
                 "pos": "感動詞",
                 "pos_detail_1": "*",
@@ -91,7 +89,6 @@
                   "data": {
                     "word_id": 51340,
                     "word_type": "KNOWN",
-                    "word_position": 5,
                     "surface_form": "、",
                     "pos": "名詞",
                     "pos_detail_1": "数",
@@ -120,7 +117,6 @@
               "data": {
                 "word_id": 51340,
                 "word_type": "KNOWN",
-                "word_position": 5,
                 "surface_form": "、",
                 "pos": "名詞",
                 "pos_detail_1": "数",
@@ -154,7 +150,6 @@
                   "data": {
                     "word_id": 329310,
                     "word_type": "KNOWN",
-                    "word_position": 6,
                     "surface_form": "日本",
                     "pos": "名詞",
                     "pos_detail_1": "固有名詞",
@@ -183,7 +178,6 @@
               "data": {
                 "word_id": 329310,
                 "word_type": "KNOWN",
-                "word_position": 6,
                 "surface_form": "日本",
                 "pos": "名詞",
                 "pos_detail_1": "固有名詞",
@@ -217,7 +211,6 @@
                   "data": {
                     "word_id": 92260,
                     "word_type": "KNOWN",
-                    "word_position": 8,
                     "surface_form": "へ",
                     "pos": "助詞",
                     "pos_detail_1": "格助詞",
@@ -246,7 +239,6 @@
               "data": {
                 "word_id": 92260,
                 "word_type": "KNOWN",
-                "word_position": 8,
                 "surface_form": "へ",
                 "pos": "助詞",
                 "pos_detail_1": "格助詞",
@@ -277,7 +269,6 @@
               "data": {
                 "word_id": 90940,
                 "word_type": "KNOWN",
-                "word_position": 9,
                 "surface_form": "。",
                 "pos": "記号",
                 "pos_detail_1": "句点",

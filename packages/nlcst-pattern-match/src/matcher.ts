@@ -51,16 +51,21 @@ export function matchNode(actualNode: Node, expectedNode: Node): boolean {
             return true;
         }
         const actualProp = actualNode[key];
+        console.log(`Math: ${key}: `, expectedProp, actualProp);
         if (key === "children") {
-            return expectedProp.every((expectedChildNode: Node, index: number) => {
+            let every = expectedProp.every((expectedChildNode: Node, index: number) => {
                 const actualChildNode = actualProp[index];
                 return matchNode(actualChildNode, expectedChildNode);
             });
+            console.log("RETURN:CIL", every);
+            return every;
         } else {
             const expectedValues = Array.isArray(expectedProp) ? expectedProp : [expectedProp];
-            return expectedValues.some(expectedValue => {
+            let b = expectedValues.some(expectedValue => {
                 return matchValue(actualProp, expectedValue);
             });
+            console.log("RETURN", b);
+            return b;
         }
     });
 }
@@ -119,6 +124,7 @@ export function match(text: string, actualSentence: Sentence, expectedSentence: 
             matchTokens.push(actualChild);
             currentTokenPosition += 1;
         } else {
+            console.log("FAIL", expectedChild);
             // reset position
             matchTokens.length = 0;
             currentTokenPosition = 0;
