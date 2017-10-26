@@ -63,7 +63,7 @@ const applyFixes = (text: string, messages: MatchTestReplaceReturnResult[]) => {
             let start = problem.index;
             const end = start + problem.match.length;
             // no replace
-            if (!problem.replace) {
+            if (problem.replace === undefined) {
                 return;
             }
             let insertionText = problem.replace;
