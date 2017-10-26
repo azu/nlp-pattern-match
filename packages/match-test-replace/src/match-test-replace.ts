@@ -16,7 +16,7 @@ export interface TestMatchReplaceReturnDict {
     // if no match, return { ok: false }
     pattern: RegExp;
     // replace function
-    replace: (args: PatternMatchDictArgs) => string;
+    replace?: (args: PatternMatchDictArgs) => string;
     // allow to replace?
     replaceTest?: (args: PatternMatchDictArgs) => boolean;
     // optional message
@@ -26,7 +26,7 @@ export interface TestMatchReplaceReturnDict {
 export interface MatchTestReplaceReturnResult {
     index: number;
     match: string;
-    replace: string;
+    replace: string | undefined;
     message?: string;
 }
 
@@ -62,6 +62,10 @@ const applyFixes = (text: string, messages: MatchTestReplaceReturnResult[]) => {
             // pickup fix range
             let start = problem.index;
             const end = start + problem.match.length;
+            // no replace
+            if (!problem.replace) {
+                return;
+            }
             let insertionText = problem.replace;
             if (end <= lastFixPos) {
                 // modify
@@ -129,14 +133,18 @@ export const matchTestReplace = (text: string, dict: TestMatchReplaceReturnDict)
             isReplaceOK = dict.replaceTest(dictArgs);
         }
         if (isReplaceOK) {
-            const replace = dict.replace(dictArgs);
+            const replace = typeof dict.replace === "function" ? dict.replace(dictArgs) : undefined;
             const message = dict.message ? dict.message(dictArgs) : undefined;
             results.push({
                 index,
                 match: match,
-                replace,
-                message
+                replace: replace,
+                message: message
             });
+            // no replace
+            if (replace === undefined) {
+                return all;
+            }
             return replace;
         } else {
             // No replace
