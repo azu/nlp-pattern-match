@@ -77,7 +77,7 @@ const text = "webkit is matched,but node-webkit is not match";
 const res = matchTestReplace(text, {
     pattern: /(\S*?)webkit/g,
     replace: () => "WebKit",
-    replaceTest: ({ captures }) => {
+    test: ({ captures }) => {
         return captures[0] !== "node-";
     }
 });
@@ -108,7 +108,7 @@ const res = matchTestReplace(text, {
         console.log(captures);
         return `To ${captures[1]}, click ${captures[0]}.`
     },
-    replaceTest: ({ all }) => {
+    test: ({ all }) => {
         const pattern = matcher.tag`Click ${{
             type: "WordNode",
             data: {

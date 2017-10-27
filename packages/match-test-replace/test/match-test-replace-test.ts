@@ -25,20 +25,20 @@ describe("testMatchReplace", () => {
         });
         it("test args", () => {
             const text = "ALL-XYZ_ABC";
-            const replaceTestArgsCaptures: PatternMatchDictArgs[] = [];
+            const testArgsCaptures: PatternMatchDictArgs[] = [];
             const res = matchTestReplace(text, {
                 pattern: /X(Y+)Z.*(ABC)/,
                 replace: () => {
                     return "";
                 },
-                replaceTest: (args: PatternMatchDictArgs) => {
-                    replaceTestArgsCaptures.push(args);
+                test: (args: PatternMatchDictArgs) => {
+                    testArgsCaptures.push(args);
                     return true;
                 }
             });
             assert.ok(res.ok === true, "should be ok: true");
-            assert.strictEqual(replaceTestArgsCaptures.length, 1, "replace should be called 1");
-            const replaceArgsCapture = replaceTestArgsCaptures[0];
+            assert.strictEqual(testArgsCaptures.length, 1, "replace should be called 1");
+            const replaceArgsCapture = testArgsCaptures[0];
             assert.strictEqual(replaceArgsCapture.index, 4, "index");
             assert.deepEqual(replaceArgsCapture.match, "XYZ_ABC");
             assert.strictEqual(replaceArgsCapture.all, "ALL-XYZ_ABC");
@@ -89,24 +89,24 @@ describe("testMatchReplace", () => {
             assert.ok(res.ok, "should be ok: true");
             assert.strictEqual(res.results.length, 1, "1 replace");
         });
-        it("should return ok:true when replaceTest() => false, but it is not replace", () => {
+        it("should return ok:true when test() => false, but it is not replace", () => {
             const text = "before";
             const res = matchTestReplace(text, {
                 pattern: /before/i,
                 replace: () => "after",
-                replaceTest: () => {
+                test: () => {
                     return false;
                 }
             });
             assert.ok(res.ok === true, "should be ok: false");
             assert.strictEqual(res.results.length, 0, "no replace");
         });
-        it("should return results if return ok:true and replaceTest() => true", () => {
+        it("should return results if return ok:true and test() => true", () => {
             const text = "webkit is matched,but node-webkit is not match";
             const res = matchTestReplace(text, {
                 pattern: /(\S*?)webkit/g,
                 replace: () => "WebKit",
-                replaceTest: ({ captures }) => {
+                test: ({ captures }) => {
                     return captures[0] !== "node-";
                 }
             });
@@ -126,7 +126,7 @@ describe("testMatchReplace", () => {
                 replace: ({ captures }) => {
                     return `To ${captures[1]}, click ${captures[0]}.`;
                 },
-                replaceTest: ({ all }) => {
+                test: ({ all }) => {
                     const pattern = matcher.tag`Click ${{
                         type: "WordNode",
                         data: {

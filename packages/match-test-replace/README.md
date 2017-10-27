@@ -5,7 +5,7 @@ Easy text pattern match and replace text.
 This library does Match -> Test -> Replace pattern.
 
 1. Match `pattern`
-2. Does `replaceTest`
+2. Does `test`
 3. Does `replace`
 
 ## Install
@@ -26,7 +26,7 @@ export interface PatternMatchDictArgs {
 export interface TestMatchReplaceReturnDict {
     pattern: RegExp;
     replace: (args: PatternMatchDictArgs) => string;
-    replaceTest?: (args: PatternMatchDictArgs) => boolean;
+    test?: (args: PatternMatchDictArgs) => boolean;
     message?: (args: PatternMatchDictArgs) => string;
 }
 export interface TestMatchReplaceReturnResult {
@@ -72,9 +72,9 @@ assert.strictEqual(res.results.length, 1, "1 replace");
 */
 ```
 
-### Match -> ReplaceTest -> Replace
+### Match -> test -> Replace
 
-match-test-replace not replace if `replaceTest` return `false`
+match-test-replace not replace if `test` return `false`
 
 ```js
 import { replaceAll, matchTestReplace } from "match-test-replace";
@@ -82,7 +82,7 @@ const text = "webkit is matched,but node-webkit is not match";
 const res = matchTestReplace(text, {
     pattern: /(\S*?)webkit/g,
     replace: () => "WebKit",
-    replaceTest: ({ captures }) => {
+    test: ({ captures }) => {
         return captures[0] !== "node-";
     }
 });
@@ -110,7 +110,7 @@ const res = matchTestReplace(text, {
         console.log(captures);
         return `To ${captures[1]}, click ${captures[0]}.`
     },
-    replaceTest: ({ all }) => {
+    test: ({ all }) => {
         const pattern = matcher.tag`Click ${{
             type: "WordNode",
             data: {

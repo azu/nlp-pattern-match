@@ -13,13 +13,14 @@ export interface PatternMatchDictArgs {
 
 export interface TestMatchReplaceReturnDict {
     // match pattern
-    // if no match, return { ok: false }
+    // if the result of match `pattern` is falsy, return { ok: false }
     pattern: RegExp;
-    // replace function
+    // test the result of match
+    // if the result of `test` is true, allow to replace if needed
+    test?: (args: PatternMatchDictArgs) => boolean;
+    // replace the result of match
     replace?: (args: PatternMatchDictArgs) => string;
-    // allow to replace?
-    replaceTest?: (args: PatternMatchDictArgs) => boolean;
-    // optional message
+    // Return the message if needed
     message?: (args: PatternMatchDictArgs) => string;
 }
 
@@ -129,8 +130,8 @@ export const matchTestReplace = (text: string, dict: TestMatchReplaceReturnDict)
             captures,
             all
         };
-        if (typeof dict.replaceTest === "function") {
-            isReplaceOK = dict.replaceTest(dictArgs);
+        if (typeof dict.test === "function") {
+            isReplaceOK = dict.test(dictArgs);
         }
         if (isReplaceOK) {
             const replace = typeof dict.replace === "function" ? dict.replace(dictArgs) : undefined;
