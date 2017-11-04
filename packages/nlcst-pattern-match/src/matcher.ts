@@ -132,7 +132,7 @@ export function match(actualSentence: Sentence, expectedSentence: Sentence): Mat
             matchTokens.push(actualChild);
             currentTokenPosition += 1;
         } else {
-            console.log("FAIL", expectedChild);
+            debug("FAIL", expectedChild);
             // reset position
             matchTokens.length = 0;
             currentTokenPosition = 0;
