@@ -11,7 +11,7 @@
     "src/"
   ],
   "name": "nlcst-pattern-match",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Pattern match for NLCST.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
