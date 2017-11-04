@@ -4,7 +4,7 @@ import { Parent, Node } from "unist-types";
 import { isPunctuation, isSentence, isWhiteSpace, Sentence } from "nlcst-types";
 import { PatternNode, TagNode } from "./NodeTypes";
 import { match, MatchCSTResult, MatchResult } from "./matcher";
-import { isParagraph } from "../../nlcst-types/src/type-guard";
+import { isParagraph } from "nlcst-types";
 
 const walk = require("estree-walker").walk;
 // Acceptable Node Types

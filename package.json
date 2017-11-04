@@ -7,7 +7,7 @@
   "description": "Natural Language pattern matching library for JavaScript.",
   "main": "lib/nlp-pattern-match.js",
   "scripts": {
-    "prepublish": "lerna run build && lerna run test",
+    "prepublish": "lerna run test",
     "publish": "lerna publish --conventional-commits",
     "publish:beta": "lerna publish --npm-tag=beta --preid=beta",
     "prepare": "lerna bootstrap",
