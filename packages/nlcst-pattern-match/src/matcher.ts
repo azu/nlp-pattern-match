@@ -2,6 +2,7 @@
 import { isPatternNode } from "./NodeTypes";
 import { Node, Position } from "unist-types";
 
+const debug = require("debug")("nlcst-pattern-match");
 const toString = require("nlcst-to-string");
 import { isSentence, Sentence } from "nlcst-types";
 
@@ -27,6 +28,9 @@ export interface MatchCSTResult {
  * @returns {boolean}
  */
 export function matchValue(actualValue: any, expectedValue: any): boolean {
+    if (actualValue === undefined || expectedValue === undefined) {
+        return false;
+    }
     // wildcard
     if (expectedValue === "*" && actualValue !== undefined) {
         return true;
@@ -56,20 +60,20 @@ export function matchNode(actualNode: Node, expectedNode: Node): boolean {
             return true;
         }
         const actualProp = actualNode[key];
-        console.log(`Math: ${key}: `, expectedProp, actualProp);
+        debug(`Math: ${key}: `, expectedProp, actualProp);
         if (key === "children") {
             let every = expectedProp.every((expectedChildNode: Node, index: number) => {
                 const actualChildNode = actualProp[index];
                 return matchNode(actualChildNode, expectedChildNode);
             });
-            console.log("RETURN:CIL", every);
+            debug("RETURN:CIL", every);
             return every;
         } else {
             const expectedValues = Array.isArray(expectedProp) ? expectedProp : [expectedProp];
             let b = expectedValues.some(expectedValue => {
                 return matchValue(actualProp, expectedValue);
             });
-            console.log("RETURN", b);
+            debug("RETURN", b);
             return b;
         }
     });

@@ -4,6 +4,7 @@ import { Parent, Node } from "unist-types";
 import { isPunctuation, isSentence, isWhiteSpace, Sentence } from "nlcst-types";
 import { PatternNode, TagNode } from "./NodeTypes";
 import { match, MatchCSTResult, MatchResult } from "./matcher";
+import { isParagraph } from "../../nlcst-types/src/type-guard";
 
 const walk = require("estree-walker").walk;
 // Acceptable Node Types
@@ -113,6 +114,9 @@ export class PatternMatcher {
         walk(AST, {
             enter: function (node: Node, parent: Parent) {
                 if (!parent || !parent.children) {
+                    return;
+                }
+                if (isParagraph(node) || isSentence(node)) {
                     return;
                 }
                 replaceHolders

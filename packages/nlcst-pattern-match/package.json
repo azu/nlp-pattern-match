@@ -37,6 +37,8 @@
   },
   "homepage": "https://github.com/azu/nlp-pattern-match/tree/master/packages/nlcst-pattern-match/",
   "dependencies": {
+    "@types/debug": "^0.0.30",
+    "debug": "^3.1.0",
     "estree-walker": "^0.5.0",
     "nlcst-to-string": "^2.0.0",
     "nlcst-types": "^1.2.1",

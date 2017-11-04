@@ -244,6 +244,24 @@ ${JSON.stringify(actual)}
                 "Click Delete if you want to delete the entire document."
             );
         });
+        it("match parameter only", () => {
+            const englishParser = new EnglishParser();
+            const patternMatcher = new PatternMatcher({
+                parser: englishParser
+            });
+            const pattern = patternMatcher.tag`${{
+                type: "*",
+                data: {
+                    pos: /^VB/ // verb
+                }
+            }}`;
+            const text = "Bob does that.";
+            const results = patternMatcher.match(text, pattern);
+            assert.strictEqual(
+                toString(results[0].nodeList),
+                "does"
+            );
+        });
         it("match regexp", () => {
             const englishParser = new EnglishParser();
             const patternMatcher = new PatternMatcher({
