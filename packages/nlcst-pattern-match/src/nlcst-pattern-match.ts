@@ -136,7 +136,6 @@ export class PatternMatcher {
                         const indexOf = parent.children.indexOf(node);
                         const actualNode = parent.children[indexOf];
                         const placeholderNode = replaceHolder.value;
-                        console.log(placeholderNode);
                         parent.children[indexOf] = Object.assign({}, placeholderNode, {
                             position: actualNode.position
                         });
@@ -145,7 +144,6 @@ export class PatternMatcher {
         });
 
         const section = AST.children[0].children[0];
-        console.log(JSON.stringify(section, null, 4));
         return section.children as TagPatterns;
     }
 }
