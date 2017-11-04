@@ -111,6 +111,7 @@ export class PatternMatcher {
             return `${result}${createPlaceholder(result.length, value)}${string}`;
         });
         const AST = this.parser.parse(allString);
+        console.log("AST", JSON.stringify(AST,null))
         walk(AST, {
             enter: function (node: Node, parent: Parent) {
                 if (!parent || !parent.children) {
@@ -119,6 +120,8 @@ export class PatternMatcher {
                 if (isParagraph(node) || isSentence(node)) {
                     return;
                 }
+                console.log(replaceHolders);
+                console.log("node", node);
                 replaceHolders
                     .filter(replaceHolder => {
                         return node.position!.start.offset === replaceHolder.start;
@@ -127,6 +130,7 @@ export class PatternMatcher {
                         const indexOf = parent.children.indexOf(node);
                         const actualNode = parent.children[indexOf];
                         const placeholderNode = replaceHolder.value;
+                        console.log(placeholderNode);
                         parent.children[indexOf] = Object.assign({}, placeholderNode, {
                             position: actualNode.position
                         });

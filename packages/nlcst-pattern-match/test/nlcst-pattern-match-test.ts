@@ -2,7 +2,7 @@ import { PatternMatcher } from "../src/nlcst-pattern-match";
 import * as assert from "assert";
 import { EnglishParser } from "nlcst-parse-english";
 import { JapaneseParser } from "nlcst-parse-japanese";
-
+const snapshot = require('snap-shot-it')
 const toString = require("nlcst-to-string");
 // const inspect = require('unist-util-inspect');
 
@@ -22,82 +22,7 @@ describe("nlcst-pattern-match", () => {
         const actual = patternMatcher.tag`This is ${{
             type: "WordNode"
         }}.`;
-        assert.deepEqual(
-            actual,
-            [
-                {
-                    type: "WordNode",
-                    children: [
-                        {
-                            type: "TextNode",
-                            value: "This",
-                            position: {
-                                start: { line: 1, column: 1, offset: 0 },
-                                end: { line: 1, column: 5, offset: 4 }
-                            }
-                        }
-                    ],
-                    position: {
-                        start: { line: 1, column: 1, offset: 0 },
-                        end: { line: 1, column: 5, offset: 4 }
-                    },
-                    data: { pos: "DT" }
-                },
-                {
-                    type: "WhiteSpaceNode",
-                    value: " ",
-                    position: {
-                        start: { line: 1, column: 5, offset: 4 },
-                        end: { line: 1, column: 6, offset: 5 }
-                    }
-                },
-                {
-                    type: "WordNode",
-                    children: [
-                        {
-                            type: "TextNode",
-                            value: "is",
-                            position: {
-                                start: { line: 1, column: 6, offset: 5 },
-                                end: { line: 1, column: 8, offset: 7 }
-                            }
-                        }
-                    ],
-                    position: {
-                        start: { line: 1, column: 6, offset: 5 },
-                        end: { line: 1, column: 8, offset: 7 }
-                    },
-                    data: { pos: "VBZ" }
-                },
-                {
-                    type: "WhiteSpaceNode",
-                    value: " ",
-                    position: {
-                        start: { line: 1, column: 8, offset: 7 },
-                        end: { line: 1, column: 9, offset: 8 }
-                    }
-                },
-                {
-                    type: "WordNode",
-                    position: {
-                        start: { line: 1, column: 9, offset: 8 },
-                        end: { line: 1, column: 14, offset: 13 }
-                    }
-                },
-                {
-                    type: "PunctuationNode",
-                    value: ".",
-                    position: {
-                        start: { line: 1, column: 14, offset: 13 },
-                        end: { line: 1, column: 15, offset: 14 }
-                    },
-                    data: { pos: "." }
-                }
-            ],
-            `Mismatch
-${JSON.stringify(actual)}
-`
-        );
+        snapshot(actual);
     });
 
     describe("#match", () => {
@@ -116,104 +41,7 @@ ${JSON.stringify(actual)}
             const results = patternMatcher.match(text, pattern);
             assert.equal(results.length, 1, "results should have 1");
             const [result] = results;
-            assert.deepEqual(result.position, {
-                index: 0,
-                end: {
-                    column: 13,
-                    line: 1,
-                    offset: 12
-                },
-                start: {
-                    column: 1,
-                    line: 1,
-                    offset: 0
-                }
-            });
-            assert.deepEqual(
-                result.nodeList,
-                [
-                    {
-                        type: "WordNode",
-                        children: [
-                            {
-                                type: "TextNode",
-                                value: "Bob",
-                                position: {
-                                    start: { line: 1, column: 1, offset: 0 },
-                                    end: { line: 1, column: 4, offset: 3 }
-                                }
-                            }
-                        ],
-                        position: {
-                            start: { line: 1, column: 1, offset: 0 },
-                            end: { line: 1, column: 4, offset: 3 }
-                        },
-                        data: { pos: "NNP" }
-                    },
-                    {
-                        type: "WhiteSpaceNode",
-                        value: " ",
-                        position: {
-                            start: { line: 1, column: 4, offset: 3 },
-                            end: { line: 1, column: 5, offset: 4 }
-                        }
-                    },
-                    {
-                        type: "WordNode",
-                        children: [
-                            {
-                                type: "TextNode",
-                                value: "does",
-                                position: {
-                                    start: { line: 1, column: 5, offset: 4 },
-                                    end: { line: 1, column: 9, offset: 8 }
-                                }
-                            }
-                        ],
-                        position: {
-                            start: { line: 1, column: 5, offset: 4 },
-                            end: { line: 1, column: 9, offset: 8 }
-                        },
-                        data: { pos: "VBZ" }
-                    },
-                    {
-                        type: "WhiteSpaceNode",
-                        value: " ",
-                        position: {
-                            start: { line: 1, column: 9, offset: 8 },
-                            end: { line: 1, column: 10, offset: 9 }
-                        }
-                    },
-                    {
-                        type: "WordNode",
-                        children: [
-                            {
-                                type: "TextNode",
-                                value: "it",
-                                position: {
-                                    start: { line: 1, column: 10, offset: 9 },
-                                    end: { line: 1, column: 12, offset: 11 }
-                                }
-                            }
-                        ],
-                        position: {
-                            start: { line: 1, column: 10, offset: 9 },
-                            end: { line: 1, column: 12, offset: 11 }
-                        },
-                        data: { pos: "PRP" }
-                    },
-                    {
-                        type: "PunctuationNode",
-                        value: ".",
-                        position: {
-                            start: { line: 1, column: 12, offset: 11 },
-                            end: { line: 1, column: 13, offset: 12 }
-                        },
-                        data: { pos: "." }
-                    }
-                ],
-                `\n${JSON.stringify(result.nodeList)}\n`
-            );
+            snapshot(result);
             assert.strictEqual(result.text, "Bob does it.");
         });
         it("match data and pattern", () => {
@@ -268,56 +96,7 @@ ${JSON.stringify(actual)}
                         "pos_detail_1": "自立",
                     }
                 }}たり`;
-                assert.deepEqual(TARI, [{
-                    "type": "WordNode",
-                    "data": { "pos": "動詞", "pos_detail_1": "自立" },
-                    "position": {
-                        "start": { "line": 1, "column": 1, "offset": 0 },
-                        "end": { "line": 1, "column": 6, "offset": 5 }
-                    }
-                }, {
-                    "type": "WordNode",
-                    "children": [{
-                        "type": "TextNode",
-                        "value": "たり",
-                        "position": {
-                            "start": { "line": 1, "column": 6, "offset": 5 },
-                            "end": { "line": 1, "column": 8, "offset": 7 }
-                        },
-                        "data": {
-                            "word_id": 92960,
-                            "word_type": "KNOWN",
-                            "surface_form": "たり",
-                            "pos": "助詞",
-                            "pos_detail_1": "並立助詞",
-                            "pos_detail_2": "*",
-                            "pos_detail_3": "*",
-                            "conjugated_type": "*",
-                            "conjugated_form": "*",
-                            "basic_form": "たり",
-                            "reading": "タリ",
-                            "pronunciation": "タリ"
-                        }
-                    }],
-                    "position": {
-                        "start": { "line": 1, "column": 6, "offset": 5 },
-                        "end": { "line": 1, "column": 8, "offset": 7 }
-                    },
-                    "data": {
-                        "word_id": 92960,
-                        "word_type": "KNOWN",
-                        "surface_form": "たり",
-                        "pos": "助詞",
-                        "pos_detail_1": "並立助詞",
-                        "pos_detail_2": "*",
-                        "pos_detail_3": "*",
-                        "conjugated_type": "*",
-                        "conjugated_form": "*",
-                        "basic_form": "たり",
-                        "reading": "タリ",
-                        "pronunciation": "タリ"
-                    }
-                }], JSON.stringify(TARI))
+                snapshot(TARI);
             });
         });
         it("match regexp", () => {
@@ -448,6 +227,7 @@ ${JSON.stringify(actual)}
                 }
             };
             const pattern = patternMatcher.tag`${動詞}${する}`;
+            assert.equal(pattern.length, 2, "have pattern node");
             const text = "行動する";
             const results = patternMatcher.match(text, pattern);
             assert.ok(results.length === 1, "should have 1 result");
@@ -574,104 +354,7 @@ ${JSON.stringify(actual)}
             const results = patternMatcher.matchCST(CST, pattern);
             assert.equal(results.length, 1, "results should have 1");
             const [result] = results;
-            assert.deepEqual(result.position, {
-                index: 0,
-                end: {
-                    column: 13,
-                    line: 1,
-                    offset: 12
-                },
-                start: {
-                    column: 1,
-                    line: 1,
-                    offset: 0
-                }
-            });
-            assert.deepEqual(
-                result.nodeList,
-                [
-                    {
-                        type: "WordNode",
-                        children: [
-                            {
-                                type: "TextNode",
-                                value: "Bob",
-                                position: {
-                                    start: { line: 1, column: 1, offset: 0 },
-                                    end: { line: 1, column: 4, offset: 3 }
-                                }
-                            }
-                        ],
-                        position: {
-                            start: { line: 1, column: 1, offset: 0 },
-                            end: { line: 1, column: 4, offset: 3 }
-                        },
-                        data: { pos: "NNP" }
-                    },
-                    {
-                        type: "WhiteSpaceNode",
-                        value: " ",
-                        position: {
-                            start: { line: 1, column: 4, offset: 3 },
-                            end: { line: 1, column: 5, offset: 4 }
-                        }
-                    },
-                    {
-                        type: "WordNode",
-                        children: [
-                            {
-                                type: "TextNode",
-                                value: "does",
-                                position: {
-                                    start: { line: 1, column: 5, offset: 4 },
-                                    end: { line: 1, column: 9, offset: 8 }
-                                }
-                            }
-                        ],
-                        position: {
-                            start: { line: 1, column: 5, offset: 4 },
-                            end: { line: 1, column: 9, offset: 8 }
-                        },
-                        data: { pos: "VBZ" }
-                    },
-                    {
-                        type: "WhiteSpaceNode",
-                        value: " ",
-                        position: {
-                            start: { line: 1, column: 9, offset: 8 },
-                            end: { line: 1, column: 10, offset: 9 }
-                        }
-                    },
-                    {
-                        type: "WordNode",
-                        children: [
-                            {
-                                type: "TextNode",
-                                value: "it",
-                                position: {
-                                    start: { line: 1, column: 10, offset: 9 },
-                                    end: { line: 1, column: 12, offset: 11 }
-                                }
-                            }
-                        ],
-                        position: {
-                            start: { line: 1, column: 10, offset: 9 },
-                            end: { line: 1, column: 12, offset: 11 }
-                        },
-                        data: { pos: "PRP" }
-                    },
-                    {
-                        type: "PunctuationNode",
-                        value: ".",
-                        position: {
-                            start: { line: 1, column: 12, offset: 11 },
-                            end: { line: 1, column: 13, offset: 12 }
-                        },
-                        data: { pos: "." }
-                    }
-                ],
-                `\n${JSON.stringify(result.nodeList)}\n`
-            );
+            snapshot(result);
         });
         it("can match node list", () => {
 
