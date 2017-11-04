@@ -112,6 +112,9 @@ export class PatternMatcher {
         const AST = this.parser.parse(allString);
         walk(AST, {
             enter: function (node: Node, parent: Parent) {
+                if (!parent || !parent.children) {
+                    return;
+                }
                 replaceHolders
                     .filter(replaceHolder => {
                         return node.position!.start.offset === replaceHolder.start;
