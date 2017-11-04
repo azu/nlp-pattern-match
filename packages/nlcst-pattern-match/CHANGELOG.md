@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.3.0"></a>
+# [1.3.0](https://github.com/azu/nlp-pattern-match/compare/nlcst-pattern-match@1.2.7...nlcst-pattern-match@1.3.0) (2017-11-04)
+
+
+### Features
+
+* **nlcst-pattern-match:** add `isNegative` property ([dc9233e](https://github.com/azu/nlp-pattern-match/commit/dc9233e))
+
+
+
+
 <a name="1.2.7"></a>
 ## [1.2.7](https://github.com/azu/nlp-pattern-match/compare/nlcst-pattern-match@1.2.6...nlcst-pattern-match@1.2.7) (2017-11-04)
 
