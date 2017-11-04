@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.2.7"></a>
+## [1.2.7](https://github.com/azu/nlp-pattern-match/compare/nlcst-pattern-match@1.2.6...nlcst-pattern-match@1.2.7) (2017-11-04)
+
+
+### Bug Fixes
+
+* **nlcst-pattern-match:** support multiple value pattern ([57f94cf](https://github.com/azu/nlp-pattern-match/commit/57f94cf))
+
+
+
+
 <a name="1.2.6"></a>
 ## [1.2.6](https://github.com/azu/nlp-pattern-match/compare/nlcst-pattern-match@1.2.5...nlcst-pattern-match@1.2.6) (2017-11-04)
 
