@@ -428,7 +428,60 @@ ${JSON.stringify(actual)}
                 "These are cars."
             );
         });
-
+        it("A Node `isNegative`, the match result is reverse", () => {
+            const englishParser = new EnglishParser();
+            const patternMatcher = new PatternMatcher({
+                parser: englishParser
+            });
+            const pattern = patternMatcher.tag`These ${{
+                type: "WordNode",
+                children: [
+                    {
+                        type: "TextNode",
+                        value: "are"
+                    }
+                ],
+                isNegative: true // <= match but is negative => not match
+            }} ${{
+                type: "WordNode",
+                data: {
+                    pos: /^NN/
+                }
+            }}.`;
+            const text = "These are pen.";
+            const results = patternMatcher.match(text, pattern);
+            assert.ok(results.length === 0, "should have 1 result");
+        });
+        it("A Node `isNegative`, the match result is reverse", () => {
+            const englishParser = new EnglishParser();
+            const patternMatcher = new PatternMatcher({
+                parser: englishParser
+            });
+            const pattern = patternMatcher.tag`These ${{
+                type: "WordNode",
+                children: [
+                    {
+                        type: "TextNode",
+                        value: "is"
+                    }
+                ],
+                isNegative: true
+            }} ${{
+                type: "WordNode",
+                data: {
+                    pos: /^NN/
+                }
+            }}.`;
+            const text = "These are pen.";
+            //                  ^^^
+            const results = patternMatcher.match(text, pattern);
+            assert.ok(results.length === 1, "should have 1 result");
+            const result = results[0];
+            assert.strictEqual(
+                text.slice(result.position!.start.offset, result.position!.end.offset),
+                "These are pen."
+            );
+        });
         it("WordNode(/^NN/) in Japanese", async () => {
             const japaneseParser = new JapaneseParser();
             await japaneseParser.ready();
@@ -447,7 +500,6 @@ ${JSON.stringify(actual)}
                 "これは桃です！"
             );
         });
-
         it("multiple value on WordNode ", async () => {
             const japaneseParser = new JapaneseParser();
             await japaneseParser.ready();

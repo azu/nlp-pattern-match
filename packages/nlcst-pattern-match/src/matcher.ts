@@ -1,5 +1,5 @@
 // MIT © 2017 azu
-import { isPatternNode } from "./NodeTypes";
+import { isPatternNode, TagNode } from "./NodeTypes";
 import { Node, Position } from "unist-types";
 
 const debug = require("debug")("nlcst-pattern-match");
@@ -54,12 +54,12 @@ export function matchValue(actualValue: any, expectedValue: any): boolean {
 /**
  * Match actualNode with expectedNode
  * @param {Node} actualNode
- * @param {Node} expectedNode
+ * @param {TagNode} expectedNode
  * @returns {boolean}
  */
-export function matchNode(actualNode: Node, expectedNode: Node): boolean {
+export function matchNode(actualNode: Node, expectedNode: TagNode): boolean {
     // ignore other property. ore-ore property should be ignored
-    return ["type", "children", "value", "data"].every((key: string) => {
+    const isMatch = ["type", "children", "value", "data"].every((key: string) => {
         const expectedProp = expectedNode[key];
         if (!expectedProp) {
             return true;
@@ -82,6 +82,10 @@ export function matchNode(actualNode: Node, expectedNode: Node): boolean {
             return b;
         }
     });
+    if (typeof expectedNode.isNegative === "boolean" && expectedNode.isNegative) {
+        return !isMatch;
+    }
+    return isMatch;
 }
 
 /**

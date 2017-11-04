@@ -3,6 +3,7 @@ import { Node } from "unist-types";
 
 export interface TagNode extends Node {
     length?: number;
+    isNegative?: boolean;
 }
 
 export const isPatternNode = (v: any): v is PatternNode => {
