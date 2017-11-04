@@ -428,6 +428,30 @@ ${JSON.stringify(actual)}
                 "These are cars."
             );
         });
+        it("variable only pattern", async () => {
+            const japaneseParser = new JapaneseParser();
+            await japaneseParser.ready();
+            const patternMatcher = new PatternMatcher({
+                parser: japaneseParser
+            });
+            const 動詞 = {
+                type: "WordNode",
+                data: {
+                    pos: "動詞",
+                    pos_detail_1: "自立"
+                }
+            };
+            const する = {
+                type: "WordNode",
+                data: {
+                    basic_form: "する"
+                }
+            };
+            const pattern = patternMatcher.tag`${動詞}${する}`;
+            const text = "行動する";
+            const results = patternMatcher.match(text, pattern);
+            assert.ok(results.length === 1, "should have 1 result");
+        });
         it("A Node `isNegative`, the match result is reverse", () => {
             const englishParser = new EnglishParser();
             const patternMatcher = new PatternMatcher({

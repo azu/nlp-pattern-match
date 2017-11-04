@@ -134,6 +134,7 @@ export class PatternMatcher {
             }
         });
 
-        return AST.children[0].children[0].children as TagPatterns;
+        const section = AST.children[0].children[0];
+        return section.children as TagPatterns;
     }
 }
