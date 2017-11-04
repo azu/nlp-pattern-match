@@ -10,7 +10,22 @@ Install with [npm](https://www.npmjs.com/):
 
 ## Usage
 
-You write Pattern of NLCST object in `patternMatcher.tag`${object}`. 
+### `patternMatcher.tag` : `TagPattern` 
+
+`patternMatcher.tag` is a tagged function.
+It is used with template literal.
+
+### `patternMatcher.match(text:string, pattern: TagPattern)`
+
+match `text` with `pattern` that is result of `tag` function.
+
+### `patternMatcher.matchCST(cst: Root, pattern: TagPattern)`
+
+match `cst` with `pattern` that is result of `tag` function.
+
+## Example
+
+You write Pattern of NLCST object in `` patternMatcher.tag`${object}` ``. 
 
 ```js
 import { PatternMatcher } from "nlcst-pattern-match";

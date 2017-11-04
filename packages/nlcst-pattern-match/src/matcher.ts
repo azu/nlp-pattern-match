@@ -15,6 +15,11 @@ export interface MatchResult {
     nodeList: Node[];
 }
 
+export interface MatchCSTResult {
+    position: Position | undefined;
+    nodeList: Node[];
+}
+
 /**
  * Match actualValue with expectedValue
  * @param actualValue
@@ -72,12 +77,11 @@ export function matchNode(actualNode: Node, expectedNode: Node): boolean {
 
 /**
  * match actualSentence with expectedSentence
- * @param {string} text
  * @param {Sentence} actualSentence
  * @param {Sentence} expectedSentence
- * @returns {MatchResult[]}
+ * @returns {MatchCSTResult[]}
  */
-export function match(text: string, actualSentence: Sentence, expectedSentence: Sentence): MatchResult[] {
+export function match(actualSentence: Sentence, expectedSentence: Sentence): MatchCSTResult[] {
     if (!isSentence(actualSentence)) {
         throw new Error(`Expected sentence node: ${JSON.stringify(actualSentence)}`);
     }
@@ -88,7 +92,7 @@ export function match(text: string, actualSentence: Sentence, expectedSentence: 
     const expectedChildren = expectedSentence.children;
     const tokenCount = expectedChildren.length;
     const matchTokens: Node[] = [];
-    const results: MatchResult[] = [];
+    const results: MatchCSTResult[] = [];
     let currentTokenPosition = 0;
     let index = 0;
     for (index = 0; index < children.length; index++) {
@@ -147,7 +151,6 @@ export function match(text: string, actualSentence: Sentence, expectedSentence: 
                 throw new Error(`The node has not position: ${firstNode}`);
             }
             results.push({
-                text: text.slice(firstNode.position.start.offset, lastNode.position.end.offset),
                 position: {
                     start: firstNode.position.start,
                     end: lastNode.position.end,
