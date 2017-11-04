@@ -1,10 +1,8 @@
 // MIT © 2017 azu
-import { Root } from "nlcst-types";
-import { Parent, Node } from "unist-types";
-import { isPunctuation, isSentence, isWhiteSpace } from "nlcst-types";
+import { isParagraph, isPunctuation, isSentence, isWhiteSpace, Root } from "nlcst-types";
+import { Node, Parent } from "unist-types";
 import { PatternNode, TagNode } from "./NodeTypes";
 import { match, MatchCSTResult, MatchResult } from "./matcher";
-import { isParagraph } from "nlcst-types";
 
 const walk = require("estree-walker").walk;
 // Acceptable Node Types
@@ -89,11 +87,11 @@ export class PatternMatcher {
             );
         }
         const replaceHolders: { start: number; length: number; value: NodeTypes }[] = [];
-        const createPlaceholder = (start: number, value: TagNode) => {
+        const createPlaceholder = (result: string, value: TagNode) => {
             const DEFAULT_VALUE_LENGTH = 5;
             const length = value.length ? value.length : DEFAULT_VALUE_LENGTH;
             replaceHolders.push({
-                start,
+                start: result.length,
                 length: length,
                 value
             });
@@ -102,16 +100,26 @@ export class PatternMatcher {
             } else if (isWhiteSpace(value)) {
                 return new Array(length + 1).join(" ");
             } else {
-                return new Array(length + 1).join("X");
+                const lastCharacter = result[result.length - 1];
+                if (!lastCharacter) {
+                    // other is Symbol
+                    return new Array(length + 1).join("|");
+                }
+                if (lastCharacter === " ") {
+                    return new Array(length + 1).join("|");
+                } else if (lastCharacter === "|") {
+                    return new Array(length + 1).join(" ");
+                } else {
+                    return new Array(length + 1).join("|");
+                }
             }
         };
         const allString = strings.reduce((result, string, i) => {
             const valueIndex = i - 1;
             const value = values[valueIndex];
-            return `${result}${createPlaceholder(result.length, value)}${string}`;
+            return `${result}${createPlaceholder(result, value)}${string}`;
         });
         const AST = this.parser.parse(allString);
-        console.log("AST", JSON.stringify(AST,null))
         walk(AST, {
             enter: function (node: Node, parent: Parent) {
                 if (!parent || !parent.children) {
@@ -120,11 +128,9 @@ export class PatternMatcher {
                 if (isParagraph(node) || isSentence(node)) {
                     return;
                 }
-                console.log(replaceHolders);
-                console.log("node", node);
                 replaceHolders
                     .filter(replaceHolder => {
-                        return node.position!.start.offset === replaceHolder.start;
+                        return node.position!.start.offset === replaceHolder.start && node.position!.end.offset === (replaceHolder.start + replaceHolder.length)
                     })
                     .forEach(replaceHolder => {
                         const indexOf = parent.children.indexOf(node);
@@ -139,6 +145,7 @@ export class PatternMatcher {
         });
 
         const section = AST.children[0].children[0];
+        console.log(JSON.stringify(section, null, 4));
         return section.children as TagPatterns;
     }
 }

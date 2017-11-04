@@ -2,6 +2,7 @@ import { PatternMatcher } from "../src/nlcst-pattern-match";
 import * as assert from "assert";
 import { EnglishParser } from "nlcst-parse-english";
 import { JapaneseParser } from "nlcst-parse-japanese";
+
 const snapshot = require('snap-shot-it')
 const toString = require("nlcst-to-string");
 // const inspect = require('unist-util-inspect');
@@ -213,22 +214,27 @@ describe("nlcst-pattern-match", () => {
             const patternMatcher = new PatternMatcher({
                 parser: japaneseParser
             });
-            const 動詞 = {
+            const 名詞 = {
                 type: "WordNode",
                 data: {
-                    pos: "動詞",
-                    pos_detail_1: "自立"
+                    pos: "名詞",
                 }
             };
-            const する = {
+            const を = {
                 type: "WordNode",
                 data: {
-                    basic_form: "する"
+                    surface_form: "を"
                 }
             };
-            const pattern = patternMatcher.tag`${動詞}${する}`;
-            assert.equal(pattern.length, 2, "have pattern node");
-            const text = "行動する";
+            const 聞く = {
+                type: "WordNode",
+                data: {
+                    basic_form: "聞く"
+                }
+            };
+            const pattern = patternMatcher.tag`${名詞}${を}${聞く}`;
+            assert.equal(pattern.length, 3, "have pattern node");
+            const text = "音を聞く";
             const results = patternMatcher.match(text, pattern);
             assert.ok(results.length === 1, "should have 1 result");
         });

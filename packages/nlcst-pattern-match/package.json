@@ -17,6 +17,7 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "test": "mocha 'test/**/*.ts'",
+    "update-snapshot": "SNAPSHOT_UPDATE=1 npm test",
     "prettier": "prettier --write '**/*.{js,jsx,ts,tsx,css}'",
     "build": "cross-env NODE_ENV=production tsc -p .",
     "watch": "tsc -p . --watch",
