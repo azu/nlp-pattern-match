@@ -262,6 +262,22 @@ ${JSON.stringify(actual)}
                 "does"
             );
         });
+        it("match japanese parser", () => {
+            const japaneseParser = new JapaneseParser();
+            return japaneseParser.ready().then(() => {
+                const matcher = new PatternMatcher({
+                    parser: japaneseParser
+                });
+                const TARI = matcher.tag`${{
+                    type: "WordNode",
+                    data: {
+                        pos: "動詞",
+                        "pos_detail_1": "自立",
+                    }
+                }}たり`;
+                console.log(TARI);
+            });
+        });
         it("match regexp", () => {
             const englishParser = new EnglishParser();
             const patternMatcher = new PatternMatcher({
