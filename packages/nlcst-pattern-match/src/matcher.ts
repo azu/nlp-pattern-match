@@ -4,7 +4,7 @@ import { Node, Position } from "unist-types";
 
 const debug = require("debug")("nlcst-pattern-match");
 const toString = require("nlcst-to-string");
-import { isSentence, Sentence } from "nlcst-types";
+import { TagPatterns } from "./nlcst-pattern-match";
 
 export const isRegExp = (v: any): v is RegExp => {
     return Object.prototype.toString.call(v) === "[object RegExp]";
@@ -80,32 +80,25 @@ export function matchNode(actualNode: Node, expectedNode: Node): boolean {
 }
 
 /**
- * match actualSentence with expectedSentence
- * @param {Sentence} actualSentence
- * @param {Sentence} expectedSentence
+ * match actualNodes with expectedPatterns
+ * @param {Sentence} actualNodes
+ * @param {Sentence} expectedPatterns
  * @returns {MatchCSTResult[]}
  */
-export function match(actualSentence: Sentence, expectedSentence: Sentence): MatchCSTResult[] {
-    if (!isSentence(actualSentence)) {
-        throw new Error(`Expected sentence node: ${JSON.stringify(actualSentence)}`);
-    }
-    if (!isSentence(expectedSentence)) {
-        throw new Error(`Expected sentence node: ${JSON.stringify(expectedSentence)}`);
-    }
-    const children = actualSentence.children;
-    const expectedChildren = expectedSentence.children;
+export function match(actualNodes: Node[], expectedPatterns: TagPatterns): MatchCSTResult[] {
+    const expectedChildren = expectedPatterns;
     const tokenCount = expectedChildren.length;
     const matchTokens: Node[] = [];
     const results: MatchCSTResult[] = [];
     let currentTokenPosition = 0;
     let index = 0;
-    for (index = 0; index < children.length; index++) {
-        const actualChild = children[index];
+    for (index = 0; index < actualNodes.length; index++) {
+        const actualChild = actualNodes[index];
         const expectedChild = expectedChildren[currentTokenPosition];
         // PatternNode
         if (isPatternNode(expectedChild)) {
             const pattern = expectedChild.pattern;
-            const afterAllChildren = children.slice(index);
+            const afterAllChildren = actualNodes.slice(index);
             const startIndex = afterAllChildren[0].position!.start.offset!;
             const text = toString(afterAllChildren);
             const matchResult = text.match(pattern);

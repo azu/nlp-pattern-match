@@ -1,7 +1,7 @@
 // MIT © 2017 azu
 import { Root } from "nlcst-types";
 import { Parent, Node } from "unist-types";
-import { isPunctuation, isSentence, isWhiteSpace, Sentence } from "nlcst-types";
+import { isPunctuation, isSentence, isWhiteSpace } from "nlcst-types";
 import { PatternNode, TagNode } from "./NodeTypes";
 import { match, MatchCSTResult, MatchResult } from "./matcher";
 import { isParagraph } from "nlcst-types";
@@ -17,7 +17,7 @@ export interface PatternMatcherArgs {
 /**
  * tag function result
  */
-export type TagPattern = Sentence
+export type TagPatterns = NodeTypes[]
 
 export class PatternMatcher {
     private parser: { parse: ((text: string) => Root) };
@@ -29,11 +29,11 @@ export class PatternMatcher {
     /**
      * Return true If test is passed
      */
-    test(text: string, pattern: TagPattern): boolean {
-        return this.match(text, pattern).length !== 0;
+    test(text: string, patterns: TagPatterns): boolean {
+        return this.match(text, patterns).length !== 0;
     }
 
-    match(text: string, pattern: TagPattern): MatchResult[] {
+    match(text: string, patterns: TagPatterns): MatchResult[] {
         if (typeof text !== "string") {
             throw new Error(
                 "Invalid Arguments: match(text: string, pattern: TagPattern)\n" +
@@ -41,7 +41,7 @@ export class PatternMatcher {
             );
         }
         const CST = this.parser.parse(text);
-        const CSTResults = this.matchCST(CST, pattern);
+        const CSTResults = this.matchCST(CST, patterns);
         return CSTResults.map(node => {
             const firstNode = node.nodeList[0];
             const lastNode = node.nodeList[node.nodeList.length - 1];
@@ -60,16 +60,16 @@ export class PatternMatcher {
         });
     }
 
-    testCST(cst: Root, pattern: TagPattern): boolean {
-        return this.matchCST(cst, pattern).length > 0;
+    testCST(cst: Root, patterns: TagPatterns): boolean {
+        return this.matchCST(cst, patterns).length > 0;
     }
 
-    matchCST(cst: Root, pattern: TagPattern): MatchCSTResult[] {
+    matchCST(cst: Root, patterns: TagPatterns): MatchCSTResult[] {
         let allResults: MatchCSTResult[] = [];
         walk(cst, {
             enter: function (node: Node) {
                 if (isSentence(node)) {
-                    const results = match(node, pattern);
+                    const results = match(node.children, patterns);
                     allResults = allResults.concat(results);
                     this.skip();
                 }
@@ -82,7 +82,7 @@ export class PatternMatcher {
      * Template tag function.
      * Return pattern objects that are used for `matcher.match` method.
      */
-    tag(strings: TemplateStringsArray, ...values: NodeTypes[]): TagPattern {
+    tag(strings: TemplateStringsArray, ...values: NodeTypes[]): TagPatterns {
         if (!Array.isArray(strings)) {
             throw new Error(
                 "tag method is template tag function.\n" + 'For example matcher.tag`this is ${{ type: "WordNode" }}` .'
@@ -134,6 +134,6 @@ export class PatternMatcher {
             }
         });
 
-        return AST.children[0].children[0] as TagPattern;
+        return AST.children[0].children[0].children as TagPatterns;
     }
 }
