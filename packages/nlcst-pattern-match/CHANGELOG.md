@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.2.0"></a>
+# [1.2.0](https://github.com/azu/nlp-pattern-match/compare/nlcst-pattern-match@1.1.3...nlcst-pattern-match@1.2.0) (2017-11-04)
+
+
+### Features
+
+* **nlcst-pattern-match:** Add matchCST and testCST ([3ec96ec](https://github.com/azu/nlp-pattern-match/commit/3ec96ec))
+
+
+
+
 <a name="1.1.3"></a>
 ## [1.1.3](https://github.com/azu/nlp-pattern-match/compare/nlcst-pattern-match@1.1.2...nlcst-pattern-match@1.1.3) (2017-10-26)
 
