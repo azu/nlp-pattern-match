@@ -387,6 +387,7 @@ ${JSON.stringify(actual)}
                 "This is a pen."
             );
         });
+
         it("WordNode(NN)", () => {
             const englishParser = new EnglishParser();
             const patternMatcher = new PatternMatcher({
@@ -444,6 +445,38 @@ ${JSON.stringify(actual)}
             assert.strictEqual(
                 text.slice(result.position!.start.offset, result.position!.end.offset),
                 "これは桃です！"
+            );
+        });
+
+        it("multiple value on WordNode ", async () => {
+            const japaneseParser = new JapaneseParser();
+            await japaneseParser.ready();
+            const patternMatcher = new PatternMatcher({
+                parser: japaneseParser
+            });
+            const pattern = [
+                {
+                    type: "WordNode",
+                    data: {
+                        pos: "動詞",
+                        pos_detail_1: "自立",
+                    }
+                },
+                {
+                    type: "WordNode",
+                    data: {
+                        pos: "助詞",
+                        surface_form: ["だり", "たり"],
+                    }
+                }
+            ];
+            const text = "トイレに行ったり、ご飯を食べる時間もない。.";
+            const results = patternMatcher.match(text, pattern);
+            assert.ok(results.length === 1, "should have 1 result");
+            const result = results[0];
+            assert.strictEqual(
+                text.slice(result.position!.start.offset, result.position!.end.offset),
+                "行ったり"
             );
         });
     });
@@ -580,7 +613,7 @@ ${JSON.stringify(actual)}
             const CST = englishParser.parse(text);
             const results = patternMatcher.matchCST(CST, pattern);
             const resultOne = results[0].nodeList;
-            assert.ok(patternMatcher.testCST(CST, resultOne), "pass test again with same node")
+            assert.ok(patternMatcher.testCST(CST, resultOne), "pass test")
         });
     });
 });

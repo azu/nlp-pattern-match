@@ -37,6 +37,11 @@ export function matchValue(actualValue: any, expectedValue: any): boolean {
     } else if (isRegExp(expectedValue)) {
         // /pattern/
         return expectedValue.test(actualValue);
+    } else if (Array.isArray(expectedValue)) {
+        // value: ["a", "b"]
+        return expectedValue.some(value => {
+            return matchValue(actualValue, value);
+        });
     } else if (typeof expectedValue === "object") {
         // data object
         return Object.keys(expectedValue).every(key => {
@@ -62,7 +67,7 @@ export function matchNode(actualNode: Node, expectedNode: Node): boolean {
         const actualProp = actualNode[key];
         debug(`Math: ${key}: `, expectedProp, actualProp);
         if (key === "children") {
-            let every = expectedProp.every((expectedChildNode: Node, index: number) => {
+            const every = expectedProp.every((expectedChildNode: Node, index: number) => {
                 const actualChildNode = actualProp[index];
                 return matchNode(actualChildNode, expectedChildNode);
             });
