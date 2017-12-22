@@ -20,10 +20,6 @@ This repository includes following packages.
 | nlcst-types | [![npm](https://img.shields.io/npm/v/nlcst-types.svg?style=flat-square)](https://www.npmjs.com/package/nlcst-types) |
 | unist-types | [![npm](https://img.shields.io/npm/v/unist-types.svg?style=flat-square)](https://www.npmjs.com/package/unist-types) |
 
-## Status
-
-Version 1.x is experimental.
-
 ## Support Language
 
 Support English and Japanese.
