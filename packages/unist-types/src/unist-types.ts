@@ -35,7 +35,3 @@ export interface Text extends Node {
 export interface Parent extends Node {
     children: Array<Node | Parent>;
 }
-
-export interface Text extends Node {
-    value: string;
-}
