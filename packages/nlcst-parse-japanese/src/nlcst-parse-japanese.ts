@@ -316,7 +316,7 @@ function tokenize(
  * Japaneses text parser
  */
 export class JapaneseParser {
-    private tokenizer: { tokenize(text: string): any };
+    private tokenizer!: { tokenize(text: string): any };
 
     ready() {
         return getTokenizer().then((tokenizer: any) => {
