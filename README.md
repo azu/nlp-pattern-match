@@ -124,11 +124,13 @@ assert.strictEqual(output, "To delete the entire document, click Delete.");
 
 See [Releases page](https://github.com/azu/nlp-pattern-match/releases).
 
-## Running tests
+## Development
 
-Install devDependencies and Run `npm test`:
-
-    npm i -d && npm test
+    yarn
+    # setup pacakges
+    yarn bootstrap
+    # tet
+    yarn test
 
 ## Contributing
 

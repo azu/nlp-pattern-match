@@ -6,10 +6,13 @@
   "version": "1.0.0",
   "description": "Natural Language pattern matching library for JavaScript.",
   "main": "lib/nlp-pattern-match.js",
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "publish": "lerna publish --conventional-commits",
     "publish:beta": "lerna publish --npm-tag=beta --preid=beta",
-    "prepare": "lerna bootstrap",
+    "bootstrap": "lerna bootstrap && yarn run build",
     "test": "lerna run test",
     "build": "lerna run build",
     "precommit": "lint-staged",
@@ -34,9 +37,9 @@
   "homepage": "https://github.com/azu/nlp-pattern-match",
   "devDependencies": {
     "husky": "^0.14.3",
-    "lerna": "^2.4.0",
-    "lint-staged": "^4.2.3",
-    "prettier": "^1.7.4"
+    "lerna": "^2.11.0",
+    "lint-staged": "^7.2.0",
+    "prettier": "^1.13.5"
   },
   "prettier": {
     "printWidth": 120,

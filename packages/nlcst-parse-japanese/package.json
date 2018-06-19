@@ -36,14 +36,14 @@
   },
   "homepage": "https://github.com/azu/nlp-pattern-match/tree/master/packages/nlcst-parse-japanese/",
   "devDependencies": {
-    "@types/mocha": "^2.2.43",
-    "@types/node": "^8.0.33",
+    "@types/mocha": "^5.2.2",
+    "@types/node": "^10.3.4",
     "cross-env": "^5.0.5",
     "husky": "^0.14.3",
-    "lint-staged": "^4.2.3",
-    "mocha": "^4.0.1",
-    "prettier": "^1.7.4",
-    "ts-node": "^3.3.0",
+    "lint-staged": "^7.2.0",
+    "mocha": "^5.2.0",
+    "prettier": "^1.13.5",
+    "ts-node": "^6.1.1",
     "typescript": "^2.5.3"
   },
   "prettier": {
