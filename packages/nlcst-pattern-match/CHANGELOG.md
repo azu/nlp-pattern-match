@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.3.4"></a>
+## [1.3.4](https://github.com/azu/nlp-pattern-match/compare/nlcst-pattern-match@1.3.3...nlcst-pattern-match@1.3.4) (2018-06-19)
+
+
+### Bug Fixes
+
+* **nlcst-parse-japanese:** fix initializer error ([f185381](https://github.com/azu/nlp-pattern-match/commit/f185381))
+* **nlcst-pattern-match:** update --timeout to 5sec ([e1a5e86](https://github.com/azu/nlp-pattern-match/commit/e1a5e86))
+
+
+
+
 <a name="1.3.3"></a>
 ## [1.3.3](https://github.com/azu/nlp-pattern-match/compare/nlcst-pattern-match@1.3.2...nlcst-pattern-match@1.3.3) (2017-11-04)
 

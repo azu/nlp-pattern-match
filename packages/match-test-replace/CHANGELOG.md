@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.1.15"></a>
+## [1.1.15](https://github.com/azu/nlp-pattern-match/compare/match-test-replace@1.1.14...match-test-replace@1.1.15) (2018-06-19)
+
+
+### Bug Fixes
+
+* **nlcst-parse-japanese:** fix initializer error ([f185381](https://github.com/azu/nlp-pattern-match/commit/f185381))
+
+
+
+
 <a name="1.1.14"></a>
 ## [1.1.14](https://github.com/azu/nlp-pattern-match/compare/match-test-replace@1.1.13...match-test-replace@1.1.14) (2017-11-04)
 

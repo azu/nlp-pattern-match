@@ -11,7 +11,7 @@
     "src/"
   ],
   "name": "nlcst-types",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "NLCST types for TypeScript.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -36,7 +36,7 @@
   },
   "homepage": "https://github.com/azu/nlp-pattern-match/tree/master/packages/nlcst-types/",
   "dependencies": {
-    "unist-types": "^1.1.3"
+    "unist-types": "^1.1.4"
   },
   "devDependencies": {
     "@types/mocha": "^5.2.2",

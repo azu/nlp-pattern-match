@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.1.4"></a>
+## [1.1.4](https://github.com/azu/nlp-pattern-match/compare/unist-types@1.1.3...unist-types@1.1.4) (2018-06-19)
+
+
+### Bug Fixes
+
+* **nlcst-parse-japanese:** fix initializer error ([f185381](https://github.com/azu/nlp-pattern-match/commit/f185381))
+
+
+
+
 <a name="1.1.3"></a>
 ## [1.1.3](https://github.com/azu/nlp-pattern-match/compare/unist-types@1.1.2...unist-types@1.1.3) (2017-10-08)
 
