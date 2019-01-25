@@ -34,10 +34,10 @@ This library use [kuromoji.js](https://github.com/takuyaa/kuromoji.js#api "kurom
 
 ```ts
 import {JapaneseParser} from "nlcst-parse-japanese";
-const japaneseParse = new JapaneseParser();
+const japaneseParser = new JapaneseParser();
 const text = "ようこそ、日本へ。";
-japaneseParse.ready().then(() => {
-    const CST = japaneseParse.parse(text);
+japaneseParser.ready().then(() => {
+    const CST = japaneseParser.parse(text);
     console.log(CST)
 });
 /*
@@ -376,6 +376,14 @@ japaneseParse.ready().then(() => {
   }
 }
 */
+```
+
+## Options
+
+If you [have problem loading dictionaries](https://github.com/azu/nlp-pattern-match/issues/5), you can pass an accessible `dictPath` to the options:
+
+```js
+const japaneseParser = new JapaneseParser({ dicPath: '/dict' });
 ```
 
 ## Changelog
