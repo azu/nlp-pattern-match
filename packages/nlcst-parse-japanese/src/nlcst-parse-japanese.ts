@@ -317,9 +317,15 @@ function tokenize(
  */
 export class JapaneseParser {
     private tokenizer!: { tokenize(text: string): any };
+    private dicPath?: string;
 
-    ready() {
-        return getTokenizer().then((tokenizer: any) => {
+    constructor(options: { dicPath?: string } = {}) {
+        this.dicPath = options.dicPath;
+    }
+
+    public ready() {
+        const options = this.dicPath && { dicPath: this.dicPath };
+        return getTokenizer(options).then((tokenizer: any) => {
             this.tokenizer = tokenizer;
         });
     }
