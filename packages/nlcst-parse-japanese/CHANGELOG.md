@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.2.0"></a>
+# [1.2.0](https://github.com/azu/nlp-pattern-match/compare/nlcst-parse-japanese@1.1.3...nlcst-parse-japanese@1.2.0) (2019-01-25)
+
+
+### Features
+
+* pass `dictPath` option down to kuromojin ([#6](https://github.com/azu/nlp-pattern-match/issues/6)) ([e313046](https://github.com/azu/nlp-pattern-match/commit/e313046))
+
+
+
+
 <a name="1.1.3"></a>
 ## [1.1.3](https://github.com/azu/nlp-pattern-match/compare/nlcst-parse-japanese@1.1.2...nlcst-parse-japanese@1.1.3) (2018-06-19)
 

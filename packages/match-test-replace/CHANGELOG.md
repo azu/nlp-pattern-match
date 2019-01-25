@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.1.16"></a>
+## [1.1.16](https://github.com/azu/nlp-pattern-match/compare/match-test-replace@1.1.15...match-test-replace@1.1.16) (2019-01-25)
+
+
+
+
+**Note:** Version bump only for package match-test-replace
+
 <a name="1.1.15"></a>
 ## [1.1.15](https://github.com/azu/nlp-pattern-match/compare/match-test-replace@1.1.14...match-test-replace@1.1.15) (2018-06-19)
 
