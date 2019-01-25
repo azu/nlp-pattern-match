@@ -317,7 +317,7 @@ function tokenize(
  */
 export class JapaneseParser {
     private tokenizer!: { tokenize(text: string): any };
-    protected dicPath?: string;
+    private dicPath?: string;
 
     constructor(options: { dicPath?: string }) {
         this.dicPath = options.dicPath;
