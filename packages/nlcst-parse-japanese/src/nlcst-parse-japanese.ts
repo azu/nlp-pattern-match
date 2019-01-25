@@ -319,7 +319,7 @@ export class JapaneseParser {
     private tokenizer!: { tokenize(text: string): any };
     private dicPath?: string;
 
-    constructor(options: { dicPath?: string }) {
+    constructor(options: { dicPath?: string } = {}) {
         this.dicPath = options.dicPath;
     }
 
