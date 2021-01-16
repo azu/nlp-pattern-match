@@ -10,8 +10,11 @@
     "packages/*"
   ],
   "scripts": {
-    "publish": "lerna publish --conventional-commits",
-    "publish:beta": "lerna publish --npm-tag=beta --preid=beta",
+    "versionup": "lerna version --conventional-commits",
+    "versionup:patch": "lerna version patch --conventional-commits",
+    "versionup:minor": "lerna version minor --conventional-commits",
+    "versionup:major": "lerna version major --conventional-commits",
+    "release": "lerna publish from-package",
     "bootstrap": "lerna bootstrap && yarn run build",
     "test": "lerna run test",
     "build": "lerna run build",
@@ -48,8 +51,7 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,css}": [
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ]
   }
 }
