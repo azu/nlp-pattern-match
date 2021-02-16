@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.7](https://github.com/azu/nlp-pattern-match/compare/nlcst-pattern-match@1.3.6...nlcst-pattern-match@1.3.7) (2021-02-16)
+
+**Note:** Version bump only for package nlcst-pattern-match
+
+
+
+
+
 ## [1.3.6](https://github.com/azu/nlp-pattern-match/compare/nlcst-pattern-match@1.3.5...nlcst-pattern-match@1.3.6) (2021-01-16)
 
 

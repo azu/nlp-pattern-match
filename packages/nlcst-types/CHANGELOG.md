@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.4](https://github.com/azu/nlp-pattern-match/compare/nlcst-types@1.2.3...nlcst-types@1.2.4) (2021-02-16)
+
+
+### Bug Fixes
+
+* **nlcst-types:** isSymbol used wrong Symbol interface ([#10](https://github.com/azu/nlp-pattern-match/issues/10)) ([e24c57a](https://github.com/azu/nlp-pattern-match/commit/e24c57a8b42c66c1fcef40c57bea1269a3d8796a))
+
+
+
+
+
 ## [1.2.3](https://github.com/azu/nlp-pattern-match/compare/nlcst-types@1.2.2...nlcst-types@1.2.3) (2021-01-16)
 
 
