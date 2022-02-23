@@ -8,7 +8,7 @@ describe("nlcst-parse-english", () => {
             const CST = parser.parse("");
             assert.deepEqual(CST, {
                 type: "RootNode",
-                children: [],
+                children: []
             });
         });
         it("should return CST", () => {
@@ -33,14 +33,14 @@ describe("nlcst-parse-english", () => {
                                                     start: {
                                                         line: 1,
                                                         column: 1,
-                                                        offset: 0,
+                                                        offset: 0
                                                     },
                                                     end: {
                                                         line: 1,
                                                         column: 3,
-                                                        offset: 2,
-                                                    },
-                                                },
+                                                        offset: 2
+                                                    }
+                                                }
                                             },
                                             {
                                                 type: "PunctuationNode",
@@ -49,31 +49,31 @@ describe("nlcst-parse-english", () => {
                                                     start: {
                                                         line: 1,
                                                         column: 3,
-                                                        offset: 2,
+                                                        offset: 2
                                                     },
                                                     end: {
                                                         line: 1,
                                                         column: 4,
-                                                        offset: 3,
-                                                    },
-                                                },
-                                            },
+                                                        offset: 3
+                                                    }
+                                                }
+                                            }
                                         ],
                                         position: {
                                             start: {
                                                 line: 1,
                                                 column: 1,
-                                                offset: 0,
+                                                offset: 0
                                             },
                                             end: {
                                                 line: 1,
                                                 column: 4,
-                                                offset: 3,
-                                            },
+                                                offset: 3
+                                            }
                                         },
                                         data: {
-                                            pos: "NNP",
-                                        },
+                                            pos: "NNP"
+                                        }
                                     },
                                     {
                                         type: "WhiteSpaceNode",
@@ -82,14 +82,14 @@ describe("nlcst-parse-english", () => {
                                             start: {
                                                 line: 1,
                                                 column: 4,
-                                                offset: 3,
+                                                offset: 3
                                             },
                                             end: {
                                                 line: 1,
                                                 column: 5,
-                                                offset: 4,
-                                            },
-                                        },
+                                                offset: 4
+                                            }
+                                        }
                                     },
                                     {
                                         type: "WordNode",
@@ -101,31 +101,31 @@ describe("nlcst-parse-english", () => {
                                                     start: {
                                                         line: 1,
                                                         column: 5,
-                                                        offset: 4,
+                                                        offset: 4
                                                     },
                                                     end: {
                                                         line: 1,
                                                         column: 10,
-                                                        offset: 9,
-                                                    },
-                                                },
-                                            },
+                                                        offset: 9
+                                                    }
+                                                }
+                                            }
                                         ],
                                         position: {
                                             start: {
                                                 line: 1,
                                                 column: 5,
-                                                offset: 4,
+                                                offset: 4
                                             },
                                             end: {
                                                 line: 1,
                                                 column: 10,
-                                                offset: 9,
-                                            },
+                                                offset: 9
+                                            }
                                         },
                                         data: {
-                                            pos: "NNP",
-                                        },
+                                            pos: "NNP"
+                                        }
                                     },
                                     {
                                         type: "WhiteSpaceNode",
@@ -134,14 +134,14 @@ describe("nlcst-parse-english", () => {
                                             start: {
                                                 line: 1,
                                                 column: 10,
-                                                offset: 9,
+                                                offset: 9
                                             },
                                             end: {
                                                 line: 1,
                                                 column: 11,
-                                                offset: 10,
-                                            },
-                                        },
+                                                offset: 10
+                                            }
+                                        }
                                     },
                                     {
                                         type: "WordNode",
@@ -153,31 +153,31 @@ describe("nlcst-parse-english", () => {
                                                     start: {
                                                         line: 1,
                                                         column: 11,
-                                                        offset: 10,
+                                                        offset: 10
                                                     },
                                                     end: {
                                                         line: 1,
                                                         column: 16,
-                                                        offset: 15,
-                                                    },
-                                                },
-                                            },
+                                                        offset: 15
+                                                    }
+                                                }
+                                            }
                                         ],
                                         position: {
                                             start: {
                                                 line: 1,
                                                 column: 11,
-                                                offset: 10,
+                                                offset: 10
                                             },
                                             end: {
                                                 line: 1,
                                                 column: 16,
-                                                offset: 15,
-                                            },
+                                                offset: 15
+                                            }
                                         },
                                         data: {
-                                            pos: "NNP",
-                                        },
+                                            pos: "NNP"
+                                        }
                                     },
                                     {
                                         type: "PunctuationNode",
@@ -186,17 +186,17 @@ describe("nlcst-parse-english", () => {
                                             start: {
                                                 line: 1,
                                                 column: 16,
-                                                offset: 15,
+                                                offset: 15
                                             },
                                             end: {
                                                 line: 1,
                                                 column: 17,
-                                                offset: 16,
-                                            },
+                                                offset: 16
+                                            }
                                         },
                                         data: {
-                                            pos: ":",
-                                        },
+                                            pos: ":"
+                                        }
                                     },
                                     {
                                         type: "WhiteSpaceNode",
@@ -205,14 +205,14 @@ describe("nlcst-parse-english", () => {
                                             start: {
                                                 line: 1,
                                                 column: 17,
-                                                offset: 16,
+                                                offset: 16
                                             },
                                             end: {
                                                 line: 1,
                                                 column: 18,
-                                                offset: 17,
-                                            },
-                                        },
+                                                offset: 17
+                                            }
+                                        }
                                     },
                                     {
                                         type: "WordNode",
@@ -224,31 +224,31 @@ describe("nlcst-parse-english", () => {
                                                     start: {
                                                         line: 1,
                                                         column: 18,
-                                                        offset: 17,
+                                                        offset: 17
                                                     },
                                                     end: {
                                                         line: 1,
                                                         column: 19,
-                                                        offset: 18,
-                                                    },
-                                                },
-                                            },
+                                                        offset: 18
+                                                    }
+                                                }
+                                            }
                                         ],
                                         position: {
                                             start: {
                                                 line: 1,
                                                 column: 18,
-                                                offset: 17,
+                                                offset: 17
                                             },
                                             end: {
                                                 line: 1,
                                                 column: 19,
-                                                offset: 18,
-                                            },
+                                                offset: 18
+                                            }
                                         },
                                         data: {
-                                            pos: "DT",
-                                        },
+                                            pos: "DT"
+                                        }
                                     },
                                     {
                                         type: "WhiteSpaceNode",
@@ -257,14 +257,14 @@ describe("nlcst-parse-english", () => {
                                             start: {
                                                 line: 1,
                                                 column: 19,
-                                                offset: 18,
+                                                offset: 18
                                             },
                                             end: {
                                                 line: 1,
                                                 column: 20,
-                                                offset: 19,
-                                            },
-                                        },
+                                                offset: 19
+                                            }
+                                        }
                                     },
                                     {
                                         type: "WordNode",
@@ -276,31 +276,31 @@ describe("nlcst-parse-english", () => {
                                                     start: {
                                                         line: 1,
                                                         column: 20,
-                                                        offset: 19,
+                                                        offset: 19
                                                     },
                                                     end: {
                                                         line: 1,
                                                         column: 27,
-                                                        offset: 26,
-                                                    },
-                                                },
-                                            },
+                                                        offset: 26
+                                                    }
+                                                }
+                                            }
                                         ],
                                         position: {
                                             start: {
                                                 line: 1,
                                                 column: 20,
-                                                offset: 19,
+                                                offset: 19
                                             },
                                             end: {
                                                 line: 1,
                                                 column: 27,
-                                                offset: 26,
-                                            },
+                                                offset: 26
+                                            }
                                         },
                                         data: {
-                                            pos: "JJ",
-                                        },
+                                            pos: "JJ"
+                                        }
                                     },
                                     {
                                         type: "WhiteSpaceNode",
@@ -309,14 +309,14 @@ describe("nlcst-parse-english", () => {
                                             start: {
                                                 line: 1,
                                                 column: 27,
-                                                offset: 26,
+                                                offset: 26
                                             },
                                             end: {
                                                 line: 1,
                                                 column: 28,
-                                                offset: 27,
-                                            },
-                                        },
+                                                offset: 27
+                                            }
+                                        }
                                     },
                                     {
                                         type: "WordNode",
@@ -328,31 +328,31 @@ describe("nlcst-parse-english", () => {
                                                     start: {
                                                         line: 1,
                                                         column: 28,
-                                                        offset: 27,
+                                                        offset: 27
                                                     },
                                                     end: {
                                                         line: 1,
                                                         column: 31,
-                                                        offset: 30,
-                                                    },
-                                                },
-                                            },
+                                                        offset: 30
+                                                    }
+                                                }
+                                            }
                                         ],
                                         position: {
                                             start: {
                                                 line: 1,
                                                 column: 28,
-                                                offset: 27,
+                                                offset: 27
                                             },
                                             end: {
                                                 line: 1,
                                                 column: 31,
-                                                offset: 30,
-                                            },
+                                                offset: 30
+                                            }
                                         },
                                         data: {
-                                            pos: "CC",
-                                        },
+                                            pos: "CC"
+                                        }
                                     },
                                     {
                                         type: "WhiteSpaceNode",
@@ -361,14 +361,14 @@ describe("nlcst-parse-english", () => {
                                             start: {
                                                 line: 1,
                                                 column: 31,
-                                                offset: 30,
+                                                offset: 30
                                             },
                                             end: {
                                                 line: 1,
                                                 column: 32,
-                                                offset: 31,
-                                            },
-                                        },
+                                                offset: 31
+                                            }
+                                        }
                                     },
                                     {
                                         type: "WordNode",
@@ -380,31 +380,31 @@ describe("nlcst-parse-english", () => {
                                                     start: {
                                                         line: 1,
                                                         column: 32,
-                                                        offset: 31,
+                                                        offset: 31
                                                     },
                                                     end: {
                                                         line: 1,
                                                         column: 40,
-                                                        offset: 39,
-                                                    },
-                                                },
-                                            },
+                                                        offset: 39
+                                                    }
+                                                }
+                                            }
                                         ],
                                         position: {
                                             start: {
                                                 line: 1,
                                                 column: 32,
-                                                offset: 31,
+                                                offset: 31
                                             },
                                             end: {
                                                 line: 1,
                                                 column: 40,
-                                                offset: 39,
-                                            },
+                                                offset: 39
+                                            }
                                         },
                                         data: {
-                                            pos: "JJ",
-                                        },
+                                            pos: "JJ"
+                                        }
                                     },
                                     {
                                         type: "WhiteSpaceNode",
@@ -413,14 +413,14 @@ describe("nlcst-parse-english", () => {
                                             start: {
                                                 line: 1,
                                                 column: 40,
-                                                offset: 39,
+                                                offset: 39
                                             },
                                             end: {
                                                 line: 1,
                                                 column: 41,
-                                                offset: 40,
-                                            },
-                                        },
+                                                offset: 40
+                                            }
+                                        }
                                     },
                                     {
                                         type: "WordNode",
@@ -432,31 +432,31 @@ describe("nlcst-parse-english", () => {
                                                     start: {
                                                         line: 1,
                                                         column: 41,
-                                                        offset: 40,
+                                                        offset: 40
                                                     },
                                                     end: {
                                                         line: 1,
                                                         column: 45,
-                                                        offset: 44,
-                                                    },
-                                                },
-                                            },
+                                                        offset: 44
+                                                    }
+                                                }
+                                            }
                                         ],
                                         position: {
                                             start: {
                                                 line: 1,
                                                 column: 41,
-                                                offset: 40,
+                                                offset: 40
                                             },
                                             end: {
                                                 line: 1,
                                                 column: 45,
-                                                offset: 44,
-                                            },
+                                                offset: 44
+                                            }
                                         },
                                         data: {
-                                            pos: "NNP",
-                                        },
+                                            pos: "NNP"
+                                        }
                                     },
                                     {
                                         type: "WhiteSpaceNode",
@@ -465,14 +465,14 @@ describe("nlcst-parse-english", () => {
                                             start: {
                                                 line: 1,
                                                 column: 45,
-                                                offset: 44,
+                                                offset: 44
                                             },
                                             end: {
                                                 line: 1,
                                                 column: 46,
-                                                offset: 45,
-                                            },
-                                        },
+                                                offset: 45
+                                            }
+                                        }
                                     },
                                     {
                                         type: "WordNode",
@@ -484,31 +484,31 @@ describe("nlcst-parse-english", () => {
                                                     start: {
                                                         line: 1,
                                                         column: 46,
-                                                        offset: 45,
+                                                        offset: 45
                                                     },
                                                     end: {
                                                         line: 1,
                                                         column: 48,
-                                                        offset: 47,
-                                                    },
-                                                },
-                                            },
+                                                        offset: 47
+                                                    }
+                                                }
+                                            }
                                         ],
                                         position: {
                                             start: {
                                                 line: 1,
                                                 column: 46,
-                                                offset: 45,
+                                                offset: 45
                                             },
                                             end: {
                                                 line: 1,
                                                 column: 48,
-                                                offset: 47,
-                                            },
+                                                offset: 47
+                                            }
                                         },
                                         data: {
-                                            pos: "IN",
-                                        },
+                                            pos: "IN"
+                                        }
                                     },
                                     {
                                         type: "WhiteSpaceNode",
@@ -517,14 +517,14 @@ describe("nlcst-parse-english", () => {
                                             start: {
                                                 line: 1,
                                                 column: 48,
-                                                offset: 47,
+                                                offset: 47
                                             },
                                             end: {
                                                 line: 1,
                                                 column: 49,
-                                                offset: 48,
-                                            },
-                                        },
+                                                offset: 48
+                                            }
+                                        }
                                     },
                                     {
                                         type: "WordNode",
@@ -536,31 +536,31 @@ describe("nlcst-parse-english", () => {
                                                     start: {
                                                         line: 1,
                                                         column: 49,
-                                                        offset: 48,
+                                                        offset: 48
                                                     },
                                                     end: {
                                                         line: 1,
                                                         column: 55,
-                                                        offset: 54,
-                                                    },
-                                                },
-                                            },
+                                                        offset: 54
+                                                    }
+                                                }
+                                            }
                                         ],
                                         position: {
                                             start: {
                                                 line: 1,
                                                 column: 49,
-                                                offset: 48,
+                                                offset: 48
                                             },
                                             end: {
                                                 line: 1,
                                                 column: 55,
-                                                offset: 54,
-                                            },
+                                                offset: 54
+                                            }
                                         },
                                         data: {
-                                            pos: "NNP",
-                                        },
+                                            pos: "NNP"
+                                        }
                                     },
                                     {
                                         type: "WhiteSpaceNode",
@@ -569,14 +569,14 @@ describe("nlcst-parse-english", () => {
                                             start: {
                                                 line: 1,
                                                 column: 55,
-                                                offset: 54,
+                                                offset: 54
                                             },
                                             end: {
                                                 line: 1,
                                                 column: 56,
-                                                offset: 55,
-                                            },
-                                        },
+                                                offset: 55
+                                            }
+                                        }
                                     },
                                     {
                                         type: "WordNode",
@@ -588,31 +588,31 @@ describe("nlcst-parse-english", () => {
                                                     start: {
                                                         line: 1,
                                                         column: 56,
-                                                        offset: 55,
+                                                        offset: 55
                                                     },
                                                     end: {
                                                         line: 1,
                                                         column: 62,
-                                                        offset: 61,
-                                                    },
-                                                },
-                                            },
+                                                        offset: 61
+                                                    }
+                                                }
+                                            }
                                         ],
                                         position: {
                                             start: {
                                                 line: 1,
                                                 column: 56,
-                                                offset: 55,
+                                                offset: 55
                                             },
                                             end: {
                                                 line: 1,
                                                 column: 62,
-                                                offset: 61,
-                                            },
+                                                offset: 61
+                                            }
                                         },
                                         data: {
-                                            pos: "NN",
-                                        },
+                                            pos: "NN"
+                                        }
                                     },
                                     {
                                         type: "PunctuationNode",
@@ -621,59 +621,59 @@ describe("nlcst-parse-english", () => {
                                             start: {
                                                 line: 1,
                                                 column: 62,
-                                                offset: 61,
+                                                offset: 61
                                             },
                                             end: {
                                                 line: 1,
                                                 column: 63,
-                                                offset: 62,
-                                            },
+                                                offset: 62
+                                            }
                                         },
                                         data: {
-                                            pos: ".",
-                                        },
-                                    },
+                                            pos: "."
+                                        }
+                                    }
                                 ],
                                 position: {
                                     start: {
                                         line: 1,
                                         column: 1,
-                                        offset: 0,
+                                        offset: 0
                                     },
                                     end: {
                                         line: 1,
                                         column: 63,
-                                        offset: 62,
-                                    },
-                                },
-                            },
+                                        offset: 62
+                                    }
+                                }
+                            }
                         ],
                         position: {
                             start: {
                                 line: 1,
                                 column: 1,
-                                offset: 0,
+                                offset: 0
                             },
                             end: {
                                 line: 1,
                                 column: 63,
-                                offset: 62,
-                            },
-                        },
-                    },
+                                offset: 62
+                            }
+                        }
+                    }
                 ],
                 position: {
                     start: {
                         line: 1,
                         column: 1,
-                        offset: 0,
+                        offset: 0
                     },
                     end: {
                         line: 1,
                         column: 63,
-                        offset: 62,
-                    },
-                },
+                        offset: 62
+                    }
+                }
             });
         });
     });

@@ -81,7 +81,7 @@ export class EnglishParser {
             const tags = new Tag(strings.map((word) => word.slice(0, 40))).initial().smooth().tags;
             sentenceChildren.forEach((node, i) => {
                 node.data = {
-                    pos: tags[i],
+                    pos: tags[i]
                 };
             });
         });

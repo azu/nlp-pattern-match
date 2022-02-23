@@ -13,7 +13,7 @@ describe("testMatchReplace", () => {
                 replace: (args) => {
                     replaceArgsCaptures.push(args);
                     return "";
-                },
+                }
             });
             assert.ok(res.ok === true, "should be ok: true");
             assert.strictEqual(replaceArgsCaptures.length, 1, "replace should be called 1");
@@ -34,7 +34,7 @@ describe("testMatchReplace", () => {
                 test: (args: PatternMatchDictArgs) => {
                     testArgsCaptures.push(args);
                     return true;
-                },
+                }
             });
             assert.ok(res.ok === true, "should be ok: true");
             assert.strictEqual(testArgsCaptures.length, 1, "replace should be called 1");
@@ -52,7 +52,7 @@ describe("testMatchReplace", () => {
             const text = "12345asdfghjkl";
             const res = matchTestReplace(text, {
                 pattern: /\w+/,
-                replace: ({ match }) => match.toUpperCase(),
+                replace: ({ match }) => match.toUpperCase()
             });
             const replacedText = replaceAll(text, res.results).output;
             assert.strictEqual(replacedText, "12345ASDFGHJKL");
@@ -63,7 +63,7 @@ describe("testMatchReplace", () => {
                 pattern: /(\d)/g,
                 replace: ({ captures }) => {
                     return `${captures[0]}_`;
-                },
+                }
             });
             assert.strictEqual(res.results.length, 5);
             const replacedText = replaceAll(text, res.results).output;
@@ -75,7 +75,7 @@ describe("testMatchReplace", () => {
             const text = "Hello";
             const res = matchTestReplace(text, {
                 pattern: /no match/,
-                replace: () => "Hello",
+                replace: () => "Hello"
             });
             assert.ok(res.ok === false, "should be ok: false");
             assert.strictEqual(res.results.length, 0, "no results");
@@ -84,7 +84,7 @@ describe("testMatchReplace", () => {
             const text = "Hello";
             const res = matchTestReplace(text, {
                 pattern: /hello/i,
-                replace: () => "Hello",
+                replace: () => "Hello"
             });
             assert.ok(res.ok, "should be ok: true");
             assert.strictEqual(res.results.length, 1, "1 replace");
@@ -96,7 +96,7 @@ describe("testMatchReplace", () => {
                 replace: () => "after",
                 test: () => {
                     return false;
-                },
+                }
             });
             assert.ok(res.ok === true, "should be ok: false");
             assert.strictEqual(res.results.length, 0, "no replace");
@@ -108,7 +108,7 @@ describe("testMatchReplace", () => {
                 replace: () => "WebKit",
                 test: ({ captures }) => {
                     return captures[0] !== "node-";
-                },
+                }
             });
             assert.ok(res.ok === true, "should be ok: false");
             assert.strictEqual(res.results.length, 1, "no replace");
@@ -131,11 +131,11 @@ describe("testMatchReplace", () => {
                         type: "WordNode",
                         data: {
                             // Verb
-                            pos: /^VB/,
-                        },
+                            pos: /^VB/
+                        }
                     }}`;
                     return matcher.test(all, pattern);
-                },
+                }
             });
             assert.ok(res.ok === true, "should be ok: true");
             const output = replaceAll(text, res.results).output;

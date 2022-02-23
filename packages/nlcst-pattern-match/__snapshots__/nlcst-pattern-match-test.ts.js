@@ -9,31 +9,31 @@ exports["nlcst-pattern-match parse-replace 1"] = [
                     start: {
                         line: 1,
                         column: 1,
-                        offset: 0,
+                        offset: 0
                     },
                     end: {
                         line: 1,
                         column: 5,
-                        offset: 4,
-                    },
-                },
-            },
+                        offset: 4
+                    }
+                }
+            }
         ],
         position: {
             start: {
                 line: 1,
                 column: 1,
-                offset: 0,
+                offset: 0
             },
             end: {
                 line: 1,
                 column: 5,
-                offset: 4,
-            },
+                offset: 4
+            }
         },
         data: {
-            pos: "DT",
-        },
+            pos: "DT"
+        }
     },
     {
         type: "WhiteSpaceNode",
@@ -42,14 +42,14 @@ exports["nlcst-pattern-match parse-replace 1"] = [
             start: {
                 line: 1,
                 column: 5,
-                offset: 4,
+                offset: 4
             },
             end: {
                 line: 1,
                 column: 6,
-                offset: 5,
-            },
-        },
+                offset: 5
+            }
+        }
     },
     {
         type: "WordNode",
@@ -61,31 +61,31 @@ exports["nlcst-pattern-match parse-replace 1"] = [
                     start: {
                         line: 1,
                         column: 6,
-                        offset: 5,
+                        offset: 5
                     },
                     end: {
                         line: 1,
                         column: 8,
-                        offset: 7,
-                    },
-                },
-            },
+                        offset: 7
+                    }
+                }
+            }
         ],
         position: {
             start: {
                 line: 1,
                 column: 6,
-                offset: 5,
+                offset: 5
             },
             end: {
                 line: 1,
                 column: 8,
-                offset: 7,
-            },
+                offset: 7
+            }
         },
         data: {
-            pos: "VBZ",
-        },
+            pos: "VBZ"
+        }
     },
     {
         type: "WhiteSpaceNode",
@@ -94,14 +94,14 @@ exports["nlcst-pattern-match parse-replace 1"] = [
             start: {
                 line: 1,
                 column: 8,
-                offset: 7,
+                offset: 7
             },
             end: {
                 line: 1,
                 column: 9,
-                offset: 8,
-            },
-        },
+                offset: 8
+            }
+        }
     },
     {
         type: "WordNode",
@@ -109,14 +109,14 @@ exports["nlcst-pattern-match parse-replace 1"] = [
             start: {
                 line: 1,
                 column: 9,
-                offset: 8,
+                offset: 8
             },
             end: {
                 line: 1,
                 column: 14,
-                offset: 13,
-            },
-        },
+                offset: 13
+            }
+        }
     },
     {
         type: "PunctuationNode",
@@ -125,18 +125,18 @@ exports["nlcst-pattern-match parse-replace 1"] = [
             start: {
                 line: 1,
                 column: 14,
-                offset: 13,
+                offset: 13
             },
             end: {
                 line: 1,
                 column: 15,
-                offset: 14,
-            },
+                offset: 14
+            }
         },
         data: {
-            pos: ".",
-        },
-    },
+            pos: "."
+        }
+    }
 ];
 
 exports["nlcst-pattern-match #match match japanese parser 1"] = [
@@ -144,20 +144,20 @@ exports["nlcst-pattern-match #match match japanese parser 1"] = [
         type: "WordNode",
         data: {
             pos: "\u52D5\u8A5E",
-            pos_detail_1: "\u81EA\u7ACB",
+            pos_detail_1: "\u81EA\u7ACB"
         },
         position: {
             start: {
                 line: 1,
                 column: 1,
-                offset: 0,
+                offset: 0
             },
             end: {
                 line: 1,
                 column: 6,
-                offset: 5,
-            },
-        },
+                offset: 5
+            }
+        }
     },
     {
         type: "WordNode",
@@ -169,13 +169,13 @@ exports["nlcst-pattern-match #match match japanese parser 1"] = [
                     start: {
                         line: 1,
                         column: 6,
-                        offset: 5,
+                        offset: 5
                     },
                     end: {
                         line: 1,
                         column: 8,
-                        offset: 7,
-                    },
+                        offset: 7
+                    }
                 },
                 data: {
                     word_id: 92960,
@@ -189,21 +189,21 @@ exports["nlcst-pattern-match #match match japanese parser 1"] = [
                     conjugated_form: "*",
                     basic_form: "\u305F\u308A",
                     reading: "\u30BF\u30EA",
-                    pronunciation: "\u30BF\u30EA",
-                },
-            },
+                    pronunciation: "\u30BF\u30EA"
+                }
+            }
         ],
         position: {
             start: {
                 line: 1,
                 column: 6,
-                offset: 5,
+                offset: 5
             },
             end: {
                 line: 1,
                 column: 8,
-                offset: 7,
-            },
+                offset: 7
+            }
         },
         data: {
             word_id: 92960,
@@ -217,9 +217,9 @@ exports["nlcst-pattern-match #match match japanese parser 1"] = [
             conjugated_form: "*",
             basic_form: "\u305F\u308A",
             reading: "\u30BF\u30EA",
-            pronunciation: "\u30BF\u30EA",
-        },
-    },
+            pronunciation: "\u30BF\u30EA"
+        }
+    }
 ];
 
 exports["nlcst-pattern-match #match should return MatchResult[] 1"] = {
@@ -228,14 +228,14 @@ exports["nlcst-pattern-match #match should return MatchResult[] 1"] = {
         start: {
             line: 1,
             column: 1,
-            offset: 0,
+            offset: 0
         },
         end: {
             line: 1,
             column: 13,
-            offset: 12,
+            offset: 12
         },
-        index: 0,
+        index: 0
     },
     nodeList: [
         {
@@ -248,31 +248,31 @@ exports["nlcst-pattern-match #match should return MatchResult[] 1"] = {
                         start: {
                             line: 1,
                             column: 1,
-                            offset: 0,
+                            offset: 0
                         },
                         end: {
                             line: 1,
                             column: 4,
-                            offset: 3,
-                        },
-                    },
-                },
+                            offset: 3
+                        }
+                    }
+                }
             ],
             position: {
                 start: {
                     line: 1,
                     column: 1,
-                    offset: 0,
+                    offset: 0
                 },
                 end: {
                     line: 1,
                     column: 4,
-                    offset: 3,
-                },
+                    offset: 3
+                }
             },
             data: {
-                pos: "NNP",
-            },
+                pos: "NNP"
+            }
         },
         {
             type: "WhiteSpaceNode",
@@ -281,14 +281,14 @@ exports["nlcst-pattern-match #match should return MatchResult[] 1"] = {
                 start: {
                     line: 1,
                     column: 4,
-                    offset: 3,
+                    offset: 3
                 },
                 end: {
                     line: 1,
                     column: 5,
-                    offset: 4,
-                },
-            },
+                    offset: 4
+                }
+            }
         },
         {
             type: "WordNode",
@@ -300,31 +300,31 @@ exports["nlcst-pattern-match #match should return MatchResult[] 1"] = {
                         start: {
                             line: 1,
                             column: 5,
-                            offset: 4,
+                            offset: 4
                         },
                         end: {
                             line: 1,
                             column: 9,
-                            offset: 8,
-                        },
-                    },
-                },
+                            offset: 8
+                        }
+                    }
+                }
             ],
             position: {
                 start: {
                     line: 1,
                     column: 5,
-                    offset: 4,
+                    offset: 4
                 },
                 end: {
                     line: 1,
                     column: 9,
-                    offset: 8,
-                },
+                    offset: 8
+                }
             },
             data: {
-                pos: "VBZ",
-            },
+                pos: "VBZ"
+            }
         },
         {
             type: "WhiteSpaceNode",
@@ -333,14 +333,14 @@ exports["nlcst-pattern-match #match should return MatchResult[] 1"] = {
                 start: {
                     line: 1,
                     column: 9,
-                    offset: 8,
+                    offset: 8
                 },
                 end: {
                     line: 1,
                     column: 10,
-                    offset: 9,
-                },
-            },
+                    offset: 9
+                }
+            }
         },
         {
             type: "WordNode",
@@ -352,31 +352,31 @@ exports["nlcst-pattern-match #match should return MatchResult[] 1"] = {
                         start: {
                             line: 1,
                             column: 10,
-                            offset: 9,
+                            offset: 9
                         },
                         end: {
                             line: 1,
                             column: 12,
-                            offset: 11,
-                        },
-                    },
-                },
+                            offset: 11
+                        }
+                    }
+                }
             ],
             position: {
                 start: {
                     line: 1,
                     column: 10,
-                    offset: 9,
+                    offset: 9
                 },
                 end: {
                     line: 1,
                     column: 12,
-                    offset: 11,
-                },
+                    offset: 11
+                }
             },
             data: {
-                pos: "PRP",
-            },
+                pos: "PRP"
+            }
         },
         {
             type: "PunctuationNode",
@@ -385,19 +385,19 @@ exports["nlcst-pattern-match #match should return MatchResult[] 1"] = {
                 start: {
                     line: 1,
                     column: 12,
-                    offset: 11,
+                    offset: 11
                 },
                 end: {
                     line: 1,
                     column: 13,
-                    offset: 12,
-                },
+                    offset: 12
+                }
             },
             data: {
-                pos: ".",
-            },
-        },
-    ],
+                pos: "."
+            }
+        }
+    ]
 };
 
 exports["nlcst-pattern-match #matchCST should return MatchCSTResult[] 1"] = {
@@ -405,14 +405,14 @@ exports["nlcst-pattern-match #matchCST should return MatchCSTResult[] 1"] = {
         start: {
             line: 1,
             column: 1,
-            offset: 0,
+            offset: 0
         },
         end: {
             line: 1,
             column: 13,
-            offset: 12,
+            offset: 12
         },
-        index: 0,
+        index: 0
     },
     nodeList: [
         {
@@ -425,31 +425,31 @@ exports["nlcst-pattern-match #matchCST should return MatchCSTResult[] 1"] = {
                         start: {
                             line: 1,
                             column: 1,
-                            offset: 0,
+                            offset: 0
                         },
                         end: {
                             line: 1,
                             column: 4,
-                            offset: 3,
-                        },
-                    },
-                },
+                            offset: 3
+                        }
+                    }
+                }
             ],
             position: {
                 start: {
                     line: 1,
                     column: 1,
-                    offset: 0,
+                    offset: 0
                 },
                 end: {
                     line: 1,
                     column: 4,
-                    offset: 3,
-                },
+                    offset: 3
+                }
             },
             data: {
-                pos: "NNP",
-            },
+                pos: "NNP"
+            }
         },
         {
             type: "WhiteSpaceNode",
@@ -458,14 +458,14 @@ exports["nlcst-pattern-match #matchCST should return MatchCSTResult[] 1"] = {
                 start: {
                     line: 1,
                     column: 4,
-                    offset: 3,
+                    offset: 3
                 },
                 end: {
                     line: 1,
                     column: 5,
-                    offset: 4,
-                },
-            },
+                    offset: 4
+                }
+            }
         },
         {
             type: "WordNode",
@@ -477,31 +477,31 @@ exports["nlcst-pattern-match #matchCST should return MatchCSTResult[] 1"] = {
                         start: {
                             line: 1,
                             column: 5,
-                            offset: 4,
+                            offset: 4
                         },
                         end: {
                             line: 1,
                             column: 9,
-                            offset: 8,
-                        },
-                    },
-                },
+                            offset: 8
+                        }
+                    }
+                }
             ],
             position: {
                 start: {
                     line: 1,
                     column: 5,
-                    offset: 4,
+                    offset: 4
                 },
                 end: {
                     line: 1,
                     column: 9,
-                    offset: 8,
-                },
+                    offset: 8
+                }
             },
             data: {
-                pos: "VBZ",
-            },
+                pos: "VBZ"
+            }
         },
         {
             type: "WhiteSpaceNode",
@@ -510,14 +510,14 @@ exports["nlcst-pattern-match #matchCST should return MatchCSTResult[] 1"] = {
                 start: {
                     line: 1,
                     column: 9,
-                    offset: 8,
+                    offset: 8
                 },
                 end: {
                     line: 1,
                     column: 10,
-                    offset: 9,
-                },
-            },
+                    offset: 9
+                }
+            }
         },
         {
             type: "WordNode",
@@ -529,31 +529,31 @@ exports["nlcst-pattern-match #matchCST should return MatchCSTResult[] 1"] = {
                         start: {
                             line: 1,
                             column: 10,
-                            offset: 9,
+                            offset: 9
                         },
                         end: {
                             line: 1,
                             column: 12,
-                            offset: 11,
-                        },
-                    },
-                },
+                            offset: 11
+                        }
+                    }
+                }
             ],
             position: {
                 start: {
                     line: 1,
                     column: 10,
-                    offset: 9,
+                    offset: 9
                 },
                 end: {
                     line: 1,
                     column: 12,
-                    offset: 11,
-                },
+                    offset: 11
+                }
             },
             data: {
-                pos: "PRP",
-            },
+                pos: "PRP"
+            }
         },
         {
             type: "PunctuationNode",
@@ -562,17 +562,17 @@ exports["nlcst-pattern-match #matchCST should return MatchCSTResult[] 1"] = {
                 start: {
                     line: 1,
                     column: 12,
-                    offset: 11,
+                    offset: 11
                 },
                 end: {
                     line: 1,
                     column: 13,
-                    offset: 12,
-                },
+                    offset: 12
+                }
             },
             data: {
-                pos: ".",
-            },
-        },
-    ],
+                pos: "."
+            }
+        }
+    ]
 };

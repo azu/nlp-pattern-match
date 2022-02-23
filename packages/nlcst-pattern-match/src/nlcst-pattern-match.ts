@@ -47,13 +47,13 @@ export class PatternMatcher {
                 return {
                     text: "",
                     position: node.position,
-                    nodeList: node.nodeList,
+                    nodeList: node.nodeList
                 };
             }
             return {
                 text: text.slice(firstNode.position!.start.offset, lastNode.position!.end.offset),
                 position: node.position,
-                nodeList: node.nodeList,
+                nodeList: node.nodeList
             };
         });
     }
@@ -71,7 +71,7 @@ export class PatternMatcher {
                     allResults = allResults.concat(results);
                     this.skip();
                 }
-            },
+            }
         });
         return allResults;
     }
@@ -93,7 +93,7 @@ export class PatternMatcher {
             replaceHolders.push({
                 start: result.length,
                 length: length,
-                value,
+                value
             });
             if (isPunctuation(value)) {
                 return new Array(length + 1).join(".");
@@ -140,10 +140,10 @@ export class PatternMatcher {
                         const actualNode = parent.children[indexOf];
                         const placeholderNode = replaceHolder.value;
                         parent.children[indexOf] = Object.assign({}, placeholderNode, {
-                            position: actualNode.position,
+                            position: actualNode.position
                         });
                     });
-            },
+            }
         });
 
         const section = AST.children[0].children[0];

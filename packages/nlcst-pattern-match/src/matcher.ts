@@ -160,9 +160,9 @@ export function match(actualNodes: Node[], expectedPatterns: TagPatterns): Match
                 position: {
                     start: firstNode.position.start,
                     end: lastNode.position.end,
-                    index: firstNode.position.start.offset,
+                    index: firstNode.position.start.offset
                 },
-                nodeList: tokens,
+                nodeList: tokens
             });
         }
     }
