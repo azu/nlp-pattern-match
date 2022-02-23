@@ -39,12 +39,12 @@ export function matchValue(actualValue: any, expectedValue: any): boolean {
         return expectedValue.test(actualValue);
     } else if (Array.isArray(expectedValue)) {
         // value: ["a", "b"]
-        return expectedValue.some(value => {
+        return expectedValue.some((value) => {
             return matchValue(actualValue, value);
         });
     } else if (typeof expectedValue === "object") {
         // data object
-        return Object.keys(expectedValue).every(key => {
+        return Object.keys(expectedValue).every((key) => {
             return matchValue(actualValue[key], expectedValue[key]);
         });
     }
@@ -75,7 +75,7 @@ export function matchNode(actualNode: Node, expectedNode: TagNode): boolean {
             return every;
         } else {
             const expectedValues = Array.isArray(expectedProp) ? expectedProp : [expectedProp];
-            let b = expectedValues.some(expectedValue => {
+            let b = expectedValues.some((expectedValue) => {
                 return matchValue(actualProp, expectedValue);
             });
             debug("RETURN", b);
@@ -117,7 +117,7 @@ export function match(actualNodes: Node[], expectedPatterns: TagPatterns): Match
                 const restChildren = afterAllChildren.slice(1);
                 // fist token always added because already matchResult.
                 matchTokens.push(afterAllChildren[0]);
-                restChildren.forEach(restChild => {
+                restChildren.forEach((restChild) => {
                     const nodeOffset = restChild.position!.end.offset!;
                     if (startIndex <= nodeOffset && nodeOffset <= endIndex) {
                         matchTokens.push(restChild);
@@ -160,9 +160,9 @@ export function match(actualNodes: Node[], expectedPatterns: TagPatterns): Match
                 position: {
                     start: firstNode.position.start,
                     end: lastNode.position.end,
-                    index: firstNode.position.start.offset
+                    index: firstNode.position.start.offset,
                 },
-                nodeList: tokens
+                nodeList: tokens,
             });
         }
     }

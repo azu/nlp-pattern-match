@@ -59,7 +59,7 @@ const applyFixes = (text: string, messages: MatchTestReplaceReturnResult[]) => {
         // split into array of characters for easier manipulation
         const chars = text.split("");
 
-        fixes.forEach(problem => {
+        fixes.forEach((problem) => {
             // pickup fix range
             let start = problem.index;
             const end = start + problem.match.length;
@@ -81,14 +81,14 @@ const applyFixes = (text: string, messages: MatchTestReplaceReturnResult[]) => {
             fixed: true,
             messages: cloneMessages, // have order
             remainingMessages: remainingMessages, // have not order
-            output: prefix + chars.join("")
+            output: prefix + chars.join(""),
         };
     } else {
         return {
             fixed: false,
             messages: cloneMessages,
             remainingMessages,
-            output: prefix + text
+            output: prefix + text,
         };
     }
 };
@@ -99,7 +99,7 @@ export const replaceAll = (text: string, results: MatchTestReplaceReturnResult[]
     const fixes = applyFixes(text, results);
     return {
         ok: fixes.fixed,
-        output: fixes.output
+        output: fixes.output,
     };
 };
 
@@ -111,7 +111,7 @@ export const matchTestReplace = (text: string, dict: TestMatchReplaceReturnDict)
     if (!dict.pattern.test(text)) {
         return {
             ok: false,
-            results: []
+            results: [],
         };
     }
 
@@ -128,7 +128,7 @@ export const matchTestReplace = (text: string, dict: TestMatchReplaceReturnDict)
             index,
             match,
             captures,
-            all
+            all,
         };
         if (typeof dict.test === "function") {
             isReplaceOK = dict.test(dictArgs);
@@ -140,7 +140,7 @@ export const matchTestReplace = (text: string, dict: TestMatchReplaceReturnDict)
                 index,
                 match: match,
                 replace: replace,
-                message: message
+                message: message,
             });
             // no replace
             if (replace === undefined) {
@@ -154,6 +154,6 @@ export const matchTestReplace = (text: string, dict: TestMatchReplaceReturnDict)
     });
     return {
         ok: true,
-        results
+        results,
     };
 };

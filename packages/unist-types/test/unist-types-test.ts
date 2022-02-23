@@ -9,8 +9,8 @@ describe("unist-types", () => {
                 {
                     type: "String",
                     data: {
-                        myData: "string"
-                    }
+                        myData: "string",
+                    },
                 },
                 {
                     type: "String-position",
@@ -18,17 +18,17 @@ describe("unist-types", () => {
                         start: {
                             line: 1,
                             column: 1,
-                            offset: 0
+                            offset: 0,
                         },
                         end: {
                             line: 1,
                             column: 2,
-                            offset: 1
+                            offset: 1,
                         },
-                        index: 1
-                    }
-                }
-            ]
+                        index: 1,
+                    },
+                },
+            ],
         };
         assert.ok(AST.children[0].type !== undefined);
         assert.ok(AST.children[0].data !== undefined);

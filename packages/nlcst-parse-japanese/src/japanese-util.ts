@@ -32,7 +32,7 @@ export function toWideSymbolForJapanese(str: string): string {
         "｢": "「",
         "｣": "」",
         "､": "、",
-        "･": "・"
+        "･": "・",
     });
     return str;
 }

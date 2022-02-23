@@ -72,16 +72,16 @@ export class EnglishParser {
 
     parse(text: string): Root {
         const NLCST = this.parser.parse(text);
-        visit(NLCST, "SentenceNode", function(node: Sentence) {
-            const sentenceChildren = node.children.filter(c =>
+        visit(NLCST, "SentenceNode", function (node: Sentence) {
+            const sentenceChildren = node.children.filter((c) =>
                 ["WordNode", "PunctuationNode", "SymbolNode"].includes(c.type)
             );
-            const strings = sentenceChildren.map(c => toString(c));
+            const strings = sentenceChildren.map((c) => toString(c));
             // HACK: Truncate any word longer than 40 chars as en-pos will not be performant.
-            const tags = new Tag(strings.map(word => word.slice(0, 40))).initial().smooth().tags;
+            const tags = new Tag(strings.map((word) => word.slice(0, 40))).initial().smooth().tags;
             sentenceChildren.forEach((node, i) => {
                 node.data = {
-                    pos: tags[i]
+                    pos: tags[i],
                 };
             });
         });

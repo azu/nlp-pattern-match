@@ -10,14 +10,14 @@ import {
     isText,
     isTextNode,
     isWhiteSpace,
-    isWord
+    isWord,
 } from "../src/type-guard";
 
 describe("nlcst", () => {
     describe("Root", () => {
         it("should detect by typeGuard function", () => {
             const node = {
-                type: "RootNode"
+                type: "RootNode",
             };
             assert.ok(isRoot(node), "node should be Root");
         });
@@ -25,7 +25,7 @@ describe("nlcst", () => {
     describe("Paragraph", () => {
         it("should detect by typeGuard function", () => {
             const node = {
-                type: "ParagraphNode"
+                type: "ParagraphNode",
             };
             assert.ok(isParagraph(node), "node should be Paragraph");
         });
@@ -33,7 +33,7 @@ describe("nlcst", () => {
     describe("Sentence", () => {
         it("should detect by typeGuard function", () => {
             const node = {
-                type: "SentenceNode"
+                type: "SentenceNode",
             };
             assert.ok(isSentence(node), "node should be Sentence");
         });
@@ -41,7 +41,7 @@ describe("nlcst", () => {
     describe("Word", () => {
         it("should detect by typeGuard function", () => {
             const node = {
-                type: "WordNode"
+                type: "WordNode",
             };
             assert.ok(isWord(node), "node should be Word");
         });
@@ -49,7 +49,7 @@ describe("nlcst", () => {
     describe("Text", () => {
         it("should detect by typeGuard function", () => {
             const node = {
-                type: "TextNode"
+                type: "TextNode",
             };
             assert.ok(isText(node), "node should be Text");
         });
@@ -57,7 +57,7 @@ describe("nlcst", () => {
     describe("Symbol", () => {
         it("should detect by typeGuard function", () => {
             const node = {
-                type: "SymbolNode"
+                type: "SymbolNode",
             };
             assert.ok(isSymbol(node), "node should be Symbol");
         });
@@ -65,7 +65,7 @@ describe("nlcst", () => {
     describe("Punctuation", () => {
         it("should detect by typeGuard function", () => {
             const node = {
-                type: "PunctuationNode"
+                type: "PunctuationNode",
             };
             assert.ok(isPunctuation(node), "node should be Punctuation");
         });
@@ -73,7 +73,7 @@ describe("nlcst", () => {
     describe("WhiteSpace", () => {
         it("should detect by typeGuard function", () => {
             const node = {
-                type: "WhiteSpaceNode"
+                type: "WhiteSpaceNode",
             };
             assert.ok(isWhiteSpace(node), "node should be WhiteSpace");
         });
@@ -81,7 +81,7 @@ describe("nlcst", () => {
     describe("Source", () => {
         it("should detect by typeGuard function", () => {
             const node = {
-                type: "SourceNode"
+                type: "SourceNode",
             };
             assert.ok(isSource(node), "node should be Source");
         });
@@ -89,7 +89,7 @@ describe("nlcst", () => {
     describe("TextNode", () => {
         it("should detect by typeGuard function", () => {
             const node = {
-                type: "TextNode"
+                type: "TextNode",
             };
             assert.ok(isTextNode(node), "node should be TextNode");
         });

@@ -10,5 +10,5 @@ export {
     isPunctuation,
     isWhiteSpace,
     isSource,
-    isTextNode
+    isTextNode,
 } from "./type-guard";

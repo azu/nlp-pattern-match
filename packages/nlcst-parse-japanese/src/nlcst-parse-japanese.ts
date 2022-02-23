@@ -79,7 +79,7 @@ function tokenize(
         return {
             line: line,
             column: column,
-            offset: offset
+            offset: offset,
         };
     }
 
@@ -103,7 +103,7 @@ function tokenize(
         const firstParentNode = parentNode.children[0];
         parentNode.position = {
             start: firstParentNode.position!.start,
-            end: next("")
+            end: next(""),
         };
     }
 
@@ -115,7 +115,7 @@ function tokenize(
     function createPosition(value: string) {
         return {
             start: now(),
-            end: next(value)
+            end: next(value),
         };
     }
 
@@ -125,7 +125,7 @@ function tokenize(
     function createParentNode(type: string, item?: Partial<IpadicFeatures>): Parent {
         const node: any = {
             type: type + "Node",
-            children: []
+            children: [],
         };
         if (parser.position) {
             node.position = {};
@@ -142,7 +142,7 @@ function tokenize(
     function createRootNode(): Root {
         const node: any = {
             type: "RootNode",
-            children: []
+            children: [],
         };
         if (parser.position) {
             node.position = {};
@@ -159,7 +159,7 @@ function tokenize(
     function createTextNode(type: string, item: IpadicFeatures): Text {
         const node: any = {
             type: type + "Node",
-            value: item.surface_form
+            value: item.surface_form,
         };
         if (parser.position && item.surface_form) {
             node.position = createPosition(item.surface_form);
@@ -183,7 +183,7 @@ function tokenize(
                 firstParentNode.position && node.position
                     ? {
                           start: firstParentNode.position.start,
-                          end: node.position.end
+                          end: node.position.end,
                       }
                     : undefined;
         }
@@ -214,7 +214,7 @@ function tokenize(
                         surface_form: "\n",
                         basic_form: "\n",
                         pos: "記号",
-                        pos_detail_1: "空白"
+                        pos_detail_1: "空白",
                     }),
                     paragraphNode
                 );
@@ -337,7 +337,7 @@ export class JapaneseParser {
         const parserOptions = {
             tokenizer: this.tokenizer,
             pos: true,
-            position: true
+            position: true,
         };
         return tokenize(parserOptions, text);
     }
