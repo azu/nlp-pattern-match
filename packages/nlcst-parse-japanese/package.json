@@ -43,7 +43,8 @@
   },
   "prettier": {
     "printWidth": 120,
-    "tabWidth": 4
+    "tabWidth": 4,
+    "trailingComma": "none"
   },
   "dependencies": {
     "kuromojin": "^1.4.0",
