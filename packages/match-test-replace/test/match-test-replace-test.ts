@@ -10,7 +10,7 @@ describe("testMatchReplace", () => {
             const replaceArgsCaptures: PatternMatchDictArgs[] = [];
             const res = matchTestReplace(text, {
                 pattern: /X(Y+)Z.*(ABC)/,
-                replace: args => {
+                replace: (args) => {
                     replaceArgsCaptures.push(args);
                     return "";
                 }

@@ -15,10 +15,10 @@ export interface PatternMatcherArgs {
 /**
  * tag function result
  */
-export type TagPatterns = NodeTypes[]
+export type TagPatterns = NodeTypes[];
 
 export class PatternMatcher {
-    private parser: { parse: ((text: string) => Root) };
+    private parser: { parse: (text: string) => Root };
 
     constructor(args: PatternMatcherArgs) {
         this.parser = args.parser;
@@ -35,12 +35,12 @@ export class PatternMatcher {
         if (typeof text !== "string") {
             throw new Error(
                 "Invalid Arguments: match(text: string, pattern: TagPattern)\n" +
-                "matcher.match(text, matcher.tag`pattern`)"
+                    "matcher.match(text, matcher.tag`pattern`)"
             );
         }
         const CST = this.parser.parse(text);
         const CSTResults = this.matchCST(CST, patterns);
-        return CSTResults.map(node => {
+        return CSTResults.map((node) => {
             const firstNode = node.nodeList[0];
             const lastNode = node.nodeList[node.nodeList.length - 1];
             if (!firstNode || !lastNode) {
@@ -48,13 +48,13 @@ export class PatternMatcher {
                     text: "",
                     position: node.position,
                     nodeList: node.nodeList
-                }
+                };
             }
             return {
                 text: text.slice(firstNode.position!.start.offset, lastNode.position!.end.offset),
                 position: node.position,
                 nodeList: node.nodeList
-            }
+            };
         });
     }
 
@@ -129,10 +129,13 @@ export class PatternMatcher {
                     return;
                 }
                 replaceHolders
-                    .filter(replaceHolder => {
-                        return node.position!.start.offset === replaceHolder.start && node.position!.end.offset === (replaceHolder.start + replaceHolder.length)
+                    .filter((replaceHolder) => {
+                        return (
+                            node.position!.start.offset === replaceHolder.start &&
+                            node.position!.end.offset === replaceHolder.start + replaceHolder.length
+                        );
                     })
-                    .forEach(replaceHolder => {
+                    .forEach((replaceHolder) => {
                         const indexOf = parent.children.indexOf(node);
                         const actualNode = parent.children[indexOf];
                         const placeholderNode = replaceHolder.value;

@@ -1,4 +1,4 @@
-# nlp-pattern-match [![Build Status](https://travis-ci.org/azu/nlp-pattern-match.svg?branch=master)](https://travis-ci.org/azu/nlp-pattern-match)
+# nlp-pattern-match [![Actions Status: test](https://github.com/azu/nlp-pattern-match/workflows/test/badge.svg)](https://github.com/azu/nlp-pattern-match/actions?query=workflow%3A"test")
 
 Natural Language pattern matching library for JavaScript.
 

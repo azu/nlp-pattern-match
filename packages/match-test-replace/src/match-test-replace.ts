@@ -59,7 +59,7 @@ const applyFixes = (text: string, messages: MatchTestReplaceReturnResult[]) => {
         // split into array of characters for easier manipulation
         const chars = text.split("");
 
-        fixes.forEach(problem => {
+        fixes.forEach((problem) => {
             // pickup fix range
             let start = problem.index;
             const end = start + problem.match.length;

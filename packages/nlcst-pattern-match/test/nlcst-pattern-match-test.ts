@@ -3,7 +3,7 @@ import * as assert from "assert";
 import { EnglishParser } from "nlcst-parse-english";
 import { JapaneseParser } from "nlcst-parse-japanese";
 
-const snapshot = require('snap-shot-it')
+const snapshot = require("snap-shot-it");
 const toString = require("nlcst-to-string");
 // const inspect = require('unist-util-inspect');
 
@@ -79,10 +79,7 @@ describe("nlcst-pattern-match", () => {
             }}`;
             const text = "Bob does that.";
             const results = patternMatcher.match(text, pattern);
-            assert.strictEqual(
-                toString(results[0].nodeList),
-                "does"
-            );
+            assert.strictEqual(toString(results[0].nodeList), "does");
         });
         it("match japanese parser", () => {
             const japaneseParser = new JapaneseParser();
@@ -94,7 +91,7 @@ describe("nlcst-pattern-match", () => {
                     type: "WordNode",
                     data: {
                         pos: "動詞",
-                        "pos_detail_1": "自立",
+                        pos_detail_1: "自立"
                     }
                 }}たり`;
                 snapshot(TARI);
@@ -217,7 +214,7 @@ describe("nlcst-pattern-match", () => {
             const 名詞 = {
                 type: "WordNode",
                 data: {
-                    pos: "名詞",
+                    pos: "名詞"
                 }
             };
             const を = {
@@ -299,7 +296,7 @@ describe("nlcst-pattern-match", () => {
                 parser: japaneseParser
             });
             const pattern = patternMatcher.tag`これは${{
-                type: "WordNode",
+                type: "WordNode"
             }}です！`;
             const text = "これは桃です！";
             const results = patternMatcher.match(text, pattern);
@@ -321,14 +318,14 @@ describe("nlcst-pattern-match", () => {
                     type: "WordNode",
                     data: {
                         pos: "動詞",
-                        pos_detail_1: "自立",
+                        pos_detail_1: "自立"
                     }
                 },
                 {
                     type: "WordNode",
                     data: {
                         pos: "助詞",
-                        surface_form: ["だり", "たり"],
+                        surface_form: ["だり", "たり"]
                     }
                 }
             ];
@@ -336,10 +333,7 @@ describe("nlcst-pattern-match", () => {
             const results = patternMatcher.match(text, pattern);
             assert.ok(results.length === 1, "should have 1 result");
             const result = results[0];
-            assert.strictEqual(
-                text.slice(result.position!.start.offset, result.position!.end.offset),
-                "行ったり"
-            );
+            assert.strictEqual(text.slice(result.position!.start.offset, result.position!.end.offset), "行ったり");
         });
     });
 
@@ -363,7 +357,6 @@ describe("nlcst-pattern-match", () => {
             snapshot(result);
         });
         it("can match node list", () => {
-
             const englishParser = new EnglishParser();
             const patternMatcher = new PatternMatcher({
                 parser: englishParser
@@ -378,7 +371,7 @@ describe("nlcst-pattern-match", () => {
             const CST = englishParser.parse(text);
             const results = patternMatcher.matchCST(CST, pattern);
             const resultOne = results[0].nodeList;
-            assert.ok(patternMatcher.testCST(CST, resultOne), "pass test")
+            assert.ok(patternMatcher.testCST(CST, resultOne), "pass test");
         });
     });
 });

@@ -1,5 +1,5 @@
 // MIT © 2017 azu
-import { Paragraph, Punctuation, Root, Sentence, Source, TextNode, WhiteSpace, Word, Symbol} from "./nlcst-types";
+import { Paragraph, Punctuation, Root, Sentence, Source, TextNode, WhiteSpace, Word, Symbol } from "./nlcst-types";
 import { Text } from "unist-types";
 
 export const isRoot = (v: any): v is Root => {

@@ -20,7 +20,8 @@
     "build": "lerna run build",
     "precommit": "lint-staged",
     "postcommit": "git reset",
-    "prettier": "prettier --write '**/*.{js,jsx,ts,tsx,css}'"
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,css}\"",
+    "prepare": "git config --local core.hooksPath .githooks"
   },
   "keywords": [
     "NLP",
@@ -39,15 +40,15 @@
   },
   "homepage": "https://github.com/azu/nlp-pattern-match",
   "devDependencies": {
-    "husky": "^0.14.3",
     "lerna": "^4.0.0",
     "lint-staged": "^12.3.4",
-    "prettier": "^1.13.5",
-    "typescript": "4.1.3"
+    "prettier": "^2.5.1",
+    "typescript": "4.5.5"
   },
   "prettier": {
+    "singleQuote": false,
     "printWidth": 120,
-    "tabWidth": 4
+    "tabWidth": 4,"trailingComma": "none"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,css}": [
