@@ -51,8 +51,7 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,css}": [
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ]
   },
   "types": "lib/nlcst-parse-japanese.d.ts",
