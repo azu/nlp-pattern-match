@@ -41,7 +41,7 @@
     "@types/node": "^10.3.4",
     "cross-env": "^5.0.5",
     "husky": "^0.14.3",
-    "lint-staged": "^7.2.0",
+    "lint-staged": "^12.3.4",
     "mocha": "^5.2.0",
     "prettier": "^1.13.5",
     "ts-node": "^6.1.1",
