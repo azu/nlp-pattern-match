@@ -129,7 +129,7 @@ See [Releases page](https://github.com/azu/nlp-pattern-match/releases).
     yarn
     # setup pacakges
     yarn bootstrap
-    # tet
+    # test
     yarn test
 
 ## Contributing
