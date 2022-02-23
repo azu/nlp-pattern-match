@@ -48,8 +48,7 @@
   "prettier": {
     "singleQuote": false,
     "printWidth": 120,
-    "tabWidth": 4,
-    "trailingComma": "none"
+    "tabWidth": 4,"trailingComma": "none"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,css}": [

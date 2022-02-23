@@ -1,40 +1,55 @@
 {
-  "directories": {
-    "lib": "lib",
-    "test": "test"
-  },
-  "author": "azu",
-  "license": "MIT",
-  "files": [
-    "bin/",
-    "lib/",
-    "src/"
-  ],
   "name": "nlcst-parse-japanese",
   "version": "1.2.2",
   "description": "Parse Japanese text and output as NLCST.",
-  "main": "lib/nlcst-parse-japanese.js",
-  "scripts": {
-    "test": "mocha 'test/**/*.ts'",
-    "prettier": "prettier --write '**/*.{js,jsx,ts,tsx,css}'",
-    "build": "cross-env NODE_ENV=production tsc -p .",
-    "watch": "tsc -p . --watch",
-    "prepublish": "npm run --if-present build"
-  },
   "keywords": [
     "NLCST",
     "parse",
     "parser",
     "japanese"
   ],
+  "homepage": "https://github.com/azu/nlp-pattern-match/tree/master/packages/nlcst-parse-japanese/",
+  "bugs": {
+    "url": "https://github.com/azu/nlp-pattern-match/issues"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/azu/nlp-pattern-match.git"
   },
-  "bugs": {
-    "url": "https://github.com/azu/nlp-pattern-match/issues"
+  "license": "MIT",
+  "author": "azu",
+  "main": "lib/nlcst-parse-japanese.js",
+  "types": "lib/nlcst-parse-japanese.d.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
   },
-  "homepage": "https://github.com/azu/nlp-pattern-match/tree/master/packages/nlcst-parse-japanese/",
+  "files": [
+    "bin/",
+    "lib/",
+    "src/"
+  ],
+  "scripts": {
+    "build": "cross-env NODE_ENV=production tsc -p .",
+    "prettier": "prettier --write '**/*.{js,jsx,ts,tsx,css}'",
+    "prepublish": "npm run --if-present build",
+    "test": "mocha 'test/**/*.ts'",
+    "watch": "tsc -p . --watch"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,css}": [
+      "prettier --write"
+    ]
+  },
+  "prettier": {
+    "printWidth": 120,
+    "tabWidth": 4
+  },
+  "dependencies": {
+    "kuromojin": "^1.4.0",
+    "nlcst-types": "^1.2.4",
+    "unist-types": "^1.1.5"
+  },
   "devDependencies": {
     "@types/mocha": "^9.1.0",
     "@types/node": "^17.0.19",
@@ -44,20 +59,5 @@
     "prettier": "^2.5.1",
     "ts-node": "^10.5.0",
     "typescript": "^4.5.5"
-  },
-  "prettier": {
-    "printWidth": 120,
-    "tabWidth": 4
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx,css}": [
-      "prettier --write"
-    ]
-  },
-  "types": "lib/nlcst-parse-japanese.d.ts",
-  "dependencies": {
-    "kuromojin": "^1.4.0",
-    "nlcst-types": "^1.2.4",
-    "unist-types": "^1.1.5"
   }
 }

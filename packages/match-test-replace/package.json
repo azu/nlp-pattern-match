@@ -1,34 +1,51 @@
 {
-  "directories": {
-    "lib": "lib",
-    "test": "test"
-  },
-  "author": "azu",
-  "license": "MIT",
-  "files": [
-    "bin/",
-    "lib/",
-    "src/"
-  ],
   "name": "match-test-replace",
   "version": "1.1.18",
   "description": "Easy pattern match and replace text.",
-  "main": "lib/match-test-replace.js",
-  "scripts": {
-    "test": "mocha 'test/**/*.ts'",
-    "prettier": "prettier --write '**/*.{js,jsx,ts,tsx,css}'",
-    "build": "cross-env NODE_ENV=production tsc -p .",
-    "watch": "tsc -p . --watch",
-    "prepublish": "npm run --if-present build"
+  "keywords": [
+    "nlp",
+    "NLCST",
+    "find",
+    "match",
+    "replace"
+  ],
+  "homepage": "https://github.com/azu/nlp-pattern-match/tree/master/packages/match-test-replace/",
+  "bugs": {
+    "url": "https://github.com/azu/nlp-pattern-match/issues"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/azu/nlp-pattern-match.git"
   },
-  "bugs": {
-    "url": "https://github.com/azu/nlp-pattern-match/issues"
+  "license": "MIT",
+  "author": "azu",
+  "main": "lib/match-test-replace.js",
+  "types": "lib/match-test-replace.d.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
   },
-  "homepage": "https://github.com/azu/nlp-pattern-match/tree/master/packages/match-test-replace/",
+  "files": [
+    "bin/",
+    "lib/",
+    "src/"
+  ],
+  "scripts": {
+    "build": "cross-env NODE_ENV=production tsc -p .",
+    "prettier": "prettier --write '**/*.{js,jsx,ts,tsx,css}'",
+    "prepublish": "npm run --if-present build",
+    "test": "mocha 'test/**/*.ts'",
+    "watch": "tsc -p . --watch"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,css}": [
+      "prettier --write"
+    ]
+  },
+  "prettier": {
+    "printWidth": 120,
+    "tabWidth": 4
+  },
   "devDependencies": {
     "@types/mocha": "^9.1.0",
     "@types/node": "^17.0.19",
@@ -40,22 +57,5 @@
     "prettier": "^2.5.1",
     "ts-node": "^10.5.0",
     "typescript": "^4.5.5"
-  },
-  "prettier": {
-    "printWidth": 120,
-    "tabWidth": 4
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx,css}": [
-      "prettier --write"
-    ]
-  },
-  "types": "lib/match-test-replace.d.ts",
-  "keywords": [
-    "nlp",
-    "NLCST",
-    "find",
-    "match",
-    "replace"
-  ]
+  }
 }
