@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.19](https://github.com/azu/nlp-pattern-match/compare/match-test-replace@1.1.18...match-test-replace@1.1.19) (2022-02-23)
+
+
+### Bug Fixes
+
+* **deps:** Update vulnerable packages ([#14](https://github.com/azu/nlp-pattern-match/issues/14)) ([c2a0386](https://github.com/azu/nlp-pattern-match/commit/c2a0386d349339a85f1168ad6329fd0e75094f21))
+
+
+
+
+
 ## [1.1.18](https://github.com/azu/nlp-pattern-match/compare/match-test-replace@1.1.17...match-test-replace@1.1.18) (2021-02-16)
 
 **Note:** Version bump only for package match-test-replace

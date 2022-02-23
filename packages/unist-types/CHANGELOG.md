@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.6](https://github.com/azu/nlp-pattern-match/compare/unist-types@1.1.5...unist-types@1.1.6) (2022-02-23)
+
+
+### Bug Fixes
+
+* **deps:** Update vulnerable packages ([#14](https://github.com/azu/nlp-pattern-match/issues/14)) ([c2a0386](https://github.com/azu/nlp-pattern-match/commit/c2a0386d349339a85f1168ad6329fd0e75094f21))
+
+
+
+
+
 ## [1.1.5](https://github.com/azu/nlp-pattern-match/compare/unist-types@1.1.4...unist-types@1.1.5) (2021-01-16)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.3](https://github.com/azu/nlp-pattern-match/compare/nlcst-parse-japanese@1.2.2...nlcst-parse-japanese@1.2.3) (2022-02-23)
+
+
+### Bug Fixes
+
+* **deps:** Update vulnerable packages ([#14](https://github.com/azu/nlp-pattern-match/issues/14)) ([c2a0386](https://github.com/azu/nlp-pattern-match/commit/c2a0386d349339a85f1168ad6329fd0e75094f21))
+
+
+
+
+
 ## [1.2.2](https://github.com/azu/nlp-pattern-match/compare/nlcst-parse-japanese@1.2.1...nlcst-parse-japanese@1.2.2) (2021-02-16)
 
 **Note:** Version bump only for package nlcst-parse-japanese

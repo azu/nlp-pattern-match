@@ -1,6 +1,6 @@
 {
   "name": "nlcst-types",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "NLCST types for TypeScript.",
   "keywords": [
     "nlcst",
@@ -46,7 +46,7 @@
     "trailingComma": "none"
   },
   "dependencies": {
-    "unist-types": "^1.1.5"
+    "unist-types": "^1.1.6"
   },
   "devDependencies": {
     "@types/mocha": "^9.1.0",
