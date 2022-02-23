@@ -1,6 +1,6 @@
 {
   "name": "nlcst-parse-japanese",
-  "version": "1.2.3",
+  "version": "1.4.0",
   "description": "Parse Japanese text and output as NLCST.",
   "keywords": [
     "NLCST",
@@ -43,8 +43,8 @@
   },
   "dependencies": {
     "kuromojin": "^1.4.0",
-    "nlcst-types": "^1.2.5",
-    "unist-types": "^1.1.6"
+    "nlcst-types": "^1.4.0",
+    "unist-types": "^1.4.0"
   },
   "devDependencies": {
     "@types/mocha": "^9.1.0",
