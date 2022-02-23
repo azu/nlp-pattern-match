@@ -37,11 +37,6 @@
     "test": "mocha 'test/**/*.ts'",
     "watch": "tsc -p . --watch"
   },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx,css}": [
-      "prettier --write"
-    ]
-  },
   "prettier": {
     "printWidth": 120,
     "tabWidth": 4,
