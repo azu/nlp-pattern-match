@@ -1,0 +1,163 @@
+name: Release
+
+on:
+  pull_request:
+    branches:
+      - master
+      - main
+    types:
+      - closed
+
+# A release waits for the running release, and is not cancelled
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    if: |
+      github.event.pull_request.merged == true &&
+      contains(github.event.pull_request.labels.*.name, 'Type: Release')
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: npm
+    permissions:
+      contents: write
+      id-token: write  # OIDC
+    outputs:
+      released: ${{ steps.tag-check.outputs.exists == 'false' }}
+      version: ${{ steps.package.outputs.version }}
+      packages: ${{ steps.stage.outputs.packages }}
+      release-url: ${{ steps.create-release.outputs.url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+
+      - name: Get package info
+        id: package
+        run: |
+          VERSION=$(jq -r '.version' lerna.json)
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
+      # Shallow checkout does not fetch tags, so check the remote
+      - name: Check if tag exists
+        id: tag-check
+        run: |
+          if git ls-remote --tags origin | grep -q "refs/tags/v${VERSION}$"; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+        env:
+          VERSION: ${{ steps.package.outputs.version }}
+
+      - name: Setup Node.js
+        if: steps.tag-check.outputs.exists == 'false'
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          # Release workflow should not use cache for avoiding cache poisoning
+          # OIDC trusted publishing requires npm 11.5.1+ (bundled with Node.js 24)
+          node-version: 24
+          registry-url: 'https://registry.npmjs.org'
+          package-manager-cache: false
+
+      - name: Install dependencies
+        if: steps.tag-check.outputs.exists == 'false'
+        run: yarn install --frozen-lockfile --ignore-scripts
+
+      # npm 7+ does not run `prepublish` on publish, so build lib/ explicitly
+      - name: Build
+        if: steps.tag-check.outputs.exists == 'false'
+        run: yarn run build
+
+      # Stage each package on npm. A maintainer approves them with 2FA to publish them.
+      # https://docs.npmjs.com/staged-publishing
+      # Requires npm 11.15.0+ (bundled with Node.js 24)
+      # lerna publish cannot stage, so stage the packages whose version is not on npm yet
+      - name: Stage publish to npm
+        id: stage
+        if: steps.tag-check.outputs.exists == 'false'
+        run: |
+          STAGED=""
+          for dir in packages/*/; do
+            NAME=$(jq -r '.name' "${dir}package.json")
+            PACKAGE_VERSION=$(jq -r '.version' "${dir}package.json")
+            if [ "$(jq -r '.private' "${dir}package.json")" = "true" ]; then
+              continue
+            fi
+            if npm view "$NAME@$PACKAGE_VERSION" version > /dev/null 2>&1; then
+              echo "Skip $NAME@$PACKAGE_VERSION: already on npm"
+              continue
+            fi
+            (cd "$dir" && npm stage publish --access public)
+            STAGED="$STAGED $NAME"
+          done
+          echo "packages=$STAGED" >> "$GITHUB_OUTPUT"
+
+      - name: Create GitHub Release with tag
+        id: create-release
+        if: steps.tag-check.outputs.exists == 'false'
+        run: |
+          RELEASE_URL=$(gh release create "v$VERSION" \
+            --title "v$VERSION" \
+            --target "$SHA" \
+            --notes "$PR_BODY")
+          echo "url=$RELEASE_URL" >> "$GITHUB_OUTPUT"
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.package.outputs.version }}
+          SHA: ${{ github.sha }}
+          PR_BODY: ${{ github.event.pull_request.body }}
+
+  comment:
+    needs: release
+    if: |
+      always() &&
+      github.event_name == 'pull_request' &&
+      needs.release.outputs.released == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pull-requests: write
+    steps:
+      - name: Comment on PR - Success
+        if: needs.release.result == 'success'
+        run: |
+          gh pr comment "$PR_NUMBER" \
+            --repo "$REPOSITORY" \
+            --body "✅ **Release v$VERSION is staged on npm!**
+
+          Approve them with 2FA to publish: \`npm stage list\` and \`npm stage approve <stage-id>\`
+
+          - 📦 Staged packages:$PACKAGES
+          - 🏷️ GitHub Release: $RELEASE_URL
+          - 🔗 Workflow run: $SERVER_URL/$REPOSITORY/actions/runs/$RUN_ID"
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          VERSION: ${{ needs.release.outputs.version }}
+          PACKAGES: ${{ needs.release.outputs.packages }}
+          RELEASE_URL: ${{ needs.release.outputs.release-url }}
+          SERVER_URL: ${{ github.server_url }}
+          REPOSITORY: ${{ github.repository }}
+          RUN_ID: ${{ github.run_id }}
+
+      - name: Comment on PR - Failure
+        if: needs.release.result == 'failure'
+        run: |
+          gh pr comment "$PR_NUMBER" \
+            --repo "$REPOSITORY" \
+            --body "❌ **Release v$VERSION failed**
+
+          Please check the workflow logs for details.
+          🔗 Workflow run: $SERVER_URL/$REPOSITORY/actions/runs/$RUN_ID"
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          VERSION: ${{ needs.release.outputs.version }}
+          SERVER_URL: ${{ github.server_url }}
+          REPOSITORY: ${{ github.repository }}
+          RUN_ID: ${{ github.run_id }}
